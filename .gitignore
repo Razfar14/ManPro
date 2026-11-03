@@ -1,50 +1,87 @@
-# Python
+# ==========================================
+# 1. SENSITIVE & SECRETS (PENTING untuk Push Protection)
+# ==========================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+
+# ==========================================
+# 2. PYTHON & AI MODEL CACHE (Backend & NLP Training)
+# ==========================================
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
-# Virtual environments
+# Virtual Environments
 venv/
-.env/
-.env/*
 .venv/
-ENV/
 env/
+ENV/
+env.bak/
+venv.bak/
 
-# IDE / editor settings
+# Jupyter Notebook & Checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Model Weights & Large Datasets (PoC 50 Berita / Scraping Cache)
+*.h5
+*.pkl
+*.onnx
+*.bin
+*.pt
+*.pth
+/datasets/raw/*
+!/datasets/raw/.gitkeep
+
+# ==========================================
+# 3. NODE.JS & FRONTEND BUILD (UI/UX)
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+.next/
+.nuxt/
+
+# ==========================================
+# 4. IDE & EDITOR SETTINGS
+# ==========================================
 .idea/
 .vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
 *.sublime-project
 *.sublime-workspace
 
-# OS files
+# ==========================================
+# 5. OS & SYSTEM FILES
+# ==========================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# Build / distribution
-build/
-Dist/
-*.egg-info/
-
-# Test / coverage
-htmlcov/
-.coverage
-.coverage.*
-.cache
-.pytest_cache/
-nosetests.xml
-coverage.xml
-*.cover
+# ==========================================
+# 6. LOGS & TEMPORARY FILES
+# ==========================================
 *.log
-
-# Project specific caches
-backend/cache/*.json
-backend/cache/*.db
-
-# Artifact / Antigravity data (generated runtime files)
-.gemini/
-brain/
-
-# Other temporary files
+logs/
 *.tmp
-*.bak
+*.temp

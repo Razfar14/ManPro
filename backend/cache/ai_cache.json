@@ -1,0 +1,68 @@
+{
+  "ppn": {
+    "_cached_at": 1793709918.796725,
+    "data": {
+      "query": "PPN",
+      "summary": "Pemberitaan mengenai penyesuaian tarif PPN 12% menunjukkan perbedaan sudut pandang antarmedia. CNN Indonesia menitikberatkan pada kepatuhan amanat UU HPP serta pembebasan barang kebutuhan pokok, CNBC Indonesia menyoroti kekhawatiran pengusaha ritel terhadap potensi penurunan konsumsi dan inflasi, sementara Tempo memberi porsi besar pada kritik ekonom dan penolakan serikat buruh terkait beban kelas menengah.",
+      "matrix_columns": [
+        "Aspek",
+        "CNN",
+        "CNBC",
+        "Tempo"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "Tarif PPN 12%; proyeksi penerimaan negara Rp 70-80 triliun",
+          "cnbc": "Potensi koreksi konsumsi 1,2%; tambahan inflasi 0,3-0,5%",
+          "tempo": "Kenaikan biaya hidup urban 2,8-3,5%; 9,4 juta kelas menengah rentan"
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Menteri Keuangan Sri Mulyani, Ditjen Pajak",
+          "cnbc": "Ketua Aprindo Roy Nicholas Mandey, Analis Pasar Modal",
+          "tempo": "Direktur Celios Bhima Yudhistira, Presiden KSPI Said Iqbal"
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Amanat regulasi UU HPP & perlindungan bansos",
+          "cnbc": "Sentimen ritel, inflasi, & margin emiten FMCG",
+          "tempo": "Daya beli kelas menengah & penolakan serikat pekerja"
+        }
+      ],
+      "consensus": [
+        "Semua media sepakat bahwa isu 'PPN' memiliki dampak signifikan dan menjadi perhatian publik.",
+        "Terdapat pengakuan bersama mengenai perlunya koordinasi lintas sektor dalam implementasi kebijakan."
+      ],
+      "divergence": [
+        "Perbedaan sudut pandang antara kepatuhan regulasi pemerintah vs dampak daya beli riil masyarakat.",
+        "Variasi data statistik yang dikutip: laporan resmi kementerian berbanding kajian asosiasi independen."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)"
+    }
+  },
+  "art_summary_art-ppn-cnn-01": {
+    "_cached_at": 1793709918.8020754,
+    "data": {
+      "summary": "Menteri Keuangan Sri Mulyani Indrawati menegaskan bahwa implementasi kenaikan tarif Pajak Pertambahan Nilai (PPN) dari 11 persen menjadi 12 persen pada 1 Januari 2025 merupakan pelaksanaan amanat Undang-Undang Nomor 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan (UU HPP). Laporan CNN Indonesia lebih lanjut menyoroti bahwa Pemerintah menargetkan penyesuaian ini mampu memberikan tambahan penerimaan negara sekitar Rp 70 triliun hingga Rp 80 triliun per tahun, yang akan dialokasikan kembali untuk belanj..."
+    }
+  },
+  "topic_sum_art-ppn-cnn-01": {
+    "_cached_at": 1793712119.9194589,
+    "data": {
+      "summary": "Topik: Ekonomi & Perdagangan. Berita ini diklasifikasikan ke dalam ranah Ekonomi & Perdagangan karena membahas aktivitas perdagangan komoditas, dinamika pasar, atau kebijakan fiskal yang berdampak pada stabilitas perekonomian nasional berdasarkan pelaporan CNN Indonesia."
+    }
+  },
+  "topic_sum_test-tempo-prabowo": {
+    "_cached_at": 1793712119.92782,
+    "data": {
+      "summary": "Topik: Politik & Tata Kelola Pemerintahan. Berita ini diklasifikasikan ke dalam ranah Politik & Tata Kelola Pemerintahan karena menyoroti dinamika kepemimpinan nasional, komunikasi pejabat publik, serta relasi kekuasaan dalam tata kelola pemerintahan berdasarkan pelaporan Tempo.co."
+    }
+  },
+  "topic_sum_test-ekspor-nikel": {
+    "_cached_at": 1793712119.9369335,
+    "data": {
+      "summary": "Topik: Ekonomi & Perdagangan. Berita ini diklasifikasikan ke dalam ranah Ekonomi & Perdagangan karena membahas aktivitas perdagangan komoditas, dinamika pasar, atau kebijakan fiskal yang berdampak pada stabilitas perekonomian nasional berdasarkan pelaporan CNBC Indonesia."
+    }
+  }
+}
