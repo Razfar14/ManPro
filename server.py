@@ -15,6 +15,13 @@ import webbrowser
 import logging
 from flask import Flask, request, jsonify, send_from_directory, make_response
 
+# Load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # python-dotenv not installed, use system env vars
+
 # Setup logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
 logger = logging.getLogger("BTH_Server")
