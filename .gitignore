@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env/*
+.venv/
+ENV/
+env/
+
+# IDE / editor settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / distribution
+build/
+Dist/
+*.egg-info/
+
+# Test / coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+
+# Project specific caches
+backend/cache/*.json
+backend/cache/*.db
+
+# Artifact / Antigravity data (generated runtime files)
+.gemini/
+brain/
+
+# Other temporary files
+*.tmp
+*.bak

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behind The Headline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" aria-label="Utama">
+    <a class="logo" href="index.html">Behind The Headline</a>
+    <ul>
+      <li><a href="index.html" class="on" aria-current="page">Beranda</a></li>
+      <li><a href="hasil.html?q=Politik">Politik</a></li>
+      <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+      <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+      <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+      <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <div class="sheet s1"><i></i><i></i></div>
+    <div class="sheet s2"><i></i><i></i></div>
+    <div class="sheet s3"><i></i><i></i></div>
+    <small>BEHIND THE</small>
+    <h1>HEADLINE</h1>
+    <p>Cari satu topik, bandingkan isi beritanya dari berbagai media.</p>
+  </header>
+  <form class="search" action="hasil.html" role="search">
+    <input id="q" name="q" type="search" placeholder="Cari kata kunci atau topik berita..." aria-label="Cari berita">
+    <button type="submit">Cari</button>
+  </form>
+  <section class="latest" aria-labelledby="terbaru">
+    <h2 id="terbaru">Berita Terbaru</h2>
+    <p>Topik terkini dari berbagai media</p>
+    <div class="grid" id="grid"></div>
+  </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

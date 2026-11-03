@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hasil Pencarian — Behind The Headline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap narrow">
+  <nav class="nav" aria-label="Utama">
+    <a class="logo" href="index.html">Behind The Headline</a>
+    <ul id="navList">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="hasil.html?q=Politik">Politik</a></li>
+      <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+      <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+      <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+      <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+    </ul>
+  </nav>
+  <form class="search" action="hasil.html" role="search">
+    <input id="q" name="q" type="search" placeholder="Cari kata kunci atau topik berita..." aria-label="Cari berita">
+    <button type="submit">Cari</button>
+  </form>
+  <div class="legend"><button class="badge" id="aiToggle" type="button" aria-pressed="true" aria-label="Tampilkan atau sembunyikan bagian AI">AI</button>
+    <span>= bagian yang dibuat otomatis oleh AI</span></div>
+
+  <section class="panel dark" data-ai id="aiPanel">
+    <span class="badge">AI</span>
+    <h2>Ringkasan</h2>
+    <p id="aiSummary">[Menganalisis artikel berita antarmedia...]</p>
+  </section>
+
+  <section class="panel light" data-ai id="matrixPanel">
+    <span class="badge">AI</span>
+    <h2>Perbandingan antar media</h2>
+    <div class="scroll">
+      <table id="compareTable">
+        <thead id="compareHead">
+          <tr><th>Aspek</th><th>CNN</th><th>CNBC</th><th>Tempo</th></tr>
+        </thead>
+        <tbody id="compareBody">
+          <tr><td>Data angka</td><td>[Memuat data...]</td><td>[Memuat data...]</td><td>[Memuat data...]</td></tr>
+          <tr><td>Narasumber</td><td>[Memuat data...]</td><td>[Memuat data...]</td><td>[Memuat data...]</td></tr>
+          <tr><td>Fokus berita</td><td>[Memuat data...]</td><td>[Memuat data...]</td><td>[Memuat data...]</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="berita">
+    <h2>Berita asli</h2>
+    <div id="beritaList">
+      <article class="item"><small>CNN Indonesia</small>
+        <h3><a href="detail.html?id=art-ppn-cnn-01">[Judul artikel...]</a></h3><a class="src" href="#">Baca di sumber asli →</a></article>
+      <article class="item"><small>CNBC Indonesia</small>
+        <h3><a href="detail.html?id=art-ppn-cnbc-02">[Judul artikel...]</a></h3><a class="src" href="#">Baca di sumber asli →</a></article>
+      <article class="item"><small>Tempo</small>
+        <h3><a href="detail.html?id=art-ppn-tempo-03">[Judul artikel...]</a></h3><a class="src" href="#">Baca di sumber asli →</a></article>
+    </div>
+  </section>
+  <p class="note" data-ai>AI hanya membandingkan dan merangkum, bukan menyatakan hoaks atau faktual.</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
