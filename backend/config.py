@@ -6,7 +6,7 @@ Mengatur endpoint API, User-Agent, timeout, dan kunci API untuk modul Ingestion 
 import os
 
 # DeepSeek AI API Configuration
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_API_URL = "https://api.deepseek.com/chat/completions"
 DEEPSEEK_MODEL = "deepseek-chat"
 
