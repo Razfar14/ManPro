@@ -12,7 +12,7 @@ import json
 import time
 import hashlib
 import logging
-from typing import Dict, Any, Optional
+from typing import Optional, List, Dict, Any
 
 logger = logging.getLogger("CacheManager")
 
