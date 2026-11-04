@@ -1,0 +1,15 @@
+# requirements.txt – Python dependencies for Behind The Headline (BTH)
+# Pin to compatible versions that are known to work with @vercel/python
+
+Flask==3.1.2
+Werkzeug==3.1.5
+requests==2.32.5
+lxml==6.1.2
+python-dotenv==1.0.1
+
+# Indirect / standard-library helpers (already in stdlib for Python 3.10+,
+# listed here for clarity)
+# xml.etree.ElementTree  → stdlib
+# concurrent.futures     → stdlib
+# dataclasses            → stdlib
+
