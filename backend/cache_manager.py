@@ -16,7 +16,25 @@ from typing import Optional, List, Dict, Any
 
 logger = logging.getLogger("CacheManager")
 
-CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cache")
+CACHE_VERSION = "v2"
+_DEFAULT_CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cache")
+
+
+def _resolve_cache_dir() -> str:
+    try:
+        os.makedirs(_DEFAULT_CACHE_DIR, exist_ok=True)
+        probe = os.path.join(_DEFAULT_CACHE_DIR, ".write_test")
+        with open(probe, "w", encoding="utf-8") as f:
+            f.write("ok")
+        os.remove(probe)
+        return _DEFAULT_CACHE_DIR
+    except OSError:
+        tmp_dir = "/tmp/bth_cache"
+        os.makedirs(tmp_dir, exist_ok=True)
+        return tmp_dir
+
+
+CACHE_DIR = _resolve_cache_dir()
 AI_CACHE_FILE = os.path.join(CACHE_DIR, "ai_cache.json")
 NEWS_CACHE_FILE = os.path.join(CACHE_DIR, "news_cache.json")
 
@@ -50,7 +68,7 @@ class CacheManager:
             logger.warning(f"Gagal menyimpan cache {file_path}: {e}")
 
     def _normalize_key(self, key: str) -> str:
-        return key.strip().lower()
+        return f"{CACHE_VERSION}_{key.strip().lower()}"
 
     # ==========================================
     # 1. AI RESPONSE CACHE (HEMAT TOKEN DEEPSEEK)

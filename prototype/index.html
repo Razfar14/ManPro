@@ -11,8 +11,13 @@
 <body>
 <div class="wrap">
   <nav class="nav" aria-label="Utama">
-    <a class="logo" href="index.html">Behind The Headline</a>
-    <ul>
+    <div class="nav-head">
+      <a class="logo" href="index.html">Behind The Headline</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu kategori" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul id="navList">
       <li><a href="index.html" class="on" aria-current="page">Beranda</a></li>
       <li><a href="hasil.html?q=Politik">Politik</a></li>
       <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
@@ -29,10 +34,11 @@
     <h1>HEADLINE</h1>
     <p>Cari satu topik, bandingkan isi beritanya dari berbagai media.</p>
   </header>
-  <form class="search" action="hasil.html" role="search">
+  <form class="search" id="searchForm" action="hasil.html" role="search" novalidate>
     <input id="q" name="q" type="search" placeholder="Cari kata kunci atau topik berita..." aria-label="Cari berita">
     <button type="submit">Cari</button>
   </form>
+  <p class="search-error" id="searchError" role="alert" hidden></p>
   <section class="latest" aria-labelledby="terbaru">
     <h2 id="terbaru">Berita Terbaru</h2>
     <p>Topik terkini dari berbagai media</p>

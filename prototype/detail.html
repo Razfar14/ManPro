@@ -11,7 +11,12 @@
 <body>
 <div class="wrap narrow">
   <nav class="nav" aria-label="Utama">
-    <a class="logo" href="index.html">Behind The Headline</a>
+    <div class="nav-head">
+      <a class="logo" href="index.html">Behind The Headline</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu kategori" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
     <ul id="navList">
       <li><a href="index.html">Beranda</a></li>
       <li><a href="hasil.html?q=Politik">Politik</a></li>
@@ -21,23 +26,34 @@
       <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
     </ul>
   </nav>
-  <a class="back" href="javascript:history.length>1?history.back():location.href='hasil.html'">← Kembali ke hasil pencarian</a>
+  <a class="back" href="javascript:history.length>1?history.back():location.href='index.html'">← Kembali ke halaman sebelumnya</a>
 
   <article class="article">
     <div class="row">
-      <span class="chip" id="kategori">Nasional</span>
-      <span id="metaPublisher">Media Daring · Waktu publikasi</span>
+      <span class="chip" id="kategori">Memuat...</span>
+      <span id="metaPublisher"><span class="skeleton sk-line sm" style="width:150px;display:inline-block;vertical-align:middle"></span></span>
     </div>
-    <h1 id="judul">[Judul berita lengkap tampil di sini]</h1>
-    <div class="by" id="penulisDate">Oleh Redaksi · Waktu terbit</div>
+    <h1 id="judul">
+      <span class="skeleton sk-line xl sk-w-100"></span>
+      <span class="skeleton sk-line xl sk-w-80"></span>
+    </h1>
+    <div class="by" id="penulisDate">
+      <span class="skeleton sk-line sm sk-w-45"></span>
+    </div>
     <figure>
       <div class="photo" id="foto">
-        <span id="photoPlaceholder">Foto berita</span>
+        <div class="photo-loader"><span class="spinner" aria-label="Memuat foto berita"></span></div>
       </div>
       <figcaption id="fotoCaption">Ilustrasi pemberitaan (Behind The Headline Media Ingestion)</figcaption>
     </figure>
     <div id="isiBerita">
-      <p class="loading-pulse" style="color:var(--muted)">Memuat paragraf artikel pilihan...</p>
+      <span class="skeleton sk-line sk-w-100"></span>
+      <span class="skeleton sk-line sk-w-90"></span>
+      <span class="skeleton sk-line sk-w-100"></span>
+      <span class="skeleton sk-line sk-w-80"></span>
+      <span class="skeleton sk-line sk-w-100" style="margin-top:16px"></span>
+      <span class="skeleton sk-line sk-w-90"></span>
+      <span class="skeleton sk-line sk-w-65"></span>
     </div>
     <hr>
     <a class="btn wide" id="linkSumberAsli" href="#" target="_blank" rel="noopener noreferrer">Baca di sumber asli →</a>
@@ -47,14 +63,26 @@
   <section class="panel dark" data-ai id="aiDetailPanel">
     <span class="badge">AI</span>
     <h2>Ringkasan Topik</h2>
-    <p id="aiSummaryDetail">[Menganalisis topik berita dan klasifikasi kategorinya...]</p>
+    <div id="aiSummaryDetail" style="margin-top:13px">
+      <span class="skeleton on-dark sk-line sk-w-100"></span>
+      <span class="skeleton on-dark sk-line sk-w-90"></span>
+      <span class="skeleton on-dark sk-line sk-w-65"></span>
+    </div>
   </section>
 
   <section class="related">
     <h2>Liputan topik yang sama dari media lain</h2>
     <div class="rel" id="relatedNews">
-      <article class="item"><small>CNBC Indonesia</small><h3><a href="#">[Memuat liputan pembanding...]</a></h3><a class="src" href="#">Baca di sumber asli →</a></article>
-      <article class="item"><small>Tempo</small><h3><a href="#">[Memuat liputan pembanding...]</a></h3><a class="src" href="#">Baca di sumber asli →</a></article>
+      <article class="item">
+        <span class="skeleton sk-line sm sk-w-45"></span>
+        <span class="skeleton sk-line lg sk-w-90" style="margin-top:10px"></span>
+        <span class="skeleton sk-line sm sk-w-45" style="margin-top:10px"></span>
+      </article>
+      <article class="item">
+        <span class="skeleton sk-line sm sk-w-45"></span>
+        <span class="skeleton sk-line lg sk-w-80" style="margin-top:10px"></span>
+        <span class="skeleton sk-line sm sk-w-45" style="margin-top:10px"></span>
+      </article>
     </div>
   </section>
   <p class="note">AI hanya membandingkan dan merangkum topik, bukan menyatakan hoaks atau faktual.</p>

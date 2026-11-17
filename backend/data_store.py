@@ -4,6 +4,7 @@ Menyimpan artikel terindeks, hasil scraping teks lengkap, serta menyediakan data
 realistis untuk simulasi offline / tahap pengujian tanpa ketergantungan internet.
 """
 
+import re
 import time
 from typing import Dict, List, Optional, Any
 from backend.ingestion.base import ArticleItem
@@ -263,20 +264,43 @@ class DataStore:
         return results[:limit]
 
     def search_local(self, query: str, limit: int = 10) -> List[Dict[str, Any]]:
-        query_words = [w.lower() for w in query.split() if len(w) > 2]
+        stopwords = {
+            "yang", "dan", "dari", "untuk", "dengan", "pada", "atau", "dalam",
+            "akan", "bisa", "ada", "ini", "itu", "juga", "oleh", "saat", "tentang",
+            "berita", "topik", "isu", "kasus", "apa", "kenapa", "mengapa", "bagaimana"
+        }
+        raw_words = [w.lower() for w in re.findall(r"[a-zA-Z0-9]+", query) if len(w) >= 2]
+        query_words = [w for w in raw_words if w not in stopwords]
         if not query_words:
-            return list(self.articles_by_id.values())[:limit]
+            query_words = raw_words
+        if not query_words:
+            return []
 
         scored_articles = []
         for art in self.articles_by_id.values():
-            text_corpus = f"{art.get('title', '')} {art.get('snippet', '')} {art.get('category', '')} {art.get('full_text', '')}".lower()
+            title_low = art.get("title", "").lower()
+            cat_low = art.get("category", "").lower()
+            text_corpus = f"{title_low} {art.get('snippet', '').lower()} {cat_low} {art.get('full_text', '').lower()}"
+
             score = 0
+            matched_words = 0
             for w in query_words:
-                if w in art.get('title', '').lower():
-                    score += 5
-                if w in text_corpus:
-                    score += 1
-            if score > 0:
+                pattern = rf"\b{re.escape(w)}\b"
+                in_title = bool(re.search(pattern, title_low))
+                in_cat = bool(re.search(pattern, cat_low))
+                in_body = bool(re.search(pattern, text_corpus))
+                if in_title or in_cat or in_body:
+                    matched_words += 1
+                    if in_title:
+                        score += 6
+                    if in_cat:
+                        score += 4
+                    if in_body:
+                        score += 1
+
+            # Untuk query multi-kata, pastikan minimal setengah kata kunci relevan (atau cocok di judul/kategori)
+            min_required = 1 if len(query_words) <= 2 else max(2, (len(query_words) + 1) // 2)
+            if score >= 4 or matched_words >= min_required:
                 scored_articles.append((score, art))
 
         scored_articles.sort(key=lambda x: x[0], reverse=True)

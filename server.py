@@ -39,6 +39,7 @@ if not os.path.exists(PROTOTYPE_DIR):
 from backend.config import PORT, HOST
 from backend.ingestion.aggregator import aggregator
 from backend.ai_engine import ai_engine
+from backend.ai_engine.topic_validator import ABSURD_TOPIC_MESSAGE, is_absurd_or_invalid_topic
 from backend.data_store import store
 from backend.cache_manager import cache_manager
 from backend.ingestion.base import ArticleItem
@@ -142,12 +143,47 @@ def search_news():
 
     limit = int(request.args.get("limit", 6))
 
-    cached_ai = cache_manager.get_ai_analysis(query)
-    if cached_ai:
-        articles = store.search_local(query, limit=limit)
+    # Filter cepat topik nyeleneh / tidak valid
+    is_absurd, _ = is_absurd_or_invalid_topic(query)
+    if is_absurd:
         return jsonify({
             "status": "success",
             "query": query,
+            "invalid_topic": True,
+            "from_cache": False,
+            "token_saved": False,
+            "totalArticles": 0,
+            "articles": [],
+            "aiSummary": ABSURD_TOPIC_MESSAGE,
+            "comparisonMatrix": {"columns": [], "rows": []},
+            "consensus": [],
+            "divergence": []
+        })
+
+    cached_ai = cache_manager.get_ai_analysis(query)
+    if cached_ai:
+        if cached_ai.get("invalid_topic"):
+            return jsonify({
+                "status": "success",
+                "query": query,
+                "invalid_topic": True,
+                "from_cache": True,
+                "token_saved": True,
+                "totalArticles": 0,
+                "articles": [],
+                "aiSummary": cached_ai.get("summary", ABSURD_TOPIC_MESSAGE),
+                "comparisonMatrix": {"columns": [], "rows": []},
+                "consensus": [],
+                "divergence": []
+            })
+
+        articles = store.search_local(query, limit=limit)
+        if not articles:
+            articles = aggregator.search_news(query, limit=limit, scrape_full_text=False)
+        return jsonify({
+            "status": "success",
+            "query": query,
+            "invalid_topic": False,
             "from_cache": True,
             "token_saved": True,
             "totalArticles": len(articles),
@@ -165,9 +201,25 @@ def search_news():
     ai_comparison = ai_engine.compare_cluster(query, articles)
     cache_manager.save_ai_analysis(query, ai_comparison)
 
+    if ai_comparison.get("invalid_topic"):
+        return jsonify({
+            "status": "success",
+            "query": query,
+            "invalid_topic": True,
+            "from_cache": False,
+            "token_saved": False,
+            "totalArticles": 0,
+            "articles": [],
+            "aiSummary": ai_comparison.get("summary", ABSURD_TOPIC_MESSAGE),
+            "comparisonMatrix": {"columns": [], "rows": []},
+            "consensus": [],
+            "divergence": []
+        })
+
     return jsonify({
         "status": "success",
         "query": query,
+        "invalid_topic": False,
         "from_cache": False,
         "token_saved": False,
         "totalArticles": len(articles),
