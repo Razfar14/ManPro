@@ -254,5 +254,394 @@
       ],
       "engine_used": "Prototype NLP (DeepSeek fallback)"
     }
+  },
+  "v3_ppn": {
+    "_cached_at": 1794892395.2192044,
+    "data": {
+      "query": "PPN",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'PPN' merangkum 3 berita terkini dari CNN Indonesia, CNBC Indonesia, Tempo (antara lain terkait Pemerintah, Pastikan, Tarif, Persen). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Pemerintah Pastikan Tarif PPN 12 Persen Berlaku Mulai 1 Januari 2025 Sesuai UU HPP\" serta perkembangan mengenai \"PPN 12% Membayang, Pengusaha Ritel Khawatirkan Dampak Pelemahan Daya Beli dan Inflasi\".\n\nCNN Indonesia dalam laporannya \"Pemerintah Pastikan Tarif PPN 12 Persen Berlaku Mulai 1 Januari 2025 Sesuai UU HPP\" menekankan bahwa menteri Keuangan Sri Mulyani Indrawati menegaskan bahwa implementasi kenaikan tarif Pajak Pertambahan Nilai (PPN) dari 11 persen menjadi 12 persen pada 1 Januari 2025 merupakan pelaksanaan a...; CNBC Indonesia dalam laporannya \"PPN 12% Membayang, Pengusaha Ritel Khawatirkan Dampak Pelemahan Daya Beli dan Inflasi\" menekankan bahwa rencana pemberlakuan tarif PPN 12% menuai kekhawatiran dari pelaku industri ritel dan pasar modal.; sementara Tempo dalam laporannya \"Kenaikan PPN 12%: Ekonom dan Serikat Buruh Soroti Tekanan Berat pada Kelas Menengah\" menekankan bahwa kenaikan tarif PPN 12% mendapatkan sorotan tajam dari kalangan ekonom independen dan organisasi serikat buruh.. Tokoh atau lembaga yang mencuat dalam pemberitaan meliputi Menteri Keuangan Sri Mulyani Indrawati, Persen Berlaku Mulai, Pajak Pertambahan Nilai, Ketua Umum Aprindo dengan angka/data yang dikutip berupa Rp 70 triliun, Rp 80 triliun, 12 Persen. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'PPN', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "CNN Indonesia",
+        "CNBC Indonesia",
+        "Tempo"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "Rp 70 triliun, Rp 80 triliun, 12 Persen, 11 persen",
+          "cnbc": "12%, 1,2%, 0,3%, 0,5%",
+          "tempo": "12%, 2,8%, 3,5%, 9,4 juta"
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Menteri Keuangan Sri Mulyani Indrawati, Persen Berlaku Mulai, Pajak Pertambahan Nilai",
+          "cnbc": "Ketua Umum Aprindo, Pengusaha Ritel Khawatirkan, Dampak Pelemahan Daya",
+          "tempo": "Direktur Eksekutif Center, Presiden Konfederasi Serikat Pekerja Indonesia, Serikat Buruh Soroti"
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Menteri Keuangan Sri Mulyani Indrawati menegaskan bahwa implementasi kenaikan tarif Pajak Pertambahan Nilai (PPN) dari 11 persen menjadi 12 persen pada 1 Januari 2025 merupakan pelaksanaan a...",
+          "cnbc": "Rencana pemberlakuan tarif PPN 12% menuai kekhawatiran dari pelaku industri ritel dan pasar modal.",
+          "tempo": "Kenaikan tarif PPN 12% mendapatkan sorotan tajam dari kalangan ekonom independen dan organisasi serikat buruh."
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'PPN'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "art-ppn-cnn-01",
+          "title": "Pemerintah Pastikan Tarif PPN 12 Persen Berlaku Mulai 1 Januari 2025 Sesuai UU HPP",
+          "url": "https://www.cnnindonesia.com/ekonomi/20250101-ppn-12-persen-uu-hpp",
+          "publisher": "CNN Indonesia",
+          "category": "Ekonomi",
+          "published_at": "2026-10-28T09:15:00Z",
+          "snippet": "Menteri Keuangan menegaskan penyesuaian tarif PPN menjadi 12 persen merupakan amanat Undang-Undang Harmonisasi Peraturan Perpajakan (UU HPP) untuk memperkuat fondasi fiskal negara.",
+          "image_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Tim Ekonomi CNN",
+          "full_text": "Jakarta, CNN Indonesia -- Menteri Keuangan Sri Mulyani Indrawati menegaskan bahwa implementasi kenaikan tarif Pajak Pertambahan Nilai (PPN) dari 11 persen menjadi 12 persen pada 1 Januari 2025 merupakan pelaksanaan amanat Undang-Undang Nomor 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan (UU HPP).\n\nPemerintah menargetkan penyesuaian ini mampu memberikan tambahan penerimaan negara sekitar Rp 70 triliun hingga Rp 80 triliun per tahun, yang akan dialokasikan kembali untuk belanja perlindungan sosial dan pembangunan infrastruktur dasar.\n\nMenkeu menekankan bahwa barang kebutuhan pokok masyarakat (sembako), jasa kesehatan, jasa pendidikan, dan jasa transportasi umum tetap dikecualikan atau dibebaskan dari pungutan PPN guna melindungi kelompok masyarakat rentan dan miskin.\n\n\"Kita memerlukan fondasi penerimaan negara yang kokoh dan berkesinambungan untuk membiayai belanja negara, namun di saat yang sama instrumen bantalan sosial tetap diperkuat,\" ujar Menkeu di Gedung DPR RI."
+        },
+        {
+          "id": "art-ppn-cnbc-02",
+          "title": "PPN 12% Membayang, Pengusaha Ritel Khawatirkan Dampak Pelemahan Daya Beli dan Inflasi",
+          "url": "https://www.cnbcindonesia.com/market/20250101-ritel-ppn-12-daya-beli",
+          "publisher": "CNBC Indonesia",
+          "category": "Ekonomi",
+          "published_at": "2026-10-28T10:30:00Z",
+          "snippet": "Asosiasi Pengusaha Ritel Indonesia (Aprindo) memperkirakan kenaikan PPN 12% berpotensi menekan konsumsi domestik sebesar 1,2% serta menambah beban inflasi tahunan hingga 0,4%.",
+          "image_url": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Analis CNBC",
+          "full_text": "Jakarta, CNBC Indonesia -- Rencana pemberlakuan tarif PPN 12% menuai kekhawatiran dari pelaku industri ritel dan pasar modal. Asosiasi Pengusaha Ritel Indonesia (Aprindo) memproyeksikan potensi koreksi indeks penjualan riil sebesar 1,2% pada kuartal pertama implementasi aturan baru tersebut.\n\nKetua Umum Aprindo, Roy Nicholas Mandey, menyampaikan bahwa tekanan biaya operasional yang meningkat seiring kenaikan tarif pajak berisiko diteruskan ke harga jual konsumen akhir. Hal ini dapat memicu efek berantai pada inflasi umum sekitar 0,3% hingga 0,5%.\n\nPara pelaku pasar saham juga mencermati pergerakan saham-saham emiten sektor barang konsumsi (FMCG) yang berpotensi mengalami kontraksi margin laba bersih jika elastisitas permintaan masyarakat terhadap harga terbukti tinggi."
+        },
+        {
+          "id": "art-ppn-tempo-03",
+          "title": "Kenaikan PPN 12%: Ekonom dan Serikat Buruh Soroti Tekanan Berat pada Kelas Menengah",
+          "url": "https://www.tempo.co/bisnis/20250101-ppn-12-kelas-menengah-buruh",
+          "publisher": "Tempo",
+          "category": "Ekonomi",
+          "published_at": "2026-10-28T11:45:00Z",
+          "snippet": "Direktur Eksekutif Celios menyatakan kelas menengah yang tidak menerima bansos akan menjadi kelompok paling terpukul akibat penyesuaian tarif PPN di tengah tren pemutusan hubungan kerja.",
+          "image_url": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Reporter Tempo",
+          "full_text": "Jakarta, Tempo.co -- Kenaikan tarif PPN 12% mendapatkan sorotan tajam dari kalangan ekonom independen dan organisasi serikat buruh. Direktur Eksekutif Center of Economic and Law Studies (Celios), Bhima Yudhistira, menilai kebijakan ini tidak tepat waktu di tengah penurunan jumlah penduduk kelas menengah sebesar 9,4 juta orang dalam lima tahun terakhir.\n\nMenurut kajian Celios, kenaikan PPN 12% dapat meningkatkan biaya hidup rata-rata keluarga urban sebesar 2,8% hingga 3,5%, sementara pendapatan riil cenderung stagnan. Di sisi lain, kelompok kelas menengah tidak memiliki jaring pengaman seperti bantuan sosial tunai (bansos) yang hanya menyasar desil terbawah.\n\nPresiden Konfederasi Serikat Pekerja Indonesia (KSPI), Said Iqbal, mendesak pemerintah dan parlemen menunda implementasi kenaikan tarif hingga upah minimum riil mencatatkan pertumbuhan di atas laju inflasi riil."
+        }
+      ]
+    }
+  },
+  "v3_politik": {
+    "_cached_at": 1794892395.255968,
+    "data": {
+      "query": "Politik",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'Politik' merangkum 3 berita terkini dari Tempo, CNN Indonesia, CNBC Indonesia (antara lain terkait Uang, Pemilihan, Umum, Pilkada). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Bawaslu Petakan 180 Kabupaten/Kota Rawan Politik Uang dan Netralitas ASN\" serta perkembangan mengenai \"KPU Pastikan Logistik Surat Suara Pilkada Serentak Terdistribusi 98 Persen\".\n\nTempo dalam laporannya \"Bawaslu Petakan 180 Kabupaten/Kota Rawan Politik Uang dan Netralitas ASN\" menekankan bahwa badan Pengawas Pemilihan Umum (Bawaslu) merilis peta Indeks Kerawanan Pemilu (IKP) menjelang pemungutan suara pilkada.; CNN Indonesia dalam laporannya \"KPU Pastikan Logistik Surat Suara Pilkada Serentak Terdistribusi 98 Persen\" menekankan bahwa komisi Pemilihan Umum (KPU) RI menyatakan kesiapan penyelenggaraan Pilkada Serentak di 545 daerah telah mencapai 98 persen.; sementara CNBC Indonesia dalam laporannya \"Perputaran Uang Selama Kampanye Pilkada Diestimasi Sumbang 0,2% ke PDB Daerah\" menekankan bahwa gelaran Pilkada Serentak memberikan stimulus ekonomi jangka pendek bagi berbagai sektor industri di daerah.. Tokoh atau lembaga yang mencuat dalam pemberitaan meliputi Bawaslu Petakan, Kota Rawan Politik, Badan Pengawas Pemilihan, Pastikan Logistik Surat dengan angka/data yang dikutip berupa 180 Kabupaten, 180 daerah, 98 Persen. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'Politik', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "Tempo",
+        "CNN Indonesia",
+        "CNBC Indonesia"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "180 Kabupaten, 180 daerah",
+          "cnbc": "98 Persen, 545 daerah, 98 persen",
+          "tempo": "0,2%"
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Bawaslu Petakan, Kota Rawan Politik, Badan Pengawas Pemilihan",
+          "cnbc": "Pastikan Logistik Surat, Suara Pilkada Serentak, Komisi Pemilihan Umum",
+          "tempo": "Perputaran Uang Selama, Kampanye Pilkada Diestimasi, Gelaran Pilkada Serentak"
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Badan Pengawas Pemilihan Umum (Bawaslu) merilis peta Indeks Kerawanan Pemilu (IKP) menjelang pemungutan suara pilkada.",
+          "cnbc": "Komisi Pemilihan Umum (KPU) RI menyatakan kesiapan penyelenggaraan Pilkada Serentak di 545 daerah telah mencapai 98 persen.",
+          "tempo": "Gelaran Pilkada Serentak memberikan stimulus ekonomi jangka pendek bagi berbagai sektor industri di daerah."
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'Politik'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "art-pilkada-tempo-09",
+          "title": "Bawaslu Petakan 180 Kabupaten/Kota Rawan Politik Uang dan Netralitas ASN",
+          "url": "https://www.tempo.co/nasional/20261012-bawaslu-indeks-kerawanan-pilkada",
+          "publisher": "Tempo",
+          "category": "Politik",
+          "published_at": "2026-10-14T11:10:00Z",
+          "snippet": "Indeks Kerawanan Pemilu (IKP) mencatat isu pelanggaran netralitas aparatur sipil negara dan penyalahgunaan wewenang petahana menjadi perhatian terbesar.",
+          "image_url": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Tim Investigasi Tempo",
+          "full_text": "Jakarta, Tempo.co -- Badan Pengawas Pemilihan Umum (Bawaslu) merilis peta Indeks Kerawanan Pemilu (IKP) menjelang pemungutan suara pilkada. Sebanyak 180 daerah dikategorikan memiliki tingkat kerawanan tinggi terkait mobilisasi birokrasi, netralitas ASN, dan distribusi bansos yang beririsan dengan elektoral kandidat petahana."
+        },
+        {
+          "id": "art-pilkada-cnn-07",
+          "title": "KPU Pastikan Logistik Surat Suara Pilkada Serentak Terdistribusi 98 Persen",
+          "url": "https://www.cnnindonesia.com/nasional/20261012-kpu-logistik-pilkada",
+          "publisher": "CNN Indonesia",
+          "category": "Politik",
+          "published_at": "2026-10-14T07:15:00Z",
+          "snippet": "Komisi Pemilihan Umum memastikan seluruh logistik utama surat suara dan kotak suara telah mencapai KPUD di seluruh provinsi tepat waktu.",
+          "image_url": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Biro Politik CNN",
+          "full_text": "Jakarta, CNN Indonesia -- Komisi Pemilihan Umum (KPU) RI menyatakan kesiapan penyelenggaraan Pilkada Serentak di 545 daerah telah mencapai 98 persen. Distribusi surat suara dan kotak suara di wilayah terdepan, terluar, dan tertinggal (3T) mendapat prioritas pengiriman dengan pengawalan aparat TNI dan Polri."
+        },
+        {
+          "id": "art-pilkada-cnbc-08",
+          "title": "Perputaran Uang Selama Kampanye Pilkada Diestimasi Sumbang 0,2% ke PDB Daerah",
+          "url": "https://www.cnbcindonesia.com/market/20261012-ekonomi-pilkada-belanja-kampanye",
+          "publisher": "CNBC Indonesia",
+          "category": "Politik",
+          "published_at": "2026-10-14T09:40:00Z",
+          "snippet": "Sektor percetakan, transportasi, dan perhotelan di daerah mencatat lonjakan pendapatan signifikan menjelang pemungutan suara serentak.",
+          "image_url": "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Analis Makro CNBC",
+          "full_text": "Jakarta, CNBC Indonesia -- Gelaran Pilkada Serentak memberikan stimulus ekonomi jangka pendek bagi berbagai sektor industri di daerah. Lembaga riset ekonomi memproyeksikan belanja kampanye para kandidat dan operasional pengawasan pemilu mengalirkan likuiditas segar hingga puluhan triliun rupiah ke perputaran ekonomi lokal."
+        }
+      ]
+    }
+  },
+  "v3_teknologi": {
+    "_cached_at": 1794892395.2951345,
+    "data": {
+      "query": "Teknologi",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'Teknologi' merangkum 3 berita terkini dari CNN Indonesia, CNBC Indonesia, Tempo (antara lain terkait Data, Kemenkomdigi, Siapkan, Peta). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Kemenkomdigi Siapkan Peta Jalan Etika Kecerdasan Buatan (AI) Nasional\" serta perkembangan mengenai \"Investasi Pusat Data AI Global Mengalir Deras ke Indonesia, Nilainya Tembus Rp 40 Triliun\".\n\nCNN Indonesia dalam laporannya \"Kemenkomdigi Siapkan Peta Jalan Etika Kecerdasan Buatan (AI) Nasional\" menekankan bahwa kementerian Komunikasi dan Digital menyusun peta jalan komprehensif terkait etika pemanfaatan teknologi Generative AI di Indonesia.; CNBC Indonesia dalam laporannya \"Investasi Pusat Data AI Global Mengalir Deras ke Indonesia, Nilainya Tembus Rp 40 Triliun\" menekankan bahwa gelombang investasi infrastruktur AI terus melesat di Indonesia.; sementara Tempo dalam laporannya \"Tantangan Kedaulatan Data dan Ancaman Penggusuran Tenaga Kerja Akibat Otomasi AI\" menekankan bahwa di balik pesatnya adopsi AI, kalangan akademisi dan pegiat ketenagakerjaan menyuarakan pentingnya audit independen kedaulatan data dan program transisi tenaga kerja adil.. Tokoh atau lembaga yang mencuat dalam pemberitaan meliputi Kemenkomdigi Siapkan Peta, Jalan Etika Kecerdasan, Kementerian Komunikasi, Investasi Pusat Data dengan angka/data yang dikutip berupa Rp 40 Triliun, Rp 40 triliun, 40 Triliun. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'Teknologi', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "CNN Indonesia",
+        "CNBC Indonesia",
+        "Tempo"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "Tidak memuat angka spesifik (berita bersifat naratif/opini)",
+          "cnbc": "Rp 40 Triliun, Rp 40 triliun, 40 Triliun, 40 triliun",
+          "tempo": "Tidak memuat angka spesifik (berita bersifat naratif/opini)"
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Kemenkomdigi Siapkan Peta, Jalan Etika Kecerdasan, Kementerian Komunikasi",
+          "cnbc": "Investasi Pusat Data, Global Mengalir Deras, Nilainya Tembus",
+          "tempo": "Tantangan Kedaulatan Data, Ancaman Penggusuran Tenaga, Kerja Akibat Otomasi"
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Kementerian Komunikasi dan Digital menyusun peta jalan komprehensif terkait etika pemanfaatan teknologi Generative AI di Indonesia.",
+          "cnbc": "Gelombang investasi infrastruktur AI terus melesat di Indonesia.",
+          "tempo": "Di balik pesatnya adopsi AI, kalangan akademisi dan pegiat ketenagakerjaan menyuarakan pentingnya audit independen kedaulatan data dan program transisi tenaga kerja adil."
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'Teknologi'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "art-ai-cnn-10",
+          "title": "Kemenkomdigi Siapkan Peta Jalan Etika Kecerdasan Buatan (AI) Nasional",
+          "url": "https://www.cnnindonesia.com/teknologi/20261020-etika-ai-kemenkominfo",
+          "publisher": "CNN Indonesia",
+          "category": "Teknologi",
+          "published_at": "2026-10-22T10:00:00Z",
+          "snippet": "Pemerintah merancang pedoman etika pemanfaatan kecerdasan buatan bagi pengembang aplikasi lokal untuk mencegah diskriminasi algoritmik dan kebocoran privasi.",
+          "image_url": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Divisi Teknologi CNN",
+          "full_text": "Jakarta, CNN Indonesia -- Kementerian Komunikasi dan Digital menyusun peta jalan komprehensif terkait etika pemanfaatan teknologi Generative AI di Indonesia. Panduan ini mewajibkan transparansi data training, perlindungan hak cipta pencipta konten lokal, serta sistem mitigasi konten disinformasi deepfake."
+        },
+        {
+          "id": "art-ai-cnbc-11",
+          "title": "Investasi Pusat Data AI Global Mengalir Deras ke Indonesia, Nilainya Tembus Rp 40 Triliun",
+          "url": "https://www.cnbcindonesia.com/tech/20261020-investasi-data-center-ai",
+          "publisher": "CNBC Indonesia",
+          "category": "Teknologi",
+          "published_at": "2026-10-22T13:30:00Z",
+          "snippet": "Raksasa teknologi global memperluas kapasitas hyperscale data center berbasis energi hijau di Cikarang dan Batam guna menyokong lonjakan komputasi AI Asia Tenggara.",
+          "image_url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Tech Analyst CNBC",
+          "full_text": "Jakarta, CNBC Indonesia -- Gelombang investasi infrastruktur AI terus melesat di Indonesia. Nilai realisasi investasi pusat data (data center) berstandar tier-4 diperkirakan melampaui Rp 40 triliun pada tahun ini, didorong kebutuhan pemrosesan model bahasa besar oleh korporasi perbankan dan e-commerce."
+        },
+        {
+          "id": "art-ai-tempo-12",
+          "title": "Tantangan Kedaulatan Data dan Ancaman Penggusuran Tenaga Kerja Akibat Otomasi AI",
+          "url": "https://www.tempo.co/tekno/20261020-kedaulatan-data-otomasi-ai-pekerja",
+          "publisher": "Tempo",
+          "category": "Teknologi",
+          "published_at": "2026-10-22T15:15:00Z",
+          "snippet": "Pakar komputasi dan serikat pekerja mengingatkan ancaman pergeseran jutaan pekerjaan administratif jika reskilling tenaga kerja muda tidak segera diprioritaskan.",
+          "image_url": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Kolom Teknologi Tempo",
+          "full_text": "Jakarta, Tempo.co -- Di balik pesatnya adopsi AI, kalangan akademisi dan pegiat ketenagakerjaan menyuarakan pentingnya audit independen kedaulatan data dan program transisi tenaga kerja adil. Tanpa intervensi kebijakan pendidikan terarah, disrupsi AI dikhawatirkan memperlebar kesenjangan ekonomi digital antardaerah."
+        }
+      ]
+    }
+  },
+  "v3_banjir jakarta": {
+    "_cached_at": 1794892395.3328211,
+    "data": {
+      "query": "Banjir Jakarta",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'Banjir Jakarta' merangkum 6 berita terkini dari CNBC Indonesia, Tempo, CNN Indonesia (antara lain terkait PPN, Genangan, DKI, Air). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Kerugian Ekonomi Akibat Banjir Jakarta Capai Miliaran Rupiah, Logistik Terganggu\" serta perkembangan mengenai \"Tata Ruang Jakarta dan Krisis Resapan Air: Walhi Kritik Solusi Betonisasi Sungai\".\n\nCNBC Indonesia dalam laporannya \"Kerugian Ekonomi Akibat Banjir Jakarta Capai Miliaran Rupiah, Logistik Terganggu\" menekankan bahwa genangan air di sejumlah titik arteri ibu kota membawa dampak langsung terhadap rantai pasok industri.; Tempo dalam laporannya \"Tata Ruang Jakarta dan Krisis Resapan Air: Walhi Kritik Solusi Betonisasi Sungai\" menekankan bahwa penanganan banjir Jakarta dinilai belum menyentuh akar masalah tata kelola ruang dan krisis daerah resapan air hulu ke hilir.; sementara CNN Indonesia dalam laporannya \"Pemerintah Pastikan Tarif PPN 12 Persen Berlaku Mulai 1 Januari 2025 Sesuai UU HPP\" menekankan bahwa menteri Keuangan Sri Mulyani Indrawati menegaskan bahwa implementasi kenaikan tarif Pajak Pertambahan Nilai (PPN) dari 11 persen menjadi 12 persen pada 1 Januari 2025 merupakan pelaksanaan a.... Tokoh atau lembaga yang mencuat dalam pemberitaan meliputi Kerugian Ekonomi Akibat, Banjir Jakarta Capai, Miliaran Rupiah, Tata Ruang Jakarta dengan angka/data yang dikutip berupa 9,8 persen, 30 persen, Rp 70 triliun. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'Banjir Jakarta', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "CNBC Indonesia",
+        "Tempo",
+        "CNN Indonesia"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "Tidak memuat angka spesifik (berita bersifat naratif/opini)",
+          "cnbc": "9,8 persen, 30 persen",
+          "tempo": "Rp 70 triliun, Rp 80 triliun, 12 Persen, 11 persen"
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Kerugian Ekonomi Akibat, Banjir Jakarta Capai, Miliaran Rupiah",
+          "cnbc": "Tata Ruang Jakarta, Krisis Resapan Air, Walhi Kritik Solusi",
+          "tempo": "Menteri Keuangan Sri Mulyani Indrawati, Persen Berlaku Mulai, Pajak Pertambahan Nilai"
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Genangan air di sejumlah titik arteri ibu kota membawa dampak langsung terhadap rantai pasok industri.",
+          "cnbc": "Penanganan banjir Jakarta dinilai belum menyentuh akar masalah tata kelola ruang dan krisis daerah resapan air hulu ke hilir.",
+          "tempo": "Menteri Keuangan Sri Mulyani Indrawati menegaskan bahwa implementasi kenaikan tarif Pajak Pertambahan Nilai (PPN) dari 11 persen menjadi 12 persen pada 1 Januari 2025 merupakan pelaksanaan a..."
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'Banjir Jakarta'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "art-banjir-cnbc-05",
+          "title": "Kerugian Ekonomi Akibat Banjir Jakarta Capai Miliaran Rupiah, Logistik Terganggu",
+          "url": "https://www.cnbcindonesia.com/news/20260910-kerugian-banjir-jakarta-logistik",
+          "publisher": "CNBC Indonesia",
+          "category": "Lingkungan",
+          "published_at": "2026-09-15T09:20:00Z",
+          "snippet": "Kamar Dagang dan Industri (Kadin) DKI menghitung estimasi kerugian perputaran barang dan jasa akibat genangan jalur logistik mencapai Rp 45 miliar per hari.",
+          "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Riset CNBC",
+          "full_text": "Jakarta, CNBC Indonesia -- Genangan air di sejumlah titik arteri ibu kota membawa dampak langsung terhadap rantai pasok industri. Kadin DKI Jakarta mencatat keterlambatan distribusi armada logistik di kawasan pergudangan Jakarta Barat dan Utara memicu kerugian hingga puluhan miliar rupiah.\n\nPelaku usaha retail dan ekspor-impor mendorong kepastian percepatan proyek drainase makro terintegrasi agar kerentanan operasional tidak terulang setiap puncak musim hujan."
+        },
+        {
+          "id": "art-banjir-tempo-06",
+          "title": "Tata Ruang Jakarta dan Krisis Resapan Air: Walhi Kritik Solusi Betonisasi Sungai",
+          "url": "https://www.tempo.co/metro/20260910-banjir-jakarta-walhi-tata-ruang",
+          "publisher": "Tempo",
+          "category": "Lingkungan",
+          "published_at": "2026-09-15T11:00:00Z",
+          "snippet": "Wahana Lingkungan Hidup Indonesia (Walhi) menegaskan normalisasi dengan betonisasi tidak menyelesaikan akar masalah jika ruang terbuka hijau DKI tetap di bawah 10%.",
+          "image_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Investigasi Tempo",
+          "full_text": "Jakarta, Tempo.co -- Penanganan banjir Jakarta dinilai belum menyentuh akar masalah tata kelola ruang dan krisis daerah resapan air hulu ke hilir. Manajer Kampanye Walhi Jakarta menyoroti proyek betonisasi dinding sungai yang mengabaikan restorasi ekosistem alami sempadan sungai.\n\nWalhi mencatat luas Ruang Terbuka Hijau (RTH) Jakarta saat ini baru mencapai 9,8 persen, jauh dari mandat regulasi sebesar 30 persen. Tanpa moratorium alih fungsi lahan di kawasan Bogor-Puncak-Cianjur, debit air kiriman dipastikan akan selalu melebihi kapasitas drainase kota."
+        },
+        {
+          "id": "art-ppn-cnn-01",
+          "title": "Pemerintah Pastikan Tarif PPN 12 Persen Berlaku Mulai 1 Januari 2025 Sesuai UU HPP",
+          "url": "https://www.cnnindonesia.com/ekonomi/20250101-ppn-12-persen-uu-hpp",
+          "publisher": "CNN Indonesia",
+          "category": "Ekonomi",
+          "published_at": "2026-10-28T09:15:00Z",
+          "snippet": "Menteri Keuangan menegaskan penyesuaian tarif PPN menjadi 12 persen merupakan amanat Undang-Undang Harmonisasi Peraturan Perpajakan (UU HPP) untuk memperkuat fondasi fiskal negara.",
+          "image_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Tim Ekonomi CNN",
+          "full_text": "Jakarta, CNN Indonesia -- Menteri Keuangan Sri Mulyani Indrawati menegaskan bahwa implementasi kenaikan tarif Pajak Pertambahan Nilai (PPN) dari 11 persen menjadi 12 persen pada 1 Januari 2025 merupakan pelaksanaan amanat Undang-Undang Nomor 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan (UU HPP).\n\nPemerintah menargetkan penyesuaian ini mampu memberikan tambahan penerimaan negara sekitar Rp 70 triliun hingga Rp 80 triliun per tahun, yang akan dialokasikan kembali untuk belanja perlindungan sosial dan pembangunan infrastruktur dasar.\n\nMenkeu menekankan bahwa barang kebutuhan pokok masyarakat (sembako), jasa kesehatan, jasa pendidikan, dan jasa transportasi umum tetap dikecualikan atau dibebaskan dari pungutan PPN guna melindungi kelompok masyarakat rentan dan miskin.\n\n\"Kita memerlukan fondasi penerimaan negara yang kokoh dan berkesinambungan untuk membiayai belanja negara, namun di saat yang sama instrumen bantalan sosial tetap diperkuat,\" ujar Menkeu di Gedung DPR RI."
+        },
+        {
+          "id": "art-ppn-cnbc-02",
+          "title": "PPN 12% Membayang, Pengusaha Ritel Khawatirkan Dampak Pelemahan Daya Beli dan Inflasi",
+          "url": "https://www.cnbcindonesia.com/market/20250101-ritel-ppn-12-daya-beli",
+          "publisher": "CNBC Indonesia",
+          "category": "Ekonomi",
+          "published_at": "2026-10-28T10:30:00Z",
+          "snippet": "Asosiasi Pengusaha Ritel Indonesia (Aprindo) memperkirakan kenaikan PPN 12% berpotensi menekan konsumsi domestik sebesar 1,2% serta menambah beban inflasi tahunan hingga 0,4%.",
+          "image_url": "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Analis CNBC",
+          "full_text": "Jakarta, CNBC Indonesia -- Rencana pemberlakuan tarif PPN 12% menuai kekhawatiran dari pelaku industri ritel dan pasar modal. Asosiasi Pengusaha Ritel Indonesia (Aprindo) memproyeksikan potensi koreksi indeks penjualan riil sebesar 1,2% pada kuartal pertama implementasi aturan baru tersebut.\n\nKetua Umum Aprindo, Roy Nicholas Mandey, menyampaikan bahwa tekanan biaya operasional yang meningkat seiring kenaikan tarif pajak berisiko diteruskan ke harga jual konsumen akhir. Hal ini dapat memicu efek berantai pada inflasi umum sekitar 0,3% hingga 0,5%.\n\nPara pelaku pasar saham juga mencermati pergerakan saham-saham emiten sektor barang konsumsi (FMCG) yang berpotensi mengalami kontraksi margin laba bersih jika elastisitas permintaan masyarakat terhadap harga terbukti tinggi."
+        },
+        {
+          "id": "art-ppn-tempo-03",
+          "title": "Kenaikan PPN 12%: Ekonom dan Serikat Buruh Soroti Tekanan Berat pada Kelas Menengah",
+          "url": "https://www.tempo.co/bisnis/20250101-ppn-12-kelas-menengah-buruh",
+          "publisher": "Tempo",
+          "category": "Ekonomi",
+          "published_at": "2026-10-28T11:45:00Z",
+          "snippet": "Direktur Eksekutif Celios menyatakan kelas menengah yang tidak menerima bansos akan menjadi kelompok paling terpukul akibat penyesuaian tarif PPN di tengah tren pemutusan hubungan kerja.",
+          "image_url": "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Reporter Tempo",
+          "full_text": "Jakarta, Tempo.co -- Kenaikan tarif PPN 12% mendapatkan sorotan tajam dari kalangan ekonom independen dan organisasi serikat buruh. Direktur Eksekutif Center of Economic and Law Studies (Celios), Bhima Yudhistira, menilai kebijakan ini tidak tepat waktu di tengah penurunan jumlah penduduk kelas menengah sebesar 9,4 juta orang dalam lima tahun terakhir.\n\nMenurut kajian Celios, kenaikan PPN 12% dapat meningkatkan biaya hidup rata-rata keluarga urban sebesar 2,8% hingga 3,5%, sementara pendapatan riil cenderung stagnan. Di sisi lain, kelompok kelas menengah tidak memiliki jaring pengaman seperti bantuan sosial tunai (bansos) yang hanya menyasar desil terbawah.\n\nPresiden Konfederasi Serikat Pekerja Indonesia (KSPI), Said Iqbal, mendesak pemerintah dan parlemen menunda implementasi kenaikan tarif hingga upah minimum riil mencatatkan pertumbuhan di atas laju inflasi riil."
+        },
+        {
+          "id": "art-banjir-cnn-04",
+          "title": "Pemprov DKI dan Kementerian PU Percepat Normalisasi Ciliwung Pasca Genangan",
+          "url": "https://www.cnnindonesia.com/nasional/20260910-banjir-jakarta-normalisasi",
+          "publisher": "CNN Indonesia",
+          "category": "Lingkungan",
+          "published_at": "2026-09-15T08:00:00Z",
+          "snippet": "Pemerintah Provinsi DKI Jakarta mengalokasikan anggaran pembebasan lahan sebesar Rp 850 miliar untuk merampungkan sodetan dan normalisasi tanggul Sungai Ciliwung.",
+          "image_url": "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=600&auto=format&fit=crop&q=80",
+          "source_type": "cache",
+          "author": "Biro Jakarta CNN",
+          "full_text": "Jakarta, CNN Indonesia -- Pemprov DKI Jakarta bersama Kementerian Pekerjaan Umum bergerak cepat mempercepat proyek normalisasi Sungai Ciliwung sepanjang 17 kilometer yang sempat tertunda. Alokasi anggaran sebesar Rp 850 miliar disiapkan tahun anggaran ini untuk pembebasan lahan bantaran sungai.\n\nKepala Dinas Sumber Daya Air DKI menyatakan pengerjaan polder dan penguatan tanggul di kawasan rawan seperti Bidara Cina dan Kampung Melayu berhasil mengurangi durasi genangan dari 14 jam menjadi 4 jam pada curah hujan ekstrem pekan lalu."
+        }
+      ]
+    }
+  },
+  "v3_topic_sum_art-ppn-cnn-01": {
+    "_cached_at": 1794892399.6379268,
+    "data": {
+      "summary": "Topik: Ekonomi & Perdagangan. Berita ini diklasifikasikan ke dalam ranah Ekonomi & Perdagangan karena membahas aktivitas perdagangan komoditas, kebijakan fiskal/perpajakan, atau dinamika pasar yang berdampak pada stabilitas perekonomian nasional berdasarkan pelaporan CNN Indonesia. Secara khusus, laporan CNN Indonesia berjudul \"Pemerintah Pastikan Tarif PPN 12 Persen Berlaku Mulai 1 Januari 2025 Sesuai UU HPP\" menyoroti inti persoalan ini dengan melibatkan/mengutip Menteri Keuangan Sri Mulyani Indrawati, Persen Berlaku Mulai serta mencantumkan indikator angka (Rp 70 triliun, Rp 80 triliun). Pemahaman atas topik ini membantu pembaca melihat keterkaitan antara kebijakan ekonomi, pelaku usaha, dan daya beli masyarakat."
+    }
+  },
+  "v3_topic_sum_test-tempo-prabowo": {
+    "_cached_at": 1794892399.6517227,
+    "data": {
+      "summary": "Topik: Politik & Tata Kelola Pemerintahan. Berita ini diklasifikasikan ke dalam ranah Politik & Tata Kelola Pemerintahan karena menyoroti dinamika kepemimpinan nasional, bursa figur politik, pesan kebangsaan, atau pengambilan keputusan di ranah pemerintahan berdasarkan pelaporan Tempo.co. Secara khusus, laporan Tempo.co berjudul \"Pidato Prabowo dalam 2 Tahun: Bertabur Makian dan Ancaman\" menyoroti inti persoalan ini dengan melibatkan/mengutip Pidato Prabowo, Bertabur Makian serta mencantumkan indikator angka (2 Tahun). Isu ini penting dicermati untuk memahami arah koalisi, dinamika elite politik, serta implikasinya terhadap stabilitas pemerintahan."
+    }
+  },
+  "v3_topic_sum_test-ekspor-nikel": {
+    "_cached_at": 1794892399.6587937,
+    "data": {
+      "summary": "Topik: Ekonomi & Perdagangan. Berita ini diklasifikasikan ke dalam ranah Ekonomi & Perdagangan karena membahas aktivitas perdagangan komoditas, kebijakan fiskal/perpajakan, atau dinamika pasar yang berdampak pada stabilitas perekonomian nasional berdasarkan pelaporan CNBC Indonesia. Secara khusus, laporan CNBC Indonesia berjudul \"Kinerja Ekspor Nikel dan Bauksit Indonesia Naik 18 Persen\" menyoroti inti persoalan ini dengan melibatkan/mengutip Kinerja Ekspor Nikel, Bauksit Indonesia Naik serta mencantumkan indikator angka (18 Persen). Pemahaman atas topik ini membantu pembaca melihat keterkaitan antara kebijakan ekonomi, pelaku usaha, dan daya beli masyarakat."
+    }
   }
 }

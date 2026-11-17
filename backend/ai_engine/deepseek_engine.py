@@ -3,7 +3,7 @@ DeepSeek AI Engine (Behind The Headline)
 Menggunakan DeepSeek API (deepseek-chat) untuk:
 1. Ringkasan Topik Tematik (klasifikasi topik & penjelasan mendalam substansinya)
 2. Ringkasan Artikel
-3. Matriks Komparasi Antarmedia & Penjelasan Topik yang Dicari
+3. Matriks Komparasi Antarmedia & Penjelasan Topik yang Dicari (selaras 100% dengan artikel asli)
 4. Deteksi Topik Nyeleneh / Tidak Valid
 """
 
@@ -33,11 +33,11 @@ class DeepSeekAIEngine(BaseAIEngine):
         self.api_key = api_key
         self.api_url = DEEPSEEK_API_URL
         self.model = model
-        self.timeout = 25
+        self.timeout = 22
         self.last_status = "initialized"
         logger.info(f"DeepSeek AI Engine diinisialisasi dengan model '{self.model}'.")
 
-    def _call_deepseek(self, messages: List[Dict[str, str]], temperature: float = 0.3, max_tokens: int = 1500) -> Optional[str]:
+    def _call_deepseek(self, messages: List[Dict[str, str]], temperature: float = 0.2, max_tokens: int = 1500) -> Optional[str]:
         if not self.api_key or self.api_key.startswith("sk-placeholder"):
             return None
 
@@ -115,7 +115,8 @@ class DeepSeekAIEngine(BaseAIEngine):
                 "role": "system",
                 "content": (
                     "Kamu adalah analis jurnalisme 'Behind The Headline'. Tugasmu adalah mengklasifikasikan topik berita "
-                    "dan menjelaskan isi topik tersebut secara informatif dalam 3-4 kalimat Bahasa Indonesia yang jelas.\n"
+                    "dan menjelaskan isi topik tersebut secara informatif dalam 3-4 kalimat Bahasa Indonesia yang jelas, "
+                    "100% berdasarkan judul dan isi artikel yang diberikan (jangan mengarang fakta di luar artikel).\n"
                     "Aturan wajib:\n"
                     "1. Awali persis dengan format 'Topik: <Nama Topik & Subtopik>.' (contoh: 'Topik: Ekonomi & Perdagangan.').\n"
                     "2. Kalimat pertama menjelaskan mengapa berita masuk ke topik itu.\n"
@@ -193,12 +194,25 @@ class DeepSeekAIEngine(BaseAIEngine):
                 }
             return prototype_engine.compare_cluster(query, articles)
 
+        # Pilih 3 artikel utama (prioritas media berbeda) untuk kolom tabel agar konsisten
+        compared_articles = prototype_engine._select_comparison_articles(articles, max_slots=3)
+        col_names = [
+            (art.get("publisher") or f"Media {i + 1}").strip()
+            for i, art in enumerate(compared_articles)
+        ]
+        while len(col_names) < 3:
+            col_names.append(f"Media {len(col_names) + 1}")
+
+        expected_columns = ["Aspek", col_names[0], col_names[1], col_names[2]]
+
         articles_payload = []
-        for art in articles[:4]:
+        for idx, art in enumerate(articles[:6]):
             articles_payload.append({
-                "publisher": art.get("publisher", "Media"),
+                "index": idx + 1,
+                "publisher": (art.get("publisher") or "Media").strip(),
                 "title": art.get("title", ""),
-                "content": (art.get("full_text", "") or art.get("snippet", ""))[:2200]
+                "snippet": art.get("snippet", ""),
+                "content": (art.get("full_text", "") or art.get("snippet", ""))[:1800]
             })
 
         messages = [
@@ -206,19 +220,26 @@ class DeepSeekAIEngine(BaseAIEngine):
                 "role": "system",
                 "content": (
                     "Kamu adalah AI analis dan komparasi berita 'Behind The Headline'.\n"
-                    "Pertama, periksa apakah topik pencarian (query) pengguna adalah topik berita nyata atau topik nyeleneh/mustahil/absurd/gibberish "
-                    "(misal: 'kucing terbang', 'alien jualan bakso', 'spongebob korupsi', 'asdfg', 'resep masak').\n"
-                    "Jika topik nyeleneh/tidak masuk akal, kembalikan:\n"
-                    '{"is_absurd": true, "summary": "' + ABSURD_TOPIC_MESSAGE + '", "matrix_columns": [], "matrix_rows": [], "consensus": [], "divergence": []}\n\n'
-                    "Jika topik berita valid, buat penjelasan yang MENDALAM dan JELAS tentang topik yang dicari, mencakup:\n"
-                    "1. Penjelasan apa topik yang dicari, latar belakang masalah/kebijakan/peristiwa, serta dampaknya bagi masyarakat.\n"
-                    "2. Fakta kunci, angka/data penting, dan pihak/narasumber yang terlibat berdasarkan artikel.\n"
-                    "3. Perbandingan penekanan atau sudut pandang masing-masing media.\n\n"
+                    "Tugasmu: menyusun ringkasan komparatif dan tabel perbandingan berdasarkan HANYA daftar artikel yang diberikan.\n\n"
+                    "ATURAN KERAS (WAJIB DIPATUHI):\n"
+                    "1. Pertama, cek apakah query pengguna adalah topik berita nyata atau topik nyeleneh/absurd/gibberish "
+                    "(misal: 'kucing terbang', 'alien jualan bakso', 'spongebob korupsi', 'asdfg'). "
+                    "Jika nyeleneh/tidak masuk akal, kembalikan:\n"
+                    '{"is_absurd": true, "summary": "' + ABSURD_TOPIC_MESSAGE + '", "matrix_columns": [], "matrix_rows": [], "consensus": [], "divergence": []}\n'
+                    "2. Ringkasan ('summary') WAJIB membahas topik yang BENAR-BENAR ada di daftar artikel yang diberikan (jangan mengarang topik lain seperti Pilkada/PPN jika tidak ada di artikel!).\n"
+                    "3. Sebutkan HANYA nama media yang benar-benar ada di daftar artikel (khususnya: " + ", ".join(col_names) + "). DILARANG menyebut CNN, CNBC, atau Tempo jika media tersebut tidak ada di daftar artikel.\n"
+                    "4. Gunakan tepat nilai matrix_columns berikut: " + json.dumps(expected_columns, ensure_ascii=False) + ".\n"
+                    "5. Pada matrix_rows, isi kolom 'cnn' untuk media ke-1 (" + col_names[0] + "), 'cnbc' untuk media ke-2 (" + col_names[1] + "), dan 'tempo' untuk media ke-3 (" + col_names[2] + ").\n"
+                    "6. Isi setiap sel tabel secara SPESIFIK dan BERBEDA per artikel berdasarkan judul/teks artikelnya:\n"
+                    "   - DILARANG menulis teks generik berulang seperti 'Koresponden ...', 'Statistik kualitatif / regulasi', atau 'Pernyataan redaksi'.\n"
+                    "   - Untuk 'Data angka': tulis angka/persentase/nominal/tahun spesifik yang muncul di artikel, atau jika tidak ada angka tulis singkat misalnya 'Tidak mencantumkan data numerik (fokus wacana/pernyataan)'.\n"
+                    "   - Untuk 'Narasumber': sebutkan nama tokoh, pejabat, pengamat, atau organisasi/lembaga yang diberitakan/dikutip dalam artikel tersebut.\n"
+                    "   - Untuk 'Fokus berita': jelaskan sudut pandang unik artikel tersebut dalam 1 kalimat ringkas.\n\n"
                     "Kembalikan HANYA JSON valid tanpa tanda backtick ``` dengan struktur:\n"
                     "{\n"
                     '  "is_absurd": false,\n'
-                    '  "summary": "Ringkasan penjelasan topik 4-6 kalimat yang informatif, mendalam, dan membandingkan sudut pandang media",\n'
-                    '  "matrix_columns": ["Aspek", "<Nama Media 1>", "<Nama Media 2>", "<Nama Media 3>"],\n'
+                    '  "summary": "Penjelasan 4-6 kalimat (boleh dipisah 2 paragraf dengan \\n\\n) yang menjelaskan topik utama yang diberitakan artikel-artikel tersebut, tokoh/fakta kuncinya, dan perbandingan fokus tiap media",\n'
+                    '  "matrix_columns": ' + json.dumps(expected_columns, ensure_ascii=False) + ',\n'
                     '  "matrix_rows": [\n'
                     '    {"aspek": "Data angka", "cnn": "...", "cnbc": "...", "tempo": "..."},\n'
                     '    {"aspek": "Narasumber", "cnn": "...", "cnbc": "...", "tempo": "..."},\n'
@@ -226,13 +247,12 @@ class DeepSeekAIEngine(BaseAIEngine):
                     '  ],\n'
                     '  "consensus": ["..."],\n'
                     '  "divergence": ["..."]\n'
-                    "}\n"
-                    "Catatan: tetap gunakan key 'cnn', 'cnbc', 'tempo' pada objek matrix_rows agar kompatibel dengan tabel frontend, dengan isi masing-masing sesuai urutan media pada matrix_columns."
+                    "}"
                 )
             },
             {
                 "role": "user",
-                "content": f"Topik yang dicari: '{query}'\nArtikel:\n{json.dumps(articles_payload, ensure_ascii=False)}"
+                "content": f"Topik pencarian: '{query}'\nDaftar Artikel Asli:\n{json.dumps(articles_payload, ensure_ascii=False)}"
             }
         ]
 
@@ -258,6 +278,7 @@ class DeepSeekAIEngine(BaseAIEngine):
                 if "summary" in parsed and "matrix_rows" in parsed:
                     parsed["query"] = query
                     parsed["invalid_topic"] = False
+                    parsed["matrix_columns"] = expected_columns
                     parsed["engine_used"] = "DeepSeek (deepseek-chat)"
                     return parsed
             except Exception as e:

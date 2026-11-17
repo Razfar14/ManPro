@@ -177,9 +177,12 @@ def search_news():
                 "divergence": []
             })
 
-        articles = store.search_local(query, limit=limit)
+        articles = cached_ai.get("articles") or store.search_local(query, limit=limit)
         if not articles:
             articles = aggregator.search_news(query, limit=limit, scrape_full_text=False)
+        for art in articles:
+            if isinstance(art, dict) and art.get("id"):
+                store.articles_by_id[art["id"]] = art
         return jsonify({
             "status": "success",
             "query": query,
@@ -199,7 +202,10 @@ def search_news():
 
     articles = aggregator.search_news(query, limit=limit, scrape_full_text=True)
     ai_comparison = ai_engine.compare_cluster(query, articles)
-    cache_manager.save_ai_analysis(query, ai_comparison)
+    cache_payload = dict(ai_comparison)
+    if not ai_comparison.get("invalid_topic"):
+        cache_payload["articles"] = articles
+    cache_manager.save_ai_analysis(query, cache_payload)
 
     if ai_comparison.get("invalid_topic"):
         return jsonify({

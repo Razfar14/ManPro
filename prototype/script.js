@@ -303,7 +303,7 @@ async function apiGet(endpoint) {
   if (isFileProtocol) return null;
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 12000);
+    const timeoutId = setTimeout(() => controller.abort(), 25000);
     const res = await fetch(endpoint, { signal: controller.signal });
     clearTimeout(timeoutId);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -544,7 +544,7 @@ if (compareTable && aiSummaryElem) {
       return;
     }
 
-    const cacheKey = `search_v2_${currentQuery.toLowerCase()}`;
+    const cacheKey = `search_v3_${currentQuery.toLowerCase()}`;
     const cachedData = BTHCache.load(cacheKey);
 
     if (cachedData) {
@@ -715,7 +715,7 @@ if (detailJudul) {
 
   async function loadArticleDetail() {
     const artId = currentId || "art-ppn-cnn-01";
-    const cacheKey = `article_v3_${artId}`;
+    const cacheKey = `article_v4_${artId}`;
 
     const cachedArticleData = BTHCache.load(cacheKey);
     if (

@@ -16,7 +16,7 @@ from typing import Optional, List, Dict, Any
 
 logger = logging.getLogger("CacheManager")
 
-CACHE_VERSION = "v2"
+CACHE_VERSION = "v3"
 _DEFAULT_CACHE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cache")
 
 

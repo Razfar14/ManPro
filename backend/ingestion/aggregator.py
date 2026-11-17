@@ -138,26 +138,49 @@ class NewsAggregator:
 
         # 2. Jika live search berhasil menemukan artikel
         if found_items:
-            processed = []
+            unique_items = []
             seen_urls = set()
-            for item in found_items[:limit]:
+            for item in found_items:
                 if item.url in seen_urls:
                     continue
                 seen_urls.add(item.url)
+                unique_items.append(item)
+                if len(unique_items) >= limit:
+                    break
 
-                full_text = ""
-                # Langkah 2: Scraping teks penuh jika URL dapat diakses
-                if scrape_full_text and item.url.startswith("http"):
+            scraped_by_url: Dict[str, Dict[str, Any]] = {}
+            if scrape_full_text:
+                def _scrape_one(item_url: str):
                     try:
-                        scrape_data = self.scraper.fetch_article(item.url)
-                        if scrape_data.get("full_text"):
-                            full_text = scrape_data["full_text"]
-                            if scrape_data.get("author"):
-                                item.author = scrape_data["author"]
-                            if scrape_data.get("lead_image") and not item.image_url:
-                                item.image_url = scrape_data["lead_image"]
+                        return item_url, self.scraper.fetch_article(item_url)
                     except Exception as e:
-                        logger.debug(f"Gagal scraping teks penuh {item.url}: {e}")
+                        logger.debug(f"Gagal scraping teks penuh {item_url}: {e}")
+                        return item_url, {}
+
+                with ThreadPoolExecutor(max_workers=4) as executor:
+                    futures = [
+                        executor.submit(_scrape_one, it.url)
+                        for it in unique_items
+                        if it.url.startswith("http")
+                    ]
+                    for fut in as_completed(futures):
+                        try:
+                            u, sdata = fut.result()
+                            if sdata:
+                                scraped_by_url[u] = sdata
+                        except Exception:
+                            pass
+
+            processed = []
+            for item in unique_items:
+                full_text = ""
+                scrape_data = scraped_by_url.get(item.url, {})
+                if scrape_data.get("full_text"):
+                    full_text = scrape_data["full_text"]
+                    if scrape_data.get("author") and scrape_data["author"] != "Redaksi":
+                        item.author = scrape_data["author"]
+                    if scrape_data.get("lead_image") and not item.image_url:
+                        item.image_url = scrape_data["lead_image"]
 
                 art_dict = store.save_article(item, full_text=full_text)
                 processed.append(art_dict)
