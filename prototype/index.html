@@ -3,16 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Behind The Headline</title>
+<title>Behind The Headline — Portal Berita &amp; Komparasi Media AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="site-wrapper">
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="topbar-left">
+      <span class="live-pill"><span class="live-dot"></span> LIVE FEED</span>
+      <span id="liveDateBadge">Portal Komparasi Berita Nasional</span>
+    </div>
+    <div class="topbar-right">
+      <span>Sumber: CNN · CNBC · Tempo · ANTARA · Detik · Kompas</span>
+    </div>
+  </div>
+</div>
+
 <div class="wrap">
   <nav class="nav" aria-label="Utama">
+    <div class="nav-sheets" aria-hidden="true">
+      <div class="sheet s1"><i></i><i></i></div>
+      <div class="sheet s2"><i></i><i></i></div>
+      <div class="sheet s3"><i></i><i></i></div>
+    </div>
     <div class="nav-head">
-      <a class="logo" href="index.html">Behind The Headline</a>
+      <a class="logo" href="index.html">
+        <span class="logo-kicker">BEHIND THE</span>
+        <span class="logo-main">HEADLINE</span>
+      </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu kategori" aria-expanded="false" aria-controls="navList">
         <span></span><span></span><span></span>
       </button>
@@ -25,25 +46,181 @@
       <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
       <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
     </ul>
+    <form class="search search-compact" id="searchForm" action="hasil.html" role="search" novalidate>
+      <input id="q" name="q" type="search" placeholder="Cari topik atau bandingkan berita..." aria-label="Cari berita">
+      <button type="submit">Cari</button>
+    </form>
   </nav>
-  <header class="hero">
-    <div class="sheet s1"><i></i><i></i></div>
-    <div class="sheet s2"><i></i><i></i></div>
-    <div class="sheet s3"><i></i><i></i></div>
-    <small>BEHIND THE</small>
-    <h1>HEADLINE</h1>
-    <p>Cari satu topik, bandingkan isi beritanya dari berbagai media.</p>
-  </header>
-  <form class="search" id="searchForm" action="hasil.html" role="search" novalidate>
-    <input id="q" name="q" type="search" placeholder="Cari kata kunci atau topik berita..." aria-label="Cari berita">
-    <button type="submit">Cari</button>
-  </form>
   <p class="search-error" id="searchError" role="alert" hidden></p>
+
+  <!-- Sub-Navigasi & Strip Topik Populer ala CNBC Indonesia -->
+  <div class="trending-bar" aria-label="Topik populer">
+    <span class="subnav-badge dark">Komparasi AI 2026</span>
+    <span class="subnav-badge accent">Pantauan Multi-Media</span>
+    <span class="trending-label">Isu Terhangat:</span>
+    <div class="trending-chips">
+      <a href="hasil.html?q=PPN" class="trend-chip">PPN 12%</a>
+      <a href="hasil.html?q=Banjir+Jakarta" class="trend-chip">Banjir Jakarta</a>
+      <a href="hasil.html?q=Kecerdasan+Buatan" class="trend-chip">Kecerdasan Buatan (AI)</a>
+      <a href="hasil.html?q=KPK" class="trend-chip">Korupsi &amp; KPK</a>
+      <a href="hasil.html?q=Pilkada" class="trend-chip">Pilkada Serentak</a>
+      <a href="hasil.html?q=Ekspor" class="trend-chip">Ekspor &amp; Komoditas</a>
+    </div>
+  </div>
+
+  <!-- Strip Data Pantauan Isu & Sentimen Media (Adaptasi Market Data CNBC) -->
+  <section class="pulse-section" aria-label="Pantauan Isu Nasional">
+    <div class="pulse-header">
+      <div class="pulse-title">
+        <h2>PANTAUAN ISU &amp; RADAR MEDIA</h2>
+        <span class="pulse-arrow">→</span>
+      </div>
+      <div class="pulse-tabs">
+        <span class="on">ISU UTAMA</span>
+        <span>FISKAL &amp; PASAR</span>
+        <span>POLITIK &amp; HUKUM</span>
+        <span>TEKNOLOGI &amp; IKLIM</span>
+      </div>
+    </div>
+    <div class="pulse-grid" id="topicPulseGrid">
+      <a class="pulse-card" href="hasil.html?q=PPN">
+        <span class="pulse-name">Tarif PPN 12%</span>
+        <strong class="pulse-val">Rp 70-80 T</strong>
+        <span class="pulse-tag up">↑ 3 Perspektif Media</span>
+      </a>
+      <a class="pulse-card" href="hasil.html?q=Politik">
+        <span class="pulse-name">Bursa &amp; Koalisi Politik</span>
+        <strong class="pulse-val">Sorotan Tinggi</strong>
+        <span class="pulse-tag up">↑ Dinamika Nasional</span>
+      </a>
+      <a class="pulse-card" href="hasil.html?q=Banjir+Jakarta">
+        <span class="pulse-name">Normalisasi Ciliwung</span>
+        <strong class="pulse-val">Rp 850 Miliar</strong>
+        <span class="pulse-tag warn">● Fokus Infrastruktur</span>
+      </a>
+      <a class="pulse-card" href="hasil.html?q=Teknologi">
+        <span class="pulse-name">Investasi Pusat Data AI</span>
+        <strong class="pulse-val">Rp 40 Triliun</strong>
+        <span class="pulse-tag up">↑ Tren Teknologi</span>
+      </a>
+      <a class="pulse-card" href="hasil.html?q=Hukum">
+        <span class="pulse-name">Pemulihan Aset KPK</span>
+        <strong class="pulse-val">Rp 350 Miliar</strong>
+        <span class="pulse-tag up">↑ Sorotan Hukum</span>
+      </a>
+      <a class="pulse-card" href="hasil.html?q=Ekonomi">
+        <span class="pulse-name">Konsumsi &amp; Daya Beli</span>
+        <strong class="pulse-val">Koreksi 1,2%</strong>
+        <span class="pulse-tag warn">● Pantauan Ritel</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Meja Redaksi 3 Kolom (Above-the-Fold ala CNN) -->
+  <section class="newsroom-desk" id="newsroomDesk" aria-label="Sorotan Utama Hari Ini">
+    <!-- Kolom Kiri: Live Updates / Kilas Berita Terkini -->
+    <aside class="desk-col desk-left" id="deskLeft">
+      <div class="desk-section-label live">● Kilas Berita Terkini</div>
+      <div id="liveUpdatesContainer">
+        <div class="desk-lead-left">
+          <span class="skeleton sk-line lg sk-w-90"></span>
+          <span class="skeleton sk-line sk-w-100"></span>
+          <span class="skeleton sk-line sk-w-80"></span>
+        </div>
+        <div class="desk-list-left">
+          <span class="skeleton sk-line sk-w-100"></span>
+          <span class="skeleton sk-line sk-w-90"></span>
+          <span class="skeleton sk-line sk-w-80"></span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Kolom Tengah: Headline Utama (Main Story) -->
+    <div class="desk-col desk-center" id="featuredStory">
+      <article class="main-headline-card" aria-hidden="true">
+        <div class="ph"><div class="photo-loader"><span class="spinner"></span></div></div>
+        <div class="main-headline-body">
+          <span class="skeleton sk-chip"></span>
+          <span class="skeleton sk-line xl sk-w-100"></span>
+          <span class="skeleton sk-line sk-w-90"></span>
+          <span class="skeleton sk-line sm sk-w-45"></span>
+        </div>
+      </article>
+    </div>
+
+    <!-- Kolom Kanan: Sorotan Komparasi AI & Developing Stories -->
+    <aside class="desk-col desk-right" id="deskRight">
+      <div class="ai-spotlight-box">
+        <div class="ai-spotlight-visual">
+          <span class="ai-tag-pill">BEHIND THE HEADLINE AI</span>
+          <h3>Bandingkan Bias &amp; Sudut Pandang Media</h3>
+          <p>Lihat perbedaan data angka, narasumber, dan fokus berita dari berbagai redaksi dalam satu tabel.</p>
+          <a href="hasil.html?q=PPN" class="ai-spotlight-btn">Lihat Contoh Komparasi →</a>
+        </div>
+      </div>
+      <div class="developing-box">
+        <div class="desk-section-label">Isu Berkembang</div>
+        <div id="developingContainer">
+          <span class="skeleton sk-line sk-w-100"></span>
+          <span class="skeleton sk-line sk-w-90"></span>
+          <span class="skeleton sk-line sk-w-80"></span>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Daftar Berita Terbaru dengan Filter Kategori Cepat -->
   <section class="latest" aria-labelledby="terbaru">
-    <h2 id="terbaru">Berita Terbaru</h2>
-    <p>Topik terkini dari berbagai media</p>
+    <div class="latest-head">
+      <div>
+        <h2 id="terbaru">Indeks Berita Terbaru</h2>
+        <p id="lastUpdatedText">Topik terkini dari berbagai media nasional</p>
+      </div>
+      <div class="latest-controls">
+        <div class="cat-filter-pills" id="categoryFilterPills">
+          <button type="button" class="cat-pill on" data-cat="all">Semua</button>
+          <button type="button" class="cat-pill" data-cat="Politik">Politik</button>
+          <button type="button" class="cat-pill" data-cat="Ekonomi">Ekonomi</button>
+          <button type="button" class="cat-pill" data-cat="Hukum">Hukum</button>
+          <button type="button" class="cat-pill" data-cat="Teknologi">Teknologi</button>
+          <button type="button" class="cat-pill" data-cat="Lingkungan">Lingkungan</button>
+        </div>
+        <button type="button" class="btn-refresh" id="refreshBtn" title="Segarkan daftar berita">↻ Segarkan</button>
+      </div>
+    </div>
+
     <div class="grid" id="grid"></div>
   </section>
+
+  <!-- Rubrik Pilihan Lintas Sektor -->
+  <section class="rubric-showcase" id="categoryShowcase" aria-label=" Sorotan per Rubrik"></section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Behind The Headline</strong>
+        <p>Platform agregasi dan komparasi berita lintas media Indonesia berbasis analisis AI untuk membantu pembaca melihat satu isu dari berbagai sudut pandang.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="hasil.html?q=Politik">Politik</a></li>
+          <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+          <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+          <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+          <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <h4>Sumber Rujukan</h4>
+        <p>Mengindeks RSS &amp; berita publik dari CNN Indonesia, CNBC Indonesia, Tempo, ANTARA, Detik, Kompas, serta jaringan Google News Indonesia.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Behind The Headline &middot; Proyek Manajemen Proyek TI</span>
+      <span>AI hanya merangkum dan membandingkan sudut pandang, bukan penentu hoaks/faktual.</span>
+    </div>
+  </footer>
 </div>
 <script src="script.js"></script>
 </body>

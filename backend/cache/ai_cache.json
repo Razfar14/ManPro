@@ -390,7 +390,11 @@
           "image_url": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&auto=format&fit=crop&q=80",
           "source_type": "cache",
           "author": "Tim Investigasi Tempo",
-          "full_text": "Jakarta, Tempo.co -- Badan Pengawas Pemilihan Umum (Bawaslu) merilis peta Indeks Kerawanan Pemilu (IKP) menjelang pemungutan suara pilkada. Sebanyak 180 daerah dikategorikan memiliki tingkat kerawanan tinggi terkait mobilisasi birokrasi, netralitas ASN, dan distribusi bansos yang beririsan dengan elektoral kandidat petahana."
+          "full_text": "Jakarta, Tempo.co -- Badan Pengawas Pemilihan Umum (Bawaslu) merilis peta Indeks Kerawanan Pemilu (IKP) menjelang pemungutan suara pilkada. Sebanyak 180 daerah dikategorikan memiliki tingkat kerawanan tinggi terkait mobilisasi birokrasi, netralitas ASN, dan distribusi bansos yang beririsan dengan elektoral kandidat petahana.\n\nPemberitaan dari Tempo ini menjadi perhatian para pengamat karena menyentuh aspek strategis dalam ranah Politik. Berbagai kalangan menggarisbawahi pentingnya meninjau fakta-fakta pendukung dari berbagai perspektif media.",
+          "paragraphs": [
+            "Jakarta, Tempo.co -- Badan Pengawas Pemilihan Umum (Bawaslu) merilis peta Indeks Kerawanan Pemilu (IKP) menjelang pemungutan suara pilkada. Sebanyak 180 daerah dikategorikan memiliki tingkat kerawanan tinggi terkait mobilisasi birokrasi, netralitas ASN, dan distribusi bansos yang beririsan dengan elektoral kandidat petahana.",
+            "Pemberitaan dari Tempo ini menjadi perhatian para pengamat karena menyentuh aspek strategis dalam ranah Politik. Berbagai kalangan menggarisbawahi pentingnya meninjau fakta-fakta pendukung dari berbagai perspektif media."
+          ]
         },
         {
           "id": "art-pilkada-cnn-07",
@@ -642,6 +646,633 @@
     "_cached_at": 1794892399.6587937,
     "data": {
       "summary": "Topik: Ekonomi & Perdagangan. Berita ini diklasifikasikan ke dalam ranah Ekonomi & Perdagangan karena membahas aktivitas perdagangan komoditas, kebijakan fiskal/perpajakan, atau dinamika pasar yang berdampak pada stabilitas perekonomian nasional berdasarkan pelaporan CNBC Indonesia. Secara khusus, laporan CNBC Indonesia berjudul \"Kinerja Ekspor Nikel dan Bauksit Indonesia Naik 18 Persen\" menyoroti inti persoalan ini dengan melibatkan/mengutip Kinerja Ekspor Nikel, Bauksit Indonesia Naik serta mencantumkan indikator angka (18 Persen). Pemahaman atas topik ini membantu pembaca melihat keterkaitan antara kebijakan ekonomi, pelaku usaha, dan daya beli masyarakat."
+    }
+  },
+  "v3_ekonomi": {
+    "_cached_at": 1795447711.5514872,
+    "data": {
+      "query": "Ekonomi",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'Ekonomi' merangkum 6 berita terkini dari detikNews, Pemerintah Kota Tangerang, Pemerintah Provinsi Jawa Tengah, - Kementerian Koordinator Bidang Perekonomian Republik Indonesia, dan 1 media lainnya (antara lain terkait Daerah, Mendagri, Tito, Bicara). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Mendagri Tito Bicara Pertumbuhan Ekonomi, Genjot Pendapatan-Belanja Daerah\" serta perkembangan mengenai \"Benteng Culture Festival 2026 Tarik 21 Ribu Pengunjung, Hasilkan Perputaran Ekonomi Rp2,1 Miliar\".\n\ndetikNews menyoroti isu \"Mendagri Tito Bicara Pertumbuhan Ekonomi, Genjot Pendapatan-Belanja Daerah\"; Pemerintah Kota Tangerang menyoroti isu \"Benteng Culture Festival 2026 Tarik 21 Ribu Pengunjung, Hasilkan Perputaran Ekonomi Rp2,1 Miliar\"; sementara Pemerintah Provinsi Jawa Tengah menyoroti isu \"Perkuat Ekonomi Kreatif Berbasis Desa, Pemkab Kendal dan Kemenekraf Gelar Pelatihan Konten dan Iklan Digital\". dengan angka/data yang dikutip berupa Rp2,1 Miliar, 21 Ribu, 2,1 Miliar. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'Ekonomi', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "detikNews",
+        "Pemerintah Kota Tangerang",
+        "Pemerintah Provinsi Jawa Tengah"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Mendagri Tito Bicara Pertumbuhan Ekonomi, Genjot Pendap...\"",
+          "cnbc": "Rp2,1 Miliar, 21 Ribu, 2,1 Miliar, 2026",
+          "tempo": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Perkuat Ekonomi Kreatif Berbasis Desa, Pemkab Kendal da...\""
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Subjek pemberitaan pada \"Mendagri Tito Bicara Pertumbuhan Ekonomi, Genjot Pendap...\"",
+          "cnbc": "Subjek pemberitaan pada \"Benteng Culture Festival 2026 Tarik 21 Ribu Pengunjung,...\"",
+          "tempo": "Subjek pemberitaan pada \"Perkuat Ekonomi Kreatif Berbasis Desa, Pemkab Kendal da...\""
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Mendagri Tito Bicara Pertumbuhan Ekonomi, Genjot Pendapatan-Belanja Daerah",
+          "cnbc": "Benteng Culture Festival 2026 Tarik 21 Ribu Pengunjung, Hasilkan Perputaran Ekonomi Rp2,1 Miliar",
+          "tempo": "Perkuat Ekonomi Kreatif Berbasis Desa, Pemkab Kendal dan Kemenekraf Gelar Pelatihan Konten dan Iklan Digital"
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'Ekonomi'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "gn-79e0f0aebf",
+          "title": "Mendagri Tito Bicara Pertumbuhan Ekonomi, Genjot Pendapatan-Belanja Daerah",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPbFU2ejEyeld1QW5mbDJFM0NjN01kbHZrUWZKVGl0X2l0S3JPSGZRalNZQVlIcEM4Ymp0cW56eFg2MGlNa3NheGhOallqUWJZZWxJYjZOOGtUOTNqS2FjemZGY0tFS0RucmI4YzVPWTZrRkxQTVU5SWVnUi1LeDdnWWg0UEVyc2J1YU9xRjNHYnVmaU1lekgtZFRNLVdLa3hnSWdQSFVXX1N6NzNnX1dYNTJoZ9IBuAFBVV95cUxOcXRLYTZTZzZGZDVUVUZTeF82OFhEcVhnUmJrRkZaenV0RkpBbUVadDlqcUhtYlNEeGhKNVJ3SGx0eDRtNGJDMm9kZVQ5Z25jQXZGR0x6VjZwUldZZ1hjRjV2d1pNV1NOQTdaN1dGS3psRnNzTW1JOXFLMEIzbndkRW8yVk5VaERXQ0dhLWVSSDZPY3ItYkh3T3VWSE4xRm0zOEV2S2UzOXkwTFhhRFFMbWZlRTV3aVhk?oc=5",
+          "publisher": "detikNews",
+          "category": "Ekonomi",
+          "published_at": "Mon, 23 Nov 2026 14:40:10 GMT",
+          "snippet": "Mendagri Tito Bicara Pertumbuhan Ekonomi, Genjot Pendapatan-Belanja Daerah  detikNews",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-3a99176a8f",
+          "title": "Benteng Culture Festival 2026 Tarik 21 Ribu Pengunjung, Hasilkan Perputaran Ekonomi Rp2,1 Miliar",
+          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNNXdIUTB6dndSNUppNEVuYjlBZWlBUE1YVU14Ym5TSFBhRWlyay1WZFFLMnAyenVFV3YzRjZDUmM2YXJOTVU1VFNtb0lFUTBaSWxhdDM1enRySWg1NzEzUm93UldvRmZYbXJsaHVpRGl5ODk3ZG9KS2w2Wm15djRsSlpKU21lUFZqUkd2SnJ0QTU4Vm54aGR6THVfdnpXbmI4SEZidmlFdXNJWHJkWGJ2dzZwb2xuWEx5eDRXc2lwRXFTN2NIelFUVnhTS2t2dVJUNmtiMGNhTGFlcFE?oc=5",
+          "publisher": "Pemerintah Kota Tangerang",
+          "category": "Ekonomi",
+          "published_at": "Mon, 23 Nov 2026 07:39:00 GMT",
+          "snippet": "Benteng Culture Festival 2026 Tarik 21 Ribu Pengunjung, Hasilkan Perputaran Ekonomi Rp2,1 Miliar  Pemerintah Kota Tangerang",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-a1efe0318c",
+          "title": "Perkuat Ekonomi Kreatif Berbasis Desa, Pemkab Kendal dan Kemenekraf Gelar Pelatihan Konten dan Iklan Digital",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbHRoU01NdWJWdzNkYW9fOXRzWkk2QjVaWWVDejhBeXhGaHhnaTN1UjZDU0Z4QUREM3dtaTVsaHJENUhyelZ1RVY5Tk1DdVM3OHF6Q3dpdzR4V0JvNDRRclROamczRDAwbEtQbXFUazhCdzBzcjFvV3Q1dGx0b0dpN3ZSVEx1V05OQ00xX3NaaDNDSWYtY3JxUTZpd1hDYWprdGEtYTZja2cxVkQ1eXB3QnJHdkg0RW9BMllfOTdSZDhUSi1SQjA4Wlh1OGUzb21IY0tUSGVWbVRHZGhua25v?oc=5",
+          "publisher": "Pemerintah Provinsi Jawa Tengah",
+          "category": "Ekonomi",
+          "published_at": "Mon, 23 Nov 2026 02:48:26 GMT",
+          "snippet": "Perkuat Ekonomi Kreatif Berbasis Desa, Pemkab Kendal dan Kemenekraf Gelar Pelatihan Konten dan Iklan Digital  Pemerintah Provinsi Jawa Tengah",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-351727de47",
+          "title": "Kementerian Koordinator Bidang Perekonomian Republik Indonesia",
+          "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxObjhLamlvSGNIUnRCcTEzNVkxNGVzQ0x2TTN3OHM2LWVNR3BsTEFOSHA2d1NtR1lNZk1YN0tYYlc3ZWtpM2txUnNjMms2NXBfUC1zNGtGTUZPNktIaklJdnZodlpvYXoweld6MFhuRGZsbWxJVjBOcE1GQXZrOWszOHJSdWYxZmYwU2NqaTh5TDJIcXRSV0VqTURyYjVNNnRGdnB5T0VBT29YSFZDYWZseDlUcGRaeGJTSHZNUUI0THF4THFKOVVUNEtfRmFad1VuZkRnUWpnd25Iajh0aDVpMzJIb2RlWmlBajhhTWlkWmhZZXVQV3FzZUZsODRjeEVtWXVERVk3YURzWW11R3QzYUdnMUxMMEh3Y2pHaG5TQ2I0WUk5OEdjWVpoWQ?oc=5",
+          "publisher": "- Kementerian Koordinator Bidang Perekonomian Republik Indonesia",
+          "category": "Ekonomi",
+          "published_at": "Mon, 23 Nov 2026 10:48:00 GMT",
+          "snippet": "Kementerian Koordinator Bidang Perekonomian Republik Indonesia  - Kementerian Koordinator Bidang Perekonomian Republik Indonesia",
+          "image_url": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=80",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": "Laporan - Kementerian Koordinator Bidang Perekonomian Republik Indonesia yang mengangkat isu 'Kementerian Koordinator Bidang Perekonomian Republik Indonesia' mengulas perkembangan penting yang tengah menjadi perbincangan publik dan pengamat nasional.\n\nPemberitaan ini menyoroti sejumlah dinamika kepemimpinan dan kebijakan, di mana berbagai pihak menelaah substansi pernyataan serta relevansinya terhadap situasi sosial politik saat ini.\n\nSebagai bagian dari diskursus publik di ranah Ekonomi, laporan - Kementerian Koordinator Bidang Perekonomian Republik Indonesia ini mengajak masyarakat mencermati konteks peristiwa secara objektif sebelum membandingkannya dengan pemberitaan media pembanding lainnya.",
+          "paragraphs": [
+            "Laporan - Kementerian Koordinator Bidang Perekonomian Republik Indonesia yang mengangkat isu 'Kementerian Koordinator Bidang Perekonomian Republik Indonesia' mengulas perkembangan penting yang tengah menjadi perbincangan publik dan pengamat nasional.",
+            "Pemberitaan ini menyoroti sejumlah dinamika kepemimpinan dan kebijakan, di mana berbagai pihak menelaah substansi pernyataan serta relevansinya terhadap situasi sosial politik saat ini.",
+            "Sebagai bagian dari diskursus publik di ranah Ekonomi, laporan - Kementerian Koordinator Bidang Perekonomian Republik Indonesia ini mengajak masyarakat mencermati konteks peristiwa secara objektif sebelum membandingkannya dengan pemberitaan media pembanding lainnya."
+          ]
+        },
+        {
+          "id": "gn-d1abf9296c",
+          "title": "Bima Arya Dorong Pemda Bangun Ekosistem Ekonomi Daerah dari Hulu ke Hilir",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPdzVRTC1PSVVXRGJZWG1lWWdEaHpkd3JfUGxTVzY0QmdTVTFyZDBSTWhESE5PSkdOWldVMzJxZUNUdjlIRzdoUTVhNjkzZ2NCMnZiVFh3X1pTcEJuMWJNZzRTaHUxWEl4RWpfTXlidVVCbXI5NDZNOWl1SWxwd1IyZWxIMDc0VFFYcjB1N0Fmd1BfdzlMaWRVSV9VZ0IyMTRjclNET01sUjhSaENzbjdsWlFYWdIBuAFBVV95cUxQNUMzUkVsOEhWQ0NWT0RnVkVTTnpMeXlQQjVvdnFMQ0Z6b19MRXp5ZDg0WnREaEtFSUFPTzJONE9PRDhQM2E4V0JGaloyMjhFbDNUZEc2N0FhSFBxSWxMZG44U2pNeV9GeEVWUng2YVNaUHRXV28yNTQwYzJYeDZRM2luUEdFamRfZ2lxTXFzXzFsVXVRYU4zZE1kMkppTnFzRzltZ2RJOHU5X1VWV29lZ1JEYmR2N1Zo?oc=5",
+          "publisher": "detikNews",
+          "category": "Ekonomi",
+          "published_at": "Mon, 23 Nov 2026 10:24:32 GMT",
+          "snippet": "Bima Arya Dorong Pemda Bangun Ekosistem Ekonomi Daerah dari Hulu ke Hilir  detikNews",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-31e4998473",
+          "title": "Hadiri Forum Ekonomi Jawa-Bali, Wali Kota Eri Cahyadi Beberkan Tantangan Investasi di Surabaya",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPNW5OX05aaTNaUUZ4RDhBUG56MHdXem9tTjV6QXpnYmt1a05mSjUyNUdnckJnOVFoSEVwVk5ZNzlzR0gwMEZic21hMFJtaEZPTUJWTUtpZFprZGlGS3VYUlhUVzhNazRsTXlkclRtZ0hvVmZBOTFfWWowWjIySU9OVU5uMm5xR1pMZUJZTVZQaFhqZldORFg1RjVBWExZWGxvSFNCVkEtQUpPS1RoVkhKcnJvNnpFQnRDaG1LTlllZDdCMk5GX3llWEVIYzY?oc=5",
+          "publisher": "Pemerintah Kota Surabaya",
+          "category": "Ekonomi",
+          "published_at": "Mon, 23 Nov 2026 09:19:15 GMT",
+          "snippet": "Hadiri Forum Ekonomi Jawa-Bali, Wali Kota Eri Cahyadi Beberkan Tantangan Investasi di Surabaya  Pemerintah Kota Surabaya",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        }
+      ]
+    }
+  },
+  "v3_topic_sum_gn-351727de47": {
+    "_cached_at": 1795447728.9272373,
+    "data": {
+      "summary": "Topik: Ekonomi & Perdagangan. Berita ini diklasifikasikan ke dalam ranah Ekonomi & Perdagangan karena membahas aktivitas perdagangan komoditas, kebijakan fiskal/perpajakan, atau dinamika pasar yang berdampak pada stabilitas perekonomian nasional berdasarkan pelaporan - Kementerian Koordinator Bidang Perekonomian Republik Indonesia. Secara khusus, laporan - Kementerian Koordinator Bidang Perekonomian Republik Indonesia berjudul \"Kementerian Koordinator Bidang Perekonomian Republik Indonesia\" menyoroti inti persoalan ini. Pemahaman atas topik ini membantu pembaca melihat keterkaitan antara kebijakan ekonomi, pelaku usaha, dan daya beli masyarakat."
+    }
+  },
+  "v3_hukum": {
+    "_cached_at": 1795447739.350911,
+    "data": {
+      "query": "Hukum",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'Hukum' merangkum 6 berita terkini dari Website Resmi Polri, Diskominfo Sumut, Kompas.id, BBC, dan 2 media lainnya (antara lain terkait Perampasan, Aset, Bentuk, Generasi). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Bentuk Generasi Muda Cerdas dan Taat Hukum, Wakapolres Tolitoli Pimpin Program POLIDIK di SMA Negeri 2 Tolitoli\" serta perkembangan mengenai \"Wagub Sumut Hadiri Rakornas Produk Hukum Daerah 2026, Mendagri Tekankan Pentingnya Sinkronisasi Regulasi\".\n\nWebsite Resmi Polri menyoroti isu \"Bentuk Generasi Muda Cerdas dan Taat Hukum, Wakapolres Tolitoli Pimpin Program POLIDIK di SMA Negeri 2 Tolitoli\"; Diskominfo Sumut menyoroti isu \"Wagub Sumut Hadiri Rakornas Produk Hukum Daerah 2026, Mendagri Tekankan Pentingnya Sinkronisasi Regulasi\"; sementara Kompas.id menyoroti isu \"Perusakan Hutan Gunung Sibayak Diproses Hukum, PT Pariban dan UPTD Diperiksa\". dengan angka/data yang dikutip berupa 2026. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'Hukum', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "Website Resmi Polri",
+        "Diskominfo Sumut",
+        "Kompas.id"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Bentuk Generasi Muda Cerdas dan Taat Hukum, Wakapolres ...\"",
+          "cnbc": "2026",
+          "tempo": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Perusakan Hutan Gunung Sibayak Diproses Hukum, PT Parib...\""
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Subjek pemberitaan pada \"Bentuk Generasi Muda Cerdas dan Taat Hukum, Wakapolres ...\"",
+          "cnbc": "Subjek pemberitaan pada \"Wagub Sumut Hadiri Rakornas Produk Hukum Daerah 2026, M...\"",
+          "tempo": "Subjek pemberitaan pada \"Perusakan Hutan Gunung Sibayak Diproses Hukum, PT Parib...\""
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Bentuk Generasi Muda Cerdas dan Taat Hukum, Wakapolres Tolitoli Pimpin Program POLIDIK di SMA Negeri 2 Tolitoli",
+          "cnbc": "Wagub Sumut Hadiri Rakornas Produk Hukum Daerah 2026, Mendagri Tekankan Pentingnya Sinkronisasi Regulasi",
+          "tempo": "Perusakan Hutan Gunung Sibayak Diproses Hukum, PT Pariban dan UPTD Diperiksa"
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'Hukum'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "gn-d1ae69e843",
+          "title": "Bentuk Generasi Muda Cerdas dan Taat Hukum, Wakapolres Tolitoli Pimpin Program POLIDIK di SMA Negeri 2 Tolitoli",
+          "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNWGdMZTdld093OHpHMnVvcWZpZDZrcjFtbEc1SGZGUFEybmxXUjRDeklBNFExS05IVWdlczFOSTNQVmNwZDRQTHdSdXROYnNGTmV0S05TdUJnN25RMzhNNUpoVm1MdF9jYUtqTDRENG1adi1LcDVmVllCRThIYUpycXJ5NGY4dzRfbWtZUWlfdXd3QkhsYkNhX3JSN1Ffbk1oMXNWb216eHlJdWdRWHZVWE5BdlNWLS04TlZDMkpIdnJocjJHdEtTenVZVXBULUJVSTl6WldzVzU4bzlUdXFMeUZRUzhqaTZueDZ0Y3phQ2s2OUpYVGc?oc=5",
+          "publisher": "Website Resmi Polri",
+          "category": "Hukum",
+          "published_at": "Mon, 23 Nov 2026 14:22:16 GMT",
+          "snippet": "Bentuk Generasi Muda Cerdas dan Taat Hukum, Wakapolres Tolitoli Pimpin Program POLIDIK di SMA Negeri 2 Tolitoli  Website Resmi Polri",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-22d5521c0e",
+          "title": "Wagub Sumut Hadiri Rakornas Produk Hukum Daerah 2026, Mendagri Tekankan Pentingnya Sinkronisasi Regulasi",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNYmppQk1zXzNrVzc2NzBlbE1lc2pfZkxiZ01ZcjZRMk9JclVTUEl3eGxwU3FuZGtuamRKc3p3RUc1bjh6T0Nxbk4wY2ViMTduVGh1NU8tb3c1MG9XTWFTb3QtMkFVTnFtLVFHX2xPM0ZBRHVlWGlreDdRSzRFTUxSMTZadTh2WEk1ZkMxUEdiQ2RMQk9UbFlFM21DaUMwcEhIbkRyUU5WYVJQdzR1RVYzX0xXb2dndm51R0JWSXdQUUhuNUlQT2tmaEdQYTN4MWRPanZ2SEE4aXJwc3hQc3FsdmJUNFY?oc=5",
+          "publisher": "Diskominfo Sumut",
+          "category": "Hukum",
+          "published_at": "Mon, 23 Nov 2026 11:33:37 GMT",
+          "snippet": "Wagub Sumut Hadiri Rakornas Produk Hukum Daerah 2026, Mendagri Tekankan Pentingnya Sinkronisasi Regulasi  Diskominfo Sumut",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-6ce588ff9d",
+          "title": "Perusakan Hutan Gunung Sibayak Diproses Hukum, PT Pariban dan UPTD Diperiksa",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNWFVyeWNmckpfN2l2YlhDWFJmZFBTckRsdWd6Vm11dFpGYjI4Ml9ITzJSX3R2eWxiN0pZV0NFVDVIMGdLX2c5ZFJCVW5rNlR6RmpLMWNWTVI3ZXNCYXpxNU9XYUd3SDZ4cUNvVDVsSmd6bDRELWdZZXpJYi1WOFZ4aTVkVkVKS09zT24ySU8yUlczR0xiRFRoS282TmwtOWswemhlU1JoSC1Ia3A3MXdOZksyaHJTUXBCR1lVbVB2alh3SjEzYnl3?oc=5",
+          "publisher": "Kompas.id",
+          "category": "Hukum",
+          "published_at": "Mon, 23 Nov 2026 12:43:34 GMT",
+          "snippet": "Perusakan Hutan Gunung Sibayak Diproses Hukum, PT Pariban dan UPTD Diperiksa  Kompas.id",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-5ff81553a9",
+          "title": "Hukum: Mengapa UU Perampasan Aset tidak mengatur perampasan aset?",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFA2VEY5RzQ4ZFpvQW5FUWZVbEhZRnMzYURLalo1RHU3T0RBb0U4TllNbmxiN0NDZXIwYlJLTkg5NFFCTlNFVEowSzYyUkdSRVRtY2NiYzAydjRHQVBEbjFqbTJB0gFnQVVfeXFMT0tNWmIzbmRYVWc4Z1pmeXl2RXRlWG1ETDhnaXhLOVM3RjRKQkZEMHRQWnBQQkhaZDI5cnh4SXNmZUI1VkR3VFlYV3lOaTFJRHJuOWVUUjc1bmNpdkk0ZUQydmtKWnFXMA?oc=5",
+          "publisher": "BBC",
+          "category": "Hukum",
+          "published_at": "Sun, 22 Nov 2026 01:30:14 GMT",
+          "snippet": "Hukum: Mengapa UU Perampasan Aset tidak mengatur perampasan aset?  BBC",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-8a98242a88",
+          "title": "Hukum Perintah Merampas, Jalan Pulang Keadilan",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRWFSTm5EYUFLM0hMRkluTDItSEJWeFhOckdFclMyMnJaaXFxeEY1TU9vMnZUeFpEejdienU5VHNOUEhGSkJWcEVUck96aDZKWC1LVUdsblFueVdDUDNZaENqUmxxQjdEdVNBblZJQThmYXlwZ1BueDBjWUUxVVlBc2tzcXB1aXAyRU9oNHcyWXdzRDdORXl5RWdGQ2tITEk?oc=5",
+          "publisher": "Kompas.com",
+          "category": "Hukum",
+          "published_at": "Mon, 23 Nov 2026 05:15:00 GMT",
+          "snippet": "Hukum Perintah Merampas, Jalan Pulang Keadilan  Kompas.com",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-bf7da61c70",
+          "title": "UU Perampasan Aset Disahkan, Praktisi Hukum Sebut Kesiapan Aparat dan Pengawasan Jadi Tantangan",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQTDM4VWNzS1cwRXJMdkpJcnF3c0htNDNRd3EzRDNxczRiS0F2SUtUQkhmQU5kbjRxbHhmbnFHcFpHX1c4bjlFMC1LeUdOUkx0SHJRa1Q2RDEyaFBHdHREZmxUWFRTNlBzTXBmX0tLYmdKeml5ZmktYUFEZlhvMEFtSUhiMzJ0bjZNTU9ZeV91YXdzSGo2ZnZmVW1HeTBFZUxaclljZExmbERiZmpOMXB2b0s4RmVuejE1Z3BoVGMxa0VCaHFJTlE?oc=5",
+          "publisher": "indoposco.id",
+          "category": "Hukum",
+          "published_at": "Sun, 22 Nov 2026 14:00:22 GMT",
+          "snippet": "UU Perampasan Aset Disahkan, Praktisi Hukum Sebut Kesiapan Aparat dan Pengawasan Jadi Tantangan  indoposco.id",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        }
+      ]
+    }
+  },
+  "v3_wakil indonesia": {
+    "_cached_at": 1795447765.5627203,
+    "data": {
+      "query": "wakil indonesia",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'wakil indonesia' merangkum 6 berita terkini dari CNN Indonesia, ANTARA News, Kompas.tv, Jakarta Review, dan 2 media lainnya (antara lain terkait Lengkap, Finals, Jadwal, Final). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Daftar Lengkap BWF Tour Finals 2026, Indonesia Loloskan 3 Wakil\" serta perkembangan mengenai \"Tiga wakil Indonesia hadapi laga penentuan FFWS Global Finals 2026\".\n\nCNN Indonesia menyoroti isu \"Daftar Lengkap BWF Tour Finals 2026, Indonesia Loloskan 3 Wakil\"; ANTARA News menyoroti isu \"Tiga wakil Indonesia hadapi laga penentuan FFWS Global Finals 2026\"; sementara Kompas.tv menyoroti isu \"Hasil Drawing Syed Modi India International 2026: Jadwal dan Lawan Wakil Indonesia di Babak Awal\". dengan angka/data yang dikutip berupa 2026. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'wakil indonesia', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "CNN Indonesia",
+        "ANTARA News",
+        "Kompas.tv"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "2026",
+          "cnbc": "2026",
+          "tempo": "2026"
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Subjek pemberitaan pada \"Daftar Lengkap BWF Tour Finals 2026, Indonesia Loloskan...\"",
+          "cnbc": "Subjek pemberitaan pada \"Tiga wakil Indonesia hadapi laga penentuan FFWS Global ...\"",
+          "tempo": "Subjek pemberitaan pada \"Hasil Drawing Syed Modi India International 2026: Jadwa...\""
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Daftar Lengkap BWF Tour Finals 2026, Indonesia Loloskan 3 Wakil",
+          "cnbc": "Tiga wakil Indonesia hadapi laga penentuan FFWS Global Finals 2026",
+          "tempo": "Hasil Drawing Syed Modi India International 2026: Jadwal dan Lawan Wakil Indonesia di Babak Awal"
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'wakil indonesia'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "gn-85f92bb623",
+          "title": "Daftar Lengkap BWF Tour Finals 2026, Indonesia Loloskan 3 Wakil",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPeUYxR3BuZjhDUjV5WnZkSkRCZ0JGdWNkelM0TFdDMU5nbWM3alU2NjRzQzZmYkw0NkxwX091UFNIWmVmNXJDZEIwWUVuRXpMVno2VW9ucmZZY1dHREpIenpsWldwQktHTlo3YW5CMXR3OVVLZTJMU19tNUw3bWFrN0ZUMkJkZ0c4T1dmMWxtUWhRbWhtcm8xQlYyZ3F4QlhWMEN0cTBOeElockhubTl2ak5pbEtCeGtjUXVBVzFPc0wxbzFDdFHSAcsBQVVfeXFMUFM3THZNN1FWUTBNc1kyRXNfekRwWUhza1liN0VFaWlDZHE2SE9sT3RDM3hRS2dBYXYxTi1wcmVDX25wOV9UeVBzNzB4MkZNYjVBRnpRUUFpZWpPLWlEMXl3TllqZVlSN2V4MUQyT05EMkQ0RVlKSVhHWlpxRFJ5MUdtSjVKOTNTTkxaczhTaElBYzZUcGhVZ1NzczFpZk9zcnFMTktHZ2x2UzhzVkNzY0VIV1dRVnRBN3MyRExBQk9Hb0cyM3NSc2xMamM?oc=5",
+          "publisher": "CNN Indonesia",
+          "category": "Nasional",
+          "published_at": "Mon, 23 Nov 2026 11:10:25 GMT",
+          "snippet": "Daftar Lengkap BWF Tour Finals 2026, Indonesia Loloskan 3 Wakil  CNN Indonesia",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-ec15bcaf87",
+          "title": "Tiga wakil Indonesia hadapi laga penentuan FFWS Global Finals 2026",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPX09iMDA5V1d5X0tRWFNtaV9RaEMxbnJZUkVMeWprSkJrOE1GSmRMc19NY29kVjVhbDkteG9OSU9ZNjdKZ0g1UlNicVdQcmZBM25jczh2b08wejV0c1BNZU1BRVhfLXNwLWo1OW9FaWxZZm5VMXNfY0VQS1Z6a0t2dld3aWl4SHhDZkRUYnVvXzlvbHNjSng2RC00YTg3bnVwNTVweS1OX0FjVF9Q0gGvAUFVX3lxTE9XaHhnS3RvdnNTOS1MZDdjQ3BjNTMtYlAzYi10bDl4Y3JPTTBLdlBJbHlEVHcyVXA4ZGRraW0zU1hsTlRQQjlBZDZVU3U0ZXh4eUREWG5rTzJNWllVWmFjTWNlWk5aREl0X2p0eEp1a3A1aFhXWGNCZUk4Q1FGV19nbnM1NFpwMEVaYkhGNG4zWDVxWnRzdXBPbExZekktLW1aT2xyUW9pU24tRTZJcms?oc=5",
+          "publisher": "ANTARA News",
+          "category": "Nasional",
+          "published_at": "Mon, 23 Nov 2026 09:47:27 GMT",
+          "snippet": "Tiga wakil Indonesia hadapi laga penentuan FFWS Global Finals 2026  ANTARA News",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-2121db8a44",
+          "title": "Hasil Drawing Syed Modi India International 2026: Jadwal dan Lawan Wakil Indonesia di Babak Awal",
+          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcWU4NmJVSTE1a1JDMkxmZW5RX1lPeVpySE14a1phVmNrY3BMbG5OMFdMOGx5cGZCZE9vWEpOa0VEZ3ViUy0wY0pFNzZpN1lGa3F3UUo3M2dkcGpJYlYwMU8xSHh5X1dzMnZKV1hLYkxCV2trbEdlRGdTN3NhVkRObHlWNFo2UWNXSjI2b3BhWmFtU2ZYUUhLOGpYT0FLcmpuc1NMdW9vMGF2ZkM2M1ZpWUhORmVNb3ZodGQ0Z0piM2JQTW41SnVfVnV4Zko3QdIB0wFBVV95cUxOUkFuNnBfbzNKeWVlTVRuSUVJM1Y0ZkE2Z3dUZnBjRS1rOHJHblp3ZW5lU1RRczZPbnY3V0hOc3J2d3R1QldxMkRyMmgtVmZZT3dsSzJObmFUeVRnS2VQOGdNbEtHVlY2N0VaUjBCLXN2czN5bUNNZ0ZET090VWZQQktlc0doOXZiSnFQOV9mNVFBY0NfX3lGc2dMM0dQZm9yV213QzY2bzhlZGkwMnMyY0p3alNBcF9hbV94UEZadDgybHVfSGtaYkNWTnROeGlsNHY4?oc=5",
+          "publisher": "Kompas.tv",
+          "category": "Nasional",
+          "published_at": "Mon, 23 Nov 2026 12:35:00 GMT",
+          "snippet": "Hasil Drawing Syed Modi India International 2026: Jadwal dan Lawan Wakil Indonesia di Babak Awal  Kompas.tv",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-6cd5f9c17e",
+          "title": "Taklukkan Ganda Korea, Leo/Daniel jadi Wakil Indonesia Pertama yang Melaju ke Final Hongkong Open 2026",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOVWh5TWVSTmhJMVhQYU9wVGhTcHZQSTg4bkRLM2N0dFhWaFlHRDdwRU55UTFkdFFnVHI3Tlo5MWkxZ1I2SmZKMUFvelY1MVIzdmwweTRNaUJKQ01QbDNaTGw3d3VZY3FPaUpQenltSW5FbmNfMkRtcTJFNll2ZVZuSGdLUTNmTVptWU5GWm9iU2hmNmpBVU9VeDZzYXZCc0d3VC1HYlppSERfbkRhQUZVemZMbXd2Ujd5Snp0SHZhRFNSYjdiLVBiRjNB?oc=5",
+          "publisher": "Jakarta Review",
+          "category": "Nasional",
+          "published_at": "Sat, 21 Nov 2026 06:33:54 GMT",
+          "snippet": "Taklukkan Ganda Korea, Leo/Daniel jadi Wakil Indonesia Pertama yang Melaju ke Final Hongkong Open 2026  Jakarta Review",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-57b4760f33",
+          "title": "Jadwal Shopee Cup 2026/2027 Lengkap, Ini Format dan Wakil Indonesia!",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdF9XNkk4R2R6MDctYlN4Q1A0d2dJMF9Cd3hmM2tGaHI3ZzlQQjJ0c0pKYjJYRmo1MzI5bFRkX09ab2RDU0xDc3dfbUNHMW5NeWI5VG8wZTI3Q2t2RnhWSjlXbHM5T3M2UU04V3d1bFpqcTE0c2Z0dHY4LVF3SEM1YzhHT3NqMGZLNHBHTEJmeFVvakdjYlp4UmRjRFg?oc=5",
+          "publisher": "Akurat.co",
+          "category": "Nasional",
+          "published_at": "Sun, 22 Nov 2026 10:36:47 GMT",
+          "snippet": "Jadwal Shopee Cup 2026/2027 Lengkap, Ini Format dan Wakil Indonesia!  Akurat.co",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-4ccbc6d42c",
+          "title": "5 Wakil Indonesia Terakhir yang Kalah di Final Hong Kong Open per 2026",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxON21BVHBWcV9iSGlEeGFma3dISHlCUzJ3RG4ydTFGQjdId3NCZWNNT2d2aVM5YzVzYWtjUXBPQUp0Y05EQlppLW5xcHpPZjhvSGdjemVQRzk1dm5SZlo3SW5HRzBMakd0R2gxUUN4YkFzdmN4cy1IYUttZnhCb1NyLUQ2a0VEamxwZUN0eVRSeWVKX0tubk9NeTMydEl2VEt0MElmSzVCMmNZUXFvektMak1JX3ZkOWFBUDRkc0hFdTNUeEhj0gHKAUFVX3lxTE9XMzVlR0hQMEp5UkNJaGRrdk9MOUdVNmpnT0xIa0VmdmZ2MWRQTDhfQ2FjNjlNNy0wZHNtR0NITXdrNW5id05EVjNJMjNzUWpCM1IwS19XV0l0THBqeDBFS09qYkJqRnlia1BlZWU4NVh1Z29lYmdBdXY0eTA1RTZDY2ZZbktISXhWWWZtTlpGM2dmWE1HWm1OX1hnT0tYY2tyMDEwVEhPbm1nYUFlTGc1WnptUG9CcFdQSC1IYlBWazZVTGtyRXhIWFE?oc=5",
+          "publisher": "IDN Times",
+          "category": "Nasional",
+          "published_at": "Mon, 23 Nov 2026 06:16:00 GMT",
+          "snippet": "5 Wakil Indonesia Terakhir yang Kalah di Final Hong Kong Open per 2026  IDN Times",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        }
+      ]
+    }
+  },
+  "v3_wakil presiden": {
+    "_cached_at": 1795447815.6687331,
+    "data": {
+      "query": "wakil presiden",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'wakil presiden' merangkum 6 berita terkini dari BBC, Pemerintah Provinsi Jawa Tengah, Hukumonline, Kementerian Sekretariat Negara, dan 2 media lainnya (antara lain terkait Prabowo, Amran, Sugiono, MPR). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Presiden Prabowo serahkan nama Amran dan Sugiono sebagai calon wakil presiden\" serta perkembangan mengenai \"[HOAKS] Video Presiden Prabowo Minta Dedi Mulyadi Jadi Wakil Presiden\".\n\nBBC dalam laporannya \"Presiden Prabowo serahkan nama Amran dan Sugiono sebagai calon wakil presiden\" menekankan bahwa presiden Prabowo serahkan nama Amran dan Sugiono sebagai calon wakil presiden BBCPrabowo Resmi Serahkan 2 Nama Cawapres ke MPR detikNewsPresiden Usulkan Sugiono dan Amran Sulaiman, Dasco Aja; Pemerintah Provinsi Jawa Tengah menyoroti isu \"[HOAKS] Video Presiden Prabowo Minta Dedi Mulyadi Jadi Wakil Presiden\"; sementara Hukumonline menyoroti isu \"Prabowo Sodorkan Amran Sulaiman dan Sugiono sebagai Calon Wapres, Ini Pertimbangannya\". Tokoh atau lembaga yang mencuat dalam pemberitaan meliputi Prabowo, Dasco, MPR, Dedi Mulyadi. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'wakil presiden', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "BBC",
+        "Pemerintah Provinsi Jawa Tengah",
+        "Hukumonline"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Presiden Prabowo serahkan nama Amran dan Sugiono sebaga...\"",
+          "cnbc": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"[HOAKS] Video Presiden Prabowo Minta Dedi Mulyadi Jadi ...\"",
+          "tempo": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Prabowo Sodorkan Amran Sulaiman dan Sugiono sebagai Cal...\""
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Prabowo, Dasco, MPR",
+          "cnbc": "Dedi Mulyadi, Prabowo",
+          "tempo": "Prabowo"
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Presiden Prabowo serahkan nama Amran dan Sugiono sebagai calon wakil presiden BBCPrabowo Resmi Serahkan 2 Nama Cawapres ke MPR detikNewsPresiden Usulkan Sugiono dan Amran Sulaiman, Dasco Aja...",
+          "cnbc": "[HOAKS] Video Presiden Prabowo Minta Dedi Mulyadi Jadi Wakil Presiden",
+          "tempo": "Prabowo Sodorkan Amran Sulaiman dan Sugiono sebagai Calon Wapres, Ini Pertimbangannya"
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'wakil presiden'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "gn-dc345692b6",
+          "title": "Presiden Prabowo serahkan nama Amran dan Sugiono sebagai calon wakil presiden",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBzUENoYTdTZFFQcTFpQmliOWhYeHNpd1JZRjM4S01jWTdaeWNidldPM0NTUS01ZUV6Mm1PMTlPcmJWNGg1cU9POXc4OTlwQ0RLdmtoUW4zR3BTUmtJZFZXUFZ30gFnQVVfeXFMT1lGZF9VaWVvSHBYUzU5VjFpNXpxTlRmOUtJMF9yd3BCUXBqalhzcnQyWTd5d3J1bzRfYkhaaTQ0LVpvYWhtUGlNc01Zb2xoUTNxMERjWnlJTmFrVVhPLU8wN2lXeUZucw?oc=5",
+          "publisher": "BBC",
+          "category": "Teknologi",
+          "published_at": "Mon, 23 Nov 2026 12:20:24 GMT",
+          "snippet": "Presiden Prabowo serahkan nama Amran dan Sugiono sebagai calon wakil presiden  BBCPrabowo Resmi Serahkan 2 Nama Cawapres ke MPR  detikNewsPresiden Usulkan Sugiono dan Amran Sulaiman, Dasco Ajak Ikuti Proses di MPR  Kompas.idPresiden Prabowo: Usulan Dua Nama Calon Wakil Presiden B...",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-e1350d03fe",
+          "title": "[HOAKS] Video Presiden Prabowo Minta Dedi Mulyadi Jadi Wakil Presiden",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPT2o4WU1RX01YeDFObUZBQXU2OTV1dTZLLVNzNVpaOW1NYnRYN1kwcHFOYW1XYm1FNTJPVTZ4QWxKbGJRUzJqcTdCNFhmWDJ6eU41VHRtRzktVFpXRmRodXdYcVQyMkpWZTVDc1VLa2MzYS1CMTFEU2QtTTJjRk1PQ2VOVXVBTDI1SVU1em5qSm1KWlNnX3pGM1FoLUNCNEZpYVVRU1J1UERndVQycDVr?oc=5",
+          "publisher": "Pemerintah Provinsi Jawa Tengah",
+          "category": "Politik",
+          "published_at": "Mon, 23 Nov 2026 04:28:43 GMT",
+          "snippet": "[HOAKS] Video Presiden Prabowo Minta Dedi Mulyadi Jadi Wakil Presiden  Pemerintah Provinsi Jawa Tengah",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-36cdb703b5",
+          "title": "Prabowo Sodorkan Amran Sulaiman dan Sugiono sebagai Calon Wapres, Ini Pertimbangannya",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQdUdyLWlMUFNxQWJyVVgwTk14dElsVGpLWkEyNzhXTkRWWXFPTEdocS1QeTNqRmh6QTFMRjBLQXV3RG9sMldLR0dlQTA4YWd1dkhRZjVFREtFS0E1RjkxYk9VbjE3N1Zwa3M2MzZ2dkFhV1hCb1RScGJtTjFIT1VFUjZoaV9QVGxXUEdKUlloSEVyMkFYS05ZTENjOTRfSzNOMjcwMExIcU5QcW9fMFRQaTNKOTQ3aF83dTJ1dDVLTGRycHRac3VwcXhkLVpXM2Rya21UaWZR?oc=5",
+          "publisher": "Hukumonline",
+          "category": "Teknologi",
+          "published_at": "Mon, 23 Nov 2026 12:26:27 GMT",
+          "snippet": "Prabowo Sodorkan Amran Sulaiman dan Sugiono sebagai Calon Wapres, Ini Pertimbangannya  Hukumonline",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-b7c7727fdf",
+          "title": "Presiden Prabowo Serahkan Nama Calon Wakil Presiden RI Sisa Masa Jabatan 2024–2029 ke MPR",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMjRYUkZtVjZCNmQ3TW1UdUpHNElIeHZPdDNCcThDcmU0RlZOVU5pWW9iaEZhMWtualJOTjEzYjB5M0NEOUYxcTVSUm1fcmFhXzBuZGYzRlgzdkRIak9vOEdWRExEaVhFMTVMLXRFejBJTzlnX2tsVzBmM2t6bUl5Y0dibDdKT2lhOUUtdUJHdy16TXdVb0RZZFozNHAtWHdCbWV4YUk1VGVjOXpoQ0toV09MNTQtblVranU5OWZiNEVjQlU?oc=5",
+          "publisher": "Kementerian Sekretariat Negara",
+          "category": "Politik",
+          "published_at": "Mon, 23 Nov 2026 12:13:12 GMT",
+          "snippet": "Presiden Prabowo Serahkan Nama Calon Wakil Presiden RI Sisa Masa Jabatan 2024–2029 ke MPR  Kementerian Sekretariat Negara",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-1c006a9566",
+          "title": "Prabowo Dikabarkan Akan Serahkan Langsung Dua Nama Cawapres ke MPR",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUV9YZkROR3BvUTBZNE4zQlJEckpIUWtPRFdmOXgweGx5TlpkRlhYV3lnVEZ2dU5ic2Z4YlVROUxyUFhockx0ZVZkOWkzVUFrU05WTU5HUEZmOGxvaXV2R1pwOUE0OVV4Y1hPSHFOUEl0SzdPdHdPWVAxMndsYm1SeUl4ZUpxMXVXRVdPc3Q3XzNJSVhHcmMzU1hrQjZhMERLX1VSTQ?oc=5",
+          "publisher": "Sonora.co.id",
+          "category": "Politik",
+          "published_at": "Mon, 23 Nov 2026 07:05:00 GMT",
+          "snippet": "Prabowo Dikabarkan Akan Serahkan Langsung Dua Nama Cawapres ke MPR  Sonora.co.id",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-0a9324b219",
+          "title": "Prabowo Usulkan Amran dan Sugiono Jadi Calon Wakil Presiden",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOekd5bmNNSXluajNHWUVPUEVzY2VINlB3eElad3VYVmtDc2pQeC15T0pqOGV4QkpjMXZLa1JweU1nUFBNSkM2WmlsdlZTQ2wyN0tXcTByWlEyTmlhQ2ZLOWd2bXF0VW9XQlVSVVFGNTVudkpGdzRpSEtFMVpjVGlXS0lLeUtnZ1BFWEIwTE5HUVFya3ZadHNyeGNvTVFmdEZPSl9kZnJaOGZzcXM?oc=5",
+          "publisher": "DDTCNews",
+          "category": "Politik",
+          "published_at": "Mon, 23 Nov 2026 12:15:00 GMT",
+          "snippet": "Prabowo Usulkan Amran dan Sugiono Jadi Calon Wakil Presiden  DDTCNews",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        }
+      ]
+    }
+  },
+  "v3_topic_sum_art-pilkada-tempo-09": {
+    "_cached_at": 1795491222.7134213,
+    "data": {
+      "summary": "Topik: Politik & Tata Kelola Pemerintahan. Berita ini diklasifikasikan ke dalam ranah Politik & Tata Kelola Pemerintahan karena menyoroti dinamika kepemimpinan nasional, bursa figur politik, pesan kebangsaan, atau pengambilan keputusan di ranah pemerintahan berdasarkan pelaporan Tempo. Secara khusus, laporan Tempo berjudul \"Bawaslu Petakan 180 Kabupaten/Kota Rawan Politik Uang dan Netralitas ASN\" menyoroti inti persoalan ini dengan melibatkan/mengutip Bawaslu serta mencantumkan indikator angka (180 Kabupaten, 180 daerah). Isu ini penting dicermati untuk memahami arah koalisi, dinamika elite politik, serta implikasinya terhadap stabilitas pemerintahan."
+    }
+  },
+  "v3_lingkungan": {
+    "_cached_at": 1795491732.8504868,
+    "data": {
+      "query": "Lingkungan",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'Lingkungan' merangkum 6 berita terkini dari TRIBRATA NEWS POLDA KEPRI, ANTARA News Sulteng, diskominfotik.bengkaliskab.go.id, Kementerian Agama Republik Indonesia, dan 2 media lainnya (antara lain terkait Ramah, Dorong, Sejumlah, Pejabat). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Sejumlah Pejabat Di Lingkungan Polda Kepri Berganti, Penyegaran Organisasi Dorong Peningkatan Kinerja\" serta perkembangan mengenai \"DLH Banggai lakukan pengawasan lingkungan di kilang DSLNG\".\n\nTRIBRATA NEWS POLDA KEPRI menyoroti isu \"Sejumlah Pejabat Di Lingkungan Polda Kepri Berganti, Penyegaran Organisasi Dorong Peningkatan Kinerja\"; ANTARA News Sulteng menyoroti isu \"DLH Banggai lakukan pengawasan lingkungan di kilang DSLNG\"; sementara diskominfotik.bengkaliskab.go.id menyoroti isu \"Gerbang Ibadah Polbeng Hadir di SMP Negeri 6 Bengkalis, Dorong Terwujudnya Lingkungan Ramah Keluarga dan Bebas Kekerasan\". Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'Lingkungan', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "TRIBRATA NEWS POLDA KEPRI",
+        "ANTARA News Sulteng",
+        "diskominfotik.bengkaliskab.go.id"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Sejumlah Pejabat Di Lingkungan Polda Kepri Berganti, Pe...\"",
+          "cnbc": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"DLH Banggai lakukan pengawasan lingkungan di kilang DSL...\"",
+          "tempo": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Gerbang Ibadah Polbeng Hadir di SMP Negeri 6 Bengkalis,...\""
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Subjek pemberitaan pada \"Sejumlah Pejabat Di Lingkungan Polda Kepri Berganti, Pe...\"",
+          "cnbc": "Subjek pemberitaan pada \"DLH Banggai lakukan pengawasan lingkungan di kilang DSL...\"",
+          "tempo": "Subjek pemberitaan pada \"Gerbang Ibadah Polbeng Hadir di SMP Negeri 6 Bengkalis,...\""
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Sejumlah Pejabat Di Lingkungan Polda Kepri Berganti, Penyegaran Organisasi Dorong Peningkatan Kinerja",
+          "cnbc": "DLH Banggai lakukan pengawasan lingkungan di kilang DSLNG",
+          "tempo": "Gerbang Ibadah Polbeng Hadir di SMP Negeri 6 Bengkalis, Dorong Terwujudnya Lingkungan Ramah Keluarga dan Bebas Kekerasan"
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'Lingkungan'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "gn-49f0500de3",
+          "title": "Sejumlah Pejabat Di Lingkungan Polda Kepri Berganti, Penyegaran Organisasi Dorong Peningkatan Kinerja",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQXdXWERxZzhidkJFQWw2WFVYQ1JQMzBQcGl5UGpKdW5BbzRlNTFBYW9OLWVzS1BOLW9RN19lT0pJSDFjWFctSmxsRUxqT2w2Z3UzM3VFR0lUZTRYdlFjXzhfbjZvLVZlVXFXLXN4WlZOWXRCY25RX2N3bVlFOVJ5cFRHQXczOVh0Nmh3ck8zOHB0ZjBTSGVKb1hhZ0hoZlhDQ294WV8zVUtwdEVPM01tT3pWNnJnR3AzRnl2djhfZVNwR0ZPYkplNjMtYUdiZkN6dnplUUM0aw?oc=5",
+          "publisher": "TRIBRATA NEWS POLDA KEPRI",
+          "category": "Lingkungan",
+          "published_at": "Sun, 22 Nov 2026 09:09:30 GMT",
+          "snippet": "Sejumlah Pejabat Di Lingkungan Polda Kepri Berganti, Penyegaran Organisasi Dorong Peningkatan Kinerja  TRIBRATA NEWS POLDA KEPRI",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-cfaa11d37b",
+          "title": "DLH Banggai lakukan pengawasan lingkungan di kilang DSLNG",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUTFTcnlIM0tIMkxNcFotX3ppaFNtRlBDZ2RMbXY1elVtZFV0RG45RkMwb0RMLUpyVzRSLVFuaDk2V0N1a1BVOEcyVWNneE02R3dSQ01HNVItcUF0M0hRVjJMdGhxT1R5OUV5NHZpZDQ2aDdtRUdPZVhFR2MtNXZmRGdLVENXMEJoYUlPUnkycGVhVnpBYTE3dDBEbTF0RWZld1VZbw?oc=5",
+          "publisher": "ANTARA News Sulteng",
+          "category": "Teknologi",
+          "published_at": "Mon, 23 Nov 2026 09:10:06 GMT",
+          "snippet": "DLH Banggai lakukan pengawasan lingkungan di kilang DSLNG  ANTARA News Sulteng",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-2c3358c45d",
+          "title": "Gerbang Ibadah Polbeng Hadir di SMP Negeri 6 Bengkalis, Dorong Terwujudnya Lingkungan Ramah Keluarga dan Bebas Kekerasan",
+          "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPRUVwdk42WW5EQ080SXhTQ3dVZHB3elpzZnJWbHF5QklWNVJJR1NwcW8yZk9fTTNLTXJWcDFodXUtMk1hT0tBemdRcFNTeHdab015bHBtTDlvaFRSelF1Nm1WbGpKUzBPQ0k3NE5VMzVSRzZmS1NDNnVXV1dZYjJvZ3ZvZ1dVQVRDNll2eFBMQmdXNDZmSUdjNWQ1OGY4OUd1bDIyQ21YT3h6WTRkVWtFeFhEM2VCZThwYlFSYnd6UlhYUnRjTVh2U0J5eXViaHFTTHNIQU1NLVVYeEg0S2dZckxTVXMxd183RURKZ2lXMkVIakhhQllGc2p2MkRiM0IydWZMbjJ3OE91SjcxVjJndA?oc=5",
+          "publisher": "diskominfotik.bengkaliskab.go.id",
+          "category": "Lingkungan",
+          "published_at": "Mon, 23 Nov 2026 03:02:37 GMT",
+          "snippet": "Gerbang Ibadah Polbeng Hadir di SMP Negeri 6 Bengkalis, Dorong Terwujudnya Lingkungan Ramah Keluarga dan Bebas Kekerasan  diskominfotik.bengkaliskab.go.id",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-a3fefd20ef",
+          "title": "Menag Ajak para Dai Perluas Pesan Dakwah, Jelaskan Urgensi Pelestarian Lingkungan",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMEVUc3MtSlJYa29NUGowTjBfSDZfVkxLdWlaQ2RxbjI5aTc3S05TeUIwdTVTb3c2QzNaQi1KdFhMNkRIMDY2SThBZnR3MzJJb3ZPRUJiLS1HWmRCQU40U3Fjai1mNkZxTmQ5NkR1UEtRV0pkaWY4Q3lqdllrY2FKcDVPVjhKYlN4LUtycUV5eG8tcTExUjlPR3dZcm5sdFdGT0hxMHg4THc3anh6a29Gc0tLbjNsTkxj?oc=5",
+          "publisher": "Kementerian Agama Republik Indonesia",
+          "category": "Teknologi",
+          "published_at": "Sat, 21 Nov 2026 10:31:00 GMT",
+          "snippet": "Menag Ajak para Dai Perluas Pesan Dakwah, Jelaskan Urgensi Pelestarian Lingkungan  Kementerian Agama Republik Indonesia",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-758ca21e72",
+          "title": "TEP Unhas Dampingi Petani Saharey Kembangkan Pertanian Ramah Lingkungan",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNTU4U2VRajdZVWN5akZ1dF9aSFRWc2F0dldTZ3AtandhbHdTblBIQXZqRmdTOGdJZ1lrdDVpMFBiZlozQ3AyUmRZNGVNbGE1Zk9tUkctUDRfWE93LXZNVml5Uzd2Z2RhbE80Vk5nUDcwSzlibmFfTjM0NWNPZGxybGdLbkxGOVI5cktyWmhjWkduOFo1MUZxUHZRSG9weUtPaWFYaXdRdXJBOWQzRTNLdld2T09FdXNqLVoyTkprdFlnODg?oc=5",
+          "publisher": "Kompas.com",
+          "category": "Lingkungan",
+          "published_at": "Mon, 23 Nov 2026 04:10:00 GMT",
+          "snippet": "TEP Unhas Dampingi Petani Saharey Kembangkan Pertanian Ramah Lingkungan  Kompas.com",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-090b684cb2",
+          "title": "Mengenal Green Industry, Konsep Industri Masa Depan yang Ramah Lingkungan",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPTkRnZFZXWjZKeEdTdVpiRDRnZldVNnFrRVQyeXo4cUJ6Y2N5bnBPWVNUYUVJSVhxdF9yVTJraGpTVEtSLS0zYTdhZUd4N2drTU1USnVnU2VjTzZaRTdtdHJnYkIxRmRYbzdwNGpVYWhZOHhVTWZ1amlyYkJBMHl4VjlkYmZEWHRBSFU2WjB2dWFXTTRoOWZwME9VcXR2dVUzQjY1NlREdEZJZTE5bXY3cElfd1BrLS03T2E2NTlfNHVubUp6djM2bndwMWtEajFf?oc=5",
+          "publisher": "Kompasiana.com",
+          "category": "Lingkungan",
+          "published_at": "Mon, 23 Nov 2026 02:41:36 GMT",
+          "snippet": "Mengenal Green Industry, Konsep Industri Masa Depan yang Ramah Lingkungan  Kompasiana.com",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        }
+      ]
     }
   }
 }

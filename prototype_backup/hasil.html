@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hasil Pencarian — Behind The Headline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap narrow">
+  <nav class="nav" aria-label="Utama">
+    <div class="nav-head">
+      <a class="logo" href="index.html">Behind The Headline</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu kategori" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul id="navList">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="hasil.html?q=Politik">Politik</a></li>
+      <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+      <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+      <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+      <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+    </ul>
+  </nav>
+
+  <form class="search" id="searchForm" action="hasil.html" role="search" novalidate>
+    <input id="q" name="q" type="search" placeholder="Cari kata kunci atau topik berita..." aria-label="Cari berita">
+    <button type="submit">Cari</button>
+  </form>
+  <p class="search-error" id="searchError" role="alert" hidden></p>
+
+  <section class="panel light" data-ai id="comparePanel">
+    <span class="badge">AI = bagian yang dibuat otomatis oleh AI</span>
+    <section class="panel dark" data-ai id="aiPanel">
+      <h2>Ringkasan Topik &amp; Sintesis Media</h2>
+      <div id="aiSummary" style="margin-top:13px">
+        <span class="skeleton on-dark sk-line sk-w-100"></span>
+        <span class="skeleton on-dark sk-line sk-w-90"></span>
+        <span class="skeleton on-dark sk-line sk-w-65"></span>
+      </div>
+    </section>
+
+    <div id="compareSection">
+      <div class="ai-spacer"></div>
+      <h2>Perbandingan antar media</h2>
+      <div class="scroll">
+        <table id="compareTable">
+          <thead id="compareHead">
+            <tr><th>Aspek</th><th>CNN</th><th>CNBC</th><th>Tempo</th></tr>
+          </thead>
+          <tbody id="compareBody">
+            <tr>
+              <td>Data angka</td>
+              <td><span class="skeleton sk-line sk-w-80"></span></td>
+              <td><span class="skeleton sk-line sk-w-80"></span></td>
+              <td><span class="skeleton sk-line sk-w-80"></span></td>
+            </tr>
+            <tr>
+              <td>Narasumber</td>
+              <td><span class="skeleton sk-line sk-w-90"></span></td>
+              <td><span class="skeleton sk-line sk-w-65"></span></td>
+              <td><span class="skeleton sk-line sk-w-80"></span></td>
+            </tr>
+            <tr>
+              <td>Fokus berita</td>
+              <td><span class="skeleton sk-line sk-w-100"></span></td>
+              <td><span class="skeleton sk-line sk-w-90"></span></td>
+              <td><span class="skeleton sk-line sk-w-100"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="insight-grid" id="insightGrid" hidden>
+        <div class="insight-box consensus">
+          <h3>Titik Temu Media (Konsensus)</h3>
+          <ul id="consensusList"></ul>
+        </div>
+        <div class="insight-box divergence">
+          <h3>Perbedaan Sudut Pandang</h3>
+          <ul id="divergenceList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="berita" id="beritaSection">
+    <div class="berita-head">
+      <h2>Berita asli yang dirujuk</h2>
+      <span class="berita-count" id="beritaCount"></span>
+    </div>
+    <div id="beritaList">
+      <article class="item">
+        <span class="skeleton sk-line sm sk-w-45"></span>
+        <span class="skeleton sk-line lg sk-w-90" style="margin-top:10px"></span>
+        <span class="skeleton sk-line sm sk-w-45" style="margin-top:10px"></span>
+      </article>
+      <article class="item">
+        <span class="skeleton sk-line sm sk-w-45"></span>
+        <span class="skeleton sk-line lg sk-w-80" style="margin-top:10px"></span>
+        <span class="skeleton sk-line sm sk-w-45" style="margin-top:10px"></span>
+      </article>
+      <article class="item">
+        <span class="skeleton sk-line sm sk-w-45"></span>
+        <span class="skeleton sk-line lg sk-w-100" style="margin-top:10px"></span>
+        <span class="skeleton sk-line sm sk-w-45" style="margin-top:10px"></span>
+      </article>
+    </div>
+  </section>
+  <p class="note" id="aiNote" data-ai>AI hanya membandingkan dan merangkum, bukan menyatakan hoaks atau faktual.</p>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Behind The Headline</strong>
+        <p>Platform agregasi dan komparasi berita lintas media Indonesia berbasis analisis AI untuk membantu pembaca melihat satu isu dari berbagai sudut pandang.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="hasil.html?q=Politik">Politik</a></li>
+          <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+          <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+          <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+          <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <h4>Sumber Rujukan</h4>
+        <p>Mengindeks RSS &amp; berita publik dari CNN Indonesia, CNBC Indonesia, Tempo, ANTARA, Detik, Kompas, serta jaringan Google News Indonesia.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Behind The Headline &middot; Proyek Manajemen Proyek TI</span>
+      <span>AI hanya merangkum dan membandingkan sudut pandang, bukan penentu hoaks/faktual.</span>
+    </div>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behind The Headline — Portal Komparasi Berita AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" aria-label="Utama">
+    <div class="nav-head">
+      <a class="logo" href="index.html">Behind The Headline</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu kategori" aria-expanded="false" aria-controls="navList">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <ul id="navList">
+      <li><a href="index.html" class="on" aria-current="page">Beranda</a></li>
+      <li><a href="hasil.html?q=Politik">Politik</a></li>
+      <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+      <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+      <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+      <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="sheet s1"><i></i><i></i></div>
+    <div class="sheet s2"><i></i><i></i></div>
+    <div class="sheet s3"><i></i><i></i></div>
+    <small>BEHIND THE</small>
+    <h1>HEADLINE</h1>
+    <p>Cari satu topik, bandingkan isi beritanya dari berbagai media secara objektif.</p>
+  </header>
+
+  <form class="search" id="searchForm" action="hasil.html" role="search" novalidate>
+    <input id="q" name="q" type="search" placeholder="Cari kata kunci atau topik berita..." aria-label="Cari berita">
+    <button type="submit">Cari</button>
+  </form>
+  <p class="search-error" id="searchError" role="alert" hidden></p>
+
+  <div class="trending-bar" aria-label="Topik populer">
+    <span class="trending-label">Topik Populer:</span>
+    <div class="trending-chips">
+      <a href="hasil.html?q=PPN" class="trend-chip">PPN 12%</a>
+      <a href="hasil.html?q=Banjir+Jakarta" class="trend-chip">Banjir Jakarta</a>
+      <a href="hasil.html?q=Kecerdasan+Buatan" class="trend-chip">Kecerdasan Buatan (AI)</a>
+      <a href="hasil.html?q=KPK" class="trend-chip">Korupsi &amp; KPK</a>
+      <a href="hasil.html?q=Pilkada" class="trend-chip">Pilkada Serentak</a>
+    </div>
+  </div>
+
+  <section class="latest" aria-labelledby="terbaru">
+    <div class="latest-head">
+      <div>
+        <h2 id="terbaru">Berita Terbaru</h2>
+        <p id="lastUpdatedText">Topik terkini dari berbagai media nasional</p>
+      </div>
+      <button type="button" class="btn-refresh" id="refreshBtn" title="Segarkan daftar berita">↻ Segarkan</button>
+    </div>
+
+    <div id="featuredStory"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Behind The Headline</strong>
+        <p>Platform agregasi dan komparasi berita lintas media Indonesia berbasis analisis AI untuk membantu pembaca melihat satu isu dari berbagai sudut pandang.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="hasil.html?q=Politik">Politik</a></li>
+          <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+          <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+          <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+          <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <h4>Sumber Rujukan</h4>
+        <p>Mengindeks RSS &amp; berita publik dari CNN Indonesia, CNBC Indonesia, Tempo, ANTARA, Detik, Kompas, serta jaringan Google News Indonesia.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Behind The Headline &middot; Proyek Manajemen Proyek TI</span>
+      <span>AI hanya merangkum dan membandingkan sudut pandang, bukan penentu hoaks/faktual.</span>
+    </div>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

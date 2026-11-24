@@ -9,10 +9,29 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="topbar">
+  <div class="wrap narrow topbar-inner">
+    <div class="topbar-left">
+      <span class="live-pill"><span class="live-dot"></span> LIVE FEED</span>
+      <span id="liveDateBadge">Portal Komparasi Berita Nasional</span>
+    </div>
+    <div class="topbar-right">
+      <span>Sumber: CNN · CNBC · Tempo · ANTARA · Detik · Kompas</span>
+    </div>
+  </div>
+</div>
 <div class="wrap narrow">
   <nav class="nav" aria-label="Utama">
+    <div class="nav-sheets" aria-hidden="true">
+      <div class="sheet s1"><i></i><i></i></div>
+      <div class="sheet s2"><i></i><i></i></div>
+      <div class="sheet s3"><i></i><i></i></div>
+    </div>
     <div class="nav-head">
-      <a class="logo" href="index.html">Behind The Headline</a>
+      <a class="logo" href="index.html">
+        <span class="logo-kicker">BEHIND THE</span>
+        <span class="logo-main">HEADLINE</span>
+      </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu kategori" aria-expanded="false" aria-controls="navList">
         <span></span><span></span><span></span>
       </button>
@@ -26,6 +45,7 @@
       <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
     </ul>
   </nav>
+
   <form class="search" id="searchForm" action="hasil.html" role="search" novalidate>
     <input id="q" name="q" type="search" placeholder="Cari kata kunci atau topik berita..." aria-label="Cari berita">
     <button type="submit">Cari</button>
@@ -35,7 +55,7 @@
   <section class="panel light" data-ai id="comparePanel">
     <span class="badge">AI = bagian yang dibuat otomatis oleh AI</span>
     <section class="panel dark" data-ai id="aiPanel">
-      <h2>Ringkasan</h2>
+      <h2>Ringkasan Topik &amp; Sintesis Media</h2>
       <div id="aiSummary" style="margin-top:13px">
         <span class="skeleton on-dark sk-line sk-w-100"></span>
         <span class="skeleton on-dark sk-line sk-w-90"></span>
@@ -73,11 +93,25 @@
           </tbody>
         </table>
       </div>
+
+      <div class="insight-grid" id="insightGrid" hidden>
+        <div class="insight-box consensus">
+          <h3>Titik Temu Media (Konsensus)</h3>
+          <ul id="consensusList"></ul>
+        </div>
+        <div class="insight-box divergence">
+          <h3>Perbedaan Sudut Pandang</h3>
+          <ul id="divergenceList"></ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="berita" id="beritaSection">
-    <h2>Berita asli</h2>
+    <div class="berita-head">
+      <h2>Berita asli yang dirujuk</h2>
+      <span class="berita-count" id="beritaCount"></span>
+    </div>
     <div id="beritaList">
       <article class="item">
         <span class="skeleton sk-line sm sk-w-45"></span>
@@ -97,6 +131,33 @@
     </div>
   </section>
   <p class="note" id="aiNote" data-ai>AI hanya membandingkan dan merangkum, bukan menyatakan hoaks atau faktual.</p>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Behind The Headline</strong>
+        <p>Platform agregasi dan komparasi berita lintas media Indonesia berbasis analisis AI untuk membantu pembaca melihat satu isu dari berbagai sudut pandang.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="hasil.html?q=Politik">Politik</a></li>
+          <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+          <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+          <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+          <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <h4>Sumber Rujukan</h4>
+        <p>Mengindeks RSS &amp; berita publik dari CNN Indonesia, CNBC Indonesia, Tempo, ANTARA, Detik, Kompas, serta jaringan Google News Indonesia.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Behind The Headline &middot; Proyek Manajemen Proyek TI</span>
+      <span>AI hanya merangkum dan membandingkan sudut pandang, bukan penentu hoaks/faktual.</span>
+    </div>
+  </footer>
 </div>
 <script src="script.js"></script>
 </body>

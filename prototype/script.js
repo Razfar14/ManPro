@@ -1,12 +1,10 @@
 /**
  * Behind The Headline (BTH) - Client Controller & Cache Manager
  * Pembaruan:
- * 1. Navigasi Burger Menu responsif & optimal di layar mobile.
- * 2. Filter pencarian kosong (mencegah submit bila input belum diisi).
- * 3. Loading circle (spinner) pada foto hingga gambar selesai dimuat.
- * 4. Skeleton shimmer placeholder untuk teks & kartu saat memuat data.
- * 5. Penanganan topik berita nyeleneh (balasan penolakan & halaman kosong).
- * 6. Halaman Detail: 2-4 paragraf pilihan & Ringkasan Topik Tematik yang informatif.
+ * 1. Layout Meja Redaksi 3-Kolom (Kilas Terkini, Headline Utama, Sorotan AI & Isu Berkembang) ala CNN.
+ * 2. Strip Pantauan Isu & Radar Media ala CNBC Indonesia.
+ * 3. Filter kategori instan di beranda & Rubrik Pilihan 3 Sektor.
+ * 4. Navigasi Burger Menu responsif, Loading Circle Foto, Skeleton Shimmer, & Filter Topik Nyeleneh.
  */
 
 // =========================================================================
@@ -61,10 +59,30 @@ const BTHCache = {
       console.warn("[BTH Cache] Gagal membaca cache:", e);
     }
     return null;
+  },
+
+  remove(key) {
+    try {
+      localStorage.removeItem(`bth_${key}`);
+    } catch (e) {
+      // ignore
+    }
   }
 };
 
 BTHCache.setCookie("bth_last_visit", new Date().toISOString(), 7);
+
+// Set tanggal hari ini di topbar jika elemen tersedia
+const liveDateBadge = document.getElementById("liveDateBadge");
+if (liveDateBadge) {
+  const todayStr = new Date().toLocaleDateString("id-ID", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+  liveDateBadge.textContent = `${todayStr} · Pantauan Berita & Komparasi AI`;
+}
 
 // =========================================================================
 // 0B. BURGER MENU NAVIGATION & VALIDASI PENCARIAN KOSONG
@@ -113,7 +131,7 @@ function initSearchValidation() {
 
   function showError(msg) {
     input.classList.remove("is-invalid");
-    void input.offsetWidth; // trigger reflow agar animasi shake dapat berulang
+    void input.offsetWidth;
     input.classList.add("is-invalid");
     if (errorBox) {
       errorBox.textContent = msg;
@@ -265,6 +283,7 @@ const FALLBACK_NEWS = [
     warna: "#2b3b60",
     url: "https://www.cnnindonesia.com/ekonomi/20250101-ppn-12-persen-uu-hpp",
     foto: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&auto=format&fit=crop&q=80",
+    snippet: "Menteri Keuangan menegaskan penyesuaian tarif PPN menjadi 12 persen merupakan amanat UU HPP untuk memperkuat fondasi fiskal negara.",
     topic_summary: "Topik: Ekonomi & Fiskal. Berita ini diklasifikasikan ke dalam ranah Ekonomi & Fiskal karena membahas penyesuaian tarif PPN yang memengaruhi penerimaan APBN sekitar Rp 70-80 triliun serta perlindungan barang kebutuhan pokok bagi masyarakat rentan.",
     full_text: "Jakarta, CNN Indonesia -- Menteri Keuangan Sri Mulyani Indrawati menegaskan bahwa implementasi kenaikan tarif Pajak Pertambahan Nilai (PPN) dari 11 persen menjadi 12 persen pada 1 Januari 2025 merupakan pelaksanaan amanat UU HPP.\n\nPemerintah menargetkan penyesuaian ini mampu memberikan tambahan penerimaan negara sekitar Rp 70 triliun hingga Rp 80 triliun per tahun untuk membiayai perlindungan sosial dan infrastruktur dasar.\n\nMenkeu menekankan bahwa barang kebutuhan pokok masyarakat (sembako), jasa kesehatan, jasa pendidikan, dan jasa transportasi umum tetap dikecualikan atau dibebaskan dari pungutan PPN."
   },
@@ -277,6 +296,7 @@ const FALLBACK_NEWS = [
     warna: "#4c5e83",
     url: "https://www.cnbcindonesia.com/market/20250101-ritel-ppn-12-daya-beli",
     foto: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=80",
+    snippet: "Asosiasi Pengusaha Ritel Indonesia (Aprindo) memperkirakan kenaikan PPN 12% berpotensi menekan konsumsi domestik sebesar 1,2%.",
     topic_summary: "Topik: Ekonomi & Pasar Ritel. Berita ini diklasifikasikan ke dalam topik Ekonomi & Pasar Ritel karena menyoroti kekhawatiran asosiasi pengusaha (Aprindo) terhadap potensi koreksi konsumsi domestik 1,2% dan tekanan inflasi tahunan.",
     full_text: "Jakarta, CNBC Indonesia -- Rencana pemberlakuan tarif PPN 12% menuai kekhawatiran dari pelaku industri ritel dan pasar modal. Aprindo memproyeksikan potensi koreksi indeks penjualan riil sebesar 1,2% pada kuartal pertama.\n\nKetua Umum Aprindo menyampaikan bahwa tekanan biaya operasional yang meningkat seiring kenaikan tarif pajak berisiko diteruskan ke harga jual konsumen akhir."
   },
@@ -289,8 +309,57 @@ const FALLBACK_NEWS = [
     warna: "#29395e",
     url: "https://www.tempo.co/bisnis/20250101-ppn-12-kelas-menengah-buruh",
     foto: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=600&auto=format&fit=crop&q=80",
+    snippet: "Direktur Eksekutif Celios menyatakan kelas menengah yang tidak menerima bansos akan menjadi kelompok paling terpukul akibat penyesuaian tarif PPN.",
     topic_summary: "Topik: Ekonomi & Kesejahteraan Buruh. Berita ini diklasifikasikan ke dalam ranah Ekonomi & Kesejahteraan Buruh karena mengulas meningkatnya beban biaya hidup kelas menengah sebesar 2,8-3,5% serta tuntutan serikat pekerja.",
     full_text: "Jakarta, Tempo.co -- Kenaikan tarif PPN 12% mendapatkan sorotan tajam dari kalangan ekonom independen dan organisasi serikat buruh. Celios menilai kebijakan ini tidak tepat waktu di tengah penurunan jumlah penduduk kelas menengah.\n\nMenurut kajian Celios, kenaikan PPN 12% dapat meningkatkan biaya hidup rata-rata keluarga urban sebesar 2,8% hingga 3,5%."
+  },
+  {
+    id: "art-banjir-cnn-04",
+    kategori: "Lingkungan",
+    judul: "Pemprov DKI dan Kementerian PU Percepat Normalisasi Ciliwung Pasca Genangan",
+    media: "CNN Indonesia",
+    waktu: "5 jam lalu",
+    url: "https://www.cnnindonesia.com/nasional/20260910-banjir-jakarta-normalisasi",
+    foto: "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=600&auto=format&fit=crop&q=80",
+    snippet: "Pemerintah Provinsi DKI Jakarta mengalokasikan anggaran pembebasan lahan sebesar Rp 850 miliar untuk merampungkan normalisasi Sungai Ciliwung.",
+    topic_summary: "Topik: Lingkungan & Infrastruktur. Berita ini diklasifikasikan ke dalam ranah Lingkungan & Infrastruktur karena membahas percepatan normalisasi Sungai Ciliwung dengan anggaran Rp 850 miliar guna menekan risiko banjir di Jakarta.",
+    full_text: "Jakarta, CNN Indonesia -- Pemprov DKI Jakarta bersama Kementerian Pekerjaan Umum bergerak cepat mempercepat proyek normalisasi Sungai Ciliwung sepanjang 17 kilometer yang sempat tertunda. Alokasi anggaran sebesar Rp 850 miliar disiapkan tahun anggaran ini untuk pembebasan lahan bantaran sungai.\n\nKepala Dinas Sumber Daya Air DKI menyatakan pengerjaan polder dan penguatan tanggul di kawasan rawan seperti Bidara Cina dan Kampung Melayu berhasil mengurangi durasi genangan dari 14 jam menjadi 4 jam pada curah hujan ekstrem pekan lalu."
+  },
+  {
+    id: "art-pilkada-cnn-07",
+    kategori: "Politik",
+    judul: "KPU Pastikan Logistik Surat Suara Pilkada Serentak Terdistribusi 98 Persen",
+    media: "CNN Indonesia",
+    waktu: "6 jam lalu",
+    url: "https://www.cnnindonesia.com/nasional/20261012-kpu-logistik-pilkada",
+    foto: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=600&auto=format&fit=crop&q=80",
+    snippet: "Komisi Pemilihan Umum memastikan seluruh logistik utama surat suara dan kotak suara telah mencapai KPUD di seluruh provinsi tepat waktu.",
+    topic_summary: "Topik: Politik & Tata Kelola Pemerintahan. Berita ini diklasifikasikan ke dalam ranah Politik & Tata Kelola Pemerintahan karena menyoroti kesiapan distribusi logistik Pilkada Serentak sebesar 98 persen di 545 daerah oleh KPU RI.",
+    full_text: "Jakarta, CNN Indonesia -- Komisi Pemilihan Umum (KPU) RI menyatakan kesiapan penyelenggaraan Pilkada Serentak di 545 daerah telah mencapai 98 persen. Distribusi surat suara dan kotak suara di wilayah terdepan, terluar, dan tertinggal (3T) mendapat prioritas pengiriman dengan pengawalan aparat TNI dan Polri.\n\nKetua KPU menegaskan koordinasi bersama pemerintah daerah dan Bawaslu terus diperkuat agar tahapan pemungutan serta penghitungan suara berjalan transparan dan tepat waktu."
+  },
+  {
+    id: "art-ai-cnn-10",
+    kategori: "Teknologi",
+    judul: "Kemenkomdigi Siapkan Peta Jalan Etika Kecerdasan Buatan (AI) Nasional",
+    media: "CNN Indonesia",
+    waktu: "7 jam lalu",
+    url: "https://www.cnnindonesia.com/teknologi/20261020-etika-ai-kemenkominfo",
+    foto: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&auto=format&fit=crop&q=80",
+    snippet: "Pemerintah merancang pedoman etika pemanfaatan kecerdasan buatan bagi pengembang aplikasi lokal untuk mencegah diskriminasi algoritmik.",
+    topic_summary: "Topik: Teknologi & Transformasi Digital. Berita ini diklasifikasikan ke dalam ranah Teknologi & Transformasi Digital karena mengulas penyusunan regulasi etika Generative AI, perlindungan privasi data, dan mitigasi konten deepfake oleh Kemenkomdigi.",
+    full_text: "Jakarta, CNN Indonesia -- Kementerian Komunikasi dan Digital menyusun peta jalan komprehensif terkait etika pemanfaatan teknologi Generative AI di Indonesia. Panduan ini mewajibkan transparansi data training, perlindungan hak cipta pencipta konten lokal, serta sistem mitigasi konten disinformasi deepfake.\n\nPemerintah juga mendorong kolaborasi antara pelaku industri pusat data, akademisi, dan pengembang startup lokal untuk memperkuat ekosistem kecerdasan buatan nasional yang berdaulat."
+  },
+  {
+    id: "art-hukum-cnn-13",
+    kategori: "Hukum",
+    judul: "KPK Sita Aset Rp 350 Miliar Terkait Perkara Dugaan Korupsi Pengadaan Barang",
+    media: "CNN Indonesia",
+    waktu: "8 jam lalu",
+    url: "https://www.cnnindonesia.com/nasional/20261025-kpk-sita-aset-korupsi",
+    foto: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop&q=80",
+    snippet: "Komisi Pemberantasan Korupsi mengoptimalkan pemulihan kerugian keuangan negara melalui penyitaan rekening dan aset tersangka.",
+    topic_summary: "Topik: Hukum & Penegakan Keadilan. Berita ini diklasifikasikan ke dalam ranah Hukum & Penegakan Keadilan karena membahas tindakan penyitaan aset Rp 350 miliar oleh KPK dalam upaya pemulihan kerugian keuangan negara (asset recovery).",
+    full_text: "Jakarta, CNN Indonesia -- Penyidik Komisi Pemberantasan Korupsi berhasil mengamankan aset senilai lebih dari Rp 350 miliar dalam penyidikan tindak pidana korupsi dan pencucian uang. Juru Bicara KPK menegaskan pendekatan pemiskinan koruptor dan pemulihan aset negara menjadi prioritas utama penindakan.\n\nSelain penyitaan aset fisik berupa tanah dan bangunan, penyidik juga menelusuri aliran dana melalui koordinasi bersama PPATK guna memulihkan kerugian negara secara maksimal."
   }
 ];
 
@@ -298,18 +367,28 @@ const params = new URLSearchParams(window.location.search);
 const currentQuery = (params.get("q") || "").trim();
 const currentId = (params.get("id") || "").trim();
 const isFileProtocol = window.location.protocol === "file:";
+const isLocalHost = window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost";
+const isStaticDevPort = isLocalHost && window.location.port !== "" && window.location.port !== "8000";
+const API_BASE_URL = isStaticDevPort ? "http://localhost:8000" : "";
+let backendUnavailable = false;
 
 async function apiGet(endpoint) {
-  if (isFileProtocol) return null;
+  if (isFileProtocol || backendUnavailable) return null;
+  const targetUrl = `${API_BASE_URL}${endpoint}`;
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 25000);
-    const res = await fetch(endpoint, { signal: controller.signal });
+    const timeoutId = setTimeout(() => controller.abort(), isStaticDevPort ? 4000 : 25000);
+    const res = await fetch(targetUrl, { signal: controller.signal });
     clearTimeout(timeoutId);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } catch (err) {
-    console.warn(`[BTH API] Endpoint ${endpoint} tidak terjangkau (${err.message}). Beralih ke data lokal.`);
+    if (isStaticDevPort) {
+      backendUnavailable = true;
+      console.info("[BTH Mode Live Server] Backend Python (port 8000) belum dijalankan. Menggunakan dataset lokal.");
+    } else {
+      console.warn(`[BTH API] Endpoint ${endpoint} tidak terjangkau (${err.message}). Beralih ke data lokal.`);
+    }
     return null;
   }
 }
@@ -328,12 +407,33 @@ function formatRelativeTime(dateStr) {
   }
 }
 
+function cleanSnippetText(snippet, title, publisher) {
+  if (!snippet) return "";
+  const s = snippet.replace(/\s+/g, " ").trim();
+  const t = (title || "").trim().toLowerCase();
+  if (!s || s.toLowerCase() === t || (s.toLowerCase().startsWith(t) && s.length <= t.length + (publisher || "").length + 12)) {
+    return "";
+  }
+  return s.length > 140 ? s.slice(0, 137) + "..." : s;
+}
+
 // =========================================================================
-// 1. BERANDA (index.html): SKELETON HOLDER + PHOTO LOADER + INSTANT CACHE
+// 1. BERANDA (index.html): MEJA REDAKSI 3 KOLOM + GRID + FILTER KATEGORI
 // =========================================================================
 const grid = document.getElementById("grid");
+const featuredStory = document.getElementById("featuredStory");
+const liveUpdatesContainer = document.getElementById("liveUpdatesContainer");
+const developingContainer = document.getElementById("developingContainer");
+const categoryShowcase = document.getElementById("categoryShowcase");
+const categoryFilterPills = document.getElementById("categoryFilterPills");
+const refreshBtn = document.getElementById("refreshBtn");
+const lastUpdatedText = document.getElementById("lastUpdatedText");
+
 if (grid) {
-  function renderGridSkeleton(count = 5) {
+  let allHomepageArticles = [];
+  let activeCategoryFilter = "all";
+
+  function renderGridSkeleton(count = 8) {
     grid.innerHTML = Array.from({ length: count }, () => `
       <article class="card" aria-hidden="true">
         <div class="ph">
@@ -350,14 +450,154 @@ if (grid) {
     `).join("");
   }
 
-  function renderGridArticles(articles) {
-    grid.innerHTML = articles.map((item) => {
+  function renderNewsroomDesk(articles) {
+    if (!articles || articles.length === 0) return;
+
+    const lead = articles[0];
+    const leftLead = articles[1] || articles[0];
+    const leftList = articles.slice(2, 6);
+    const rightList = articles.slice(6, 10).length > 0 ? articles.slice(6, 10) : articles.slice(1, 4);
+    const subBullets = articles.slice(1, 3);
+
+    // 1. Kolom Tengah: Headline Utama ala CNN
+    if (featuredStory && lead) {
+      const leadId = lead.id || "art-ppn-cnn-01";
+      const leadKat = lead.category || lead.kategori || "Nasional";
+      const leadJudul = lead.title || lead.judul || "Berita Utama";
+      const leadPub = lead.publisher || lead.media || "Media Nasional";
+      const leadTime = formatRelativeTime(lead.published_at || lead.waktu);
+      const leadImg = lead.image_url || lead.foto;
+      const leadSnippet = cleanSnippetText(lead.snippet, leadJudul, leadPub) ||
+        `Laporan utama dari ${leadPub} menyoroti perkembangan penting di sektor ${leadKat}. Klik untuk membaca ringkasan paragraf pilihan serta analisis komparasi topik AI.`;
+
+      const bulletsHtml = subBullets.map((b) => {
+        const bId = b.id || "art-ppn-cnn-01";
+        const bTitle = b.title || b.judul || "";
+        const bPub = b.publisher || b.media || "Media";
+        return `<li><a href="detail.html?id=${encodeURIComponent(bId)}">${escapeHtml(bTitle)} <span style="color:var(--muted);font-weight:400">(${escapeHtml(bPub)})</span></a></li>`;
+      }).join("");
+
+      featuredStory.innerHTML = `
+        <article class="main-headline-card">
+          <div class="ph">${buildPhotoMarkup(leadImg, leadJudul, true)}</div>
+          <div class="main-headline-body">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <span class="chip spotlight">HEADLINE UTAMA</span>
+              <span class="chip">${escapeHtml(leadKat)}</span>
+              <span class="meta" style="margin-top:0">${escapeHtml(leadPub)} · ${escapeHtml(leadTime)}</span>
+            </div>
+            <h2><a href="detail.html?id=${encodeURIComponent(leadId)}">${escapeHtml(leadJudul)}</a></h2>
+            <p>${escapeHtml(leadSnippet)}</p>
+            ${bulletsHtml ? `<ul class="main-subbullets">${bulletsHtml}</ul>` : ""}
+          </div>
+        </article>
+      `;
+      attachImageLoaders(featuredStory);
+    }
+
+    // 2. Kolom Kiri: Kilas Berita Terkini (Live Updates)
+    if (liveUpdatesContainer && leftLead) {
+      const lId = leftLead.id || "art-ppn-cnn-01";
+      const lTitle = leftLead.title || leftLead.judul || "Berita Terkini";
+      const lPub = leftLead.publisher || leftLead.media || "Media";
+      const lKat = leftLead.category || leftLead.kategori || "Nasional";
+      const lSnippet = cleanSnippetText(leftLead.snippet, lTitle, lPub) ||
+        `Sorotan ${lPub} mengenai perkembangan terbaru isu ${lKat} yang menjadi perhatian publik.`;
+
+      const listHtml = leftList.map((item) => {
+        const id = item.id || "art-ppn-cnn-01";
+        const title = item.title || item.judul || "";
+        const pub = item.publisher || item.media || "Media";
+        const time = formatRelativeTime(item.published_at || item.waktu);
+        return `
+          <li>
+            <a href="detail.html?id=${encodeURIComponent(id)}">${escapeHtml(title)}</a>
+            <small>${escapeHtml(pub)} · ${escapeHtml(time)}</small>
+          </li>
+        `;
+      }).join("");
+
+      liveUpdatesContainer.innerHTML = `
+        <div class="desk-lead-left">
+          <span class="chip" style="margin-bottom:8px">${escapeHtml(lKat)}</span>
+          <h3><a href="detail.html?id=${encodeURIComponent(lId)}">${escapeHtml(lTitle)}</a></h3>
+          <p>${escapeHtml(lSnippet)}</p>
+        </div>
+        <span class="desk-live-badge">● Umpan Berita Masuk</span>
+        <ul class="desk-list-left">${listHtml}</ul>
+      `;
+    }
+
+    // 3. Kolom Kanan: Developing Stories dengan Thumbnail
+    if (developingContainer) {
+      developingContainer.innerHTML = `<div class="developing-list">${rightList.map((item) => {
+        const id = item.id || "art-ppn-cnn-01";
+        const title = item.title || item.judul || "";
+        const pub = item.publisher || item.media || "Media";
+        const img = item.image_url || item.foto || "";
+        return `
+          <div class="developing-item">
+            <div class="ph">${buildPhotoMarkup(img, title)}</div>
+            <div>
+              <h4><a href="detail.html?id=${encodeURIComponent(id)}">${escapeHtml(title)}</a></h4>
+              <small>${escapeHtml(pub)}</small>
+            </div>
+          </div>
+        `;
+      }).join("")}</div>`;
+      attachImageLoaders(developingContainer);
+    }
+  }
+
+  function renderCategoryShowcase(articles) {
+    if (!categoryShowcase || !articles || articles.length === 0) return;
+    const groups = [
+      { title: "Politik & Hukum", query: "Politik", match: ["politik", "hukum", "nasional"] },
+      { title: "Ekonomi & Fiskal", query: "Ekonomi", match: ["ekonomi", "bisnis"] },
+      { title: "Teknologi & Lingkungan", query: "Teknologi", match: ["teknologi", "lingkungan"] }
+    ];
+
+    categoryShowcase.innerHTML = groups.map((g) => {
+      const matched = articles.filter((a) => {
+        const c = (a.category || a.kategori || "").toLowerCase();
+        return g.match.some((m) => c.includes(m));
+      }).slice(0, 3);
+      const list = matched.length > 0 ? matched : articles.slice(0, 3);
+
+      return `
+        <div class="rubric-col">
+          <div class="rubric-col-head">
+            <h3>${escapeHtml(g.title)}</h3>
+            <a href="hasil.html?q=${encodeURIComponent(g.query)}">Bandingkan Isu →</a>
+          </div>
+          <ul class="rubric-list">
+            ${list.map((item) => `
+              <li>
+                <a href="detail.html?id=${encodeURIComponent(item.id || "art-ppn-cnn-01")}">${escapeHtml(item.title || item.judul)}</a>
+                <small>${escapeHtml(item.publisher || item.media || "Media Nasional")} · ${escapeHtml(formatRelativeTime(item.published_at || item.waktu))}</small>
+              </li>
+            `).join("")}
+          </ul>
+        </div>
+      `;
+    }).join("");
+  }
+
+  function renderFilteredGrid() {
+    const filtered = activeCategoryFilter === "all"
+      ? allHomepageArticles
+      : allHomepageArticles.filter((a) => (a.category || a.kategori || "").toLowerCase() === activeCategoryFilter.toLowerCase());
+
+    const listToRender = filtered.length > 0 ? filtered : allHomepageArticles;
+
+    grid.innerHTML = listToRender.map((item) => {
       const artId = item.id || "art-ppn-cnn-01";
       const kategori = item.category || item.kategori || "Nasional";
       const judul = item.title || item.judul || "Judul Berita";
       const publisher = item.publisher || item.media || "Media Indonesia";
       const timeStr = formatRelativeTime(item.published_at || item.waktu);
       const imageUrl = item.image_url || item.foto;
+      const snippet = cleanSnippetText(item.snippet, judul, publisher);
 
       return `
         <article class="card">
@@ -365,6 +605,7 @@ if (grid) {
           <div class="info">
             <span class="chip">${escapeHtml(kategori)}</span>
             <h3><a href="detail.html?id=${encodeURIComponent(artId)}">${escapeHtml(judul)}</a></h3>
+            ${snippet ? `<p class="card-snippet">${escapeHtml(snippet)}</p>` : ""}
             <div class="meta">${escapeHtml(publisher)} · ${escapeHtml(timeStr)}</div>
           </div>
         </article>
@@ -373,24 +614,57 @@ if (grid) {
     attachImageLoaders(grid);
   }
 
-  async function loadHomepageNews() {
-    const cachedArticles = BTHCache.load("homepage_articles");
-    if (cachedArticles && cachedArticles.length > 0) {
-      renderGridArticles(cachedArticles);
-    } else {
-      renderGridSkeleton(5);
-    }
+  function renderHomepageAll(articles) {
+    if (!articles || articles.length === 0) return;
+    allHomepageArticles = articles;
+    renderNewsroomDesk(articles);
+    renderFilteredGrid();
+    renderCategoryShowcase(articles);
 
-    const data = await apiGet("/api/v1/news/latest?limit=15");
-    if (data && data.articles && data.articles.length > 0) {
-      BTHCache.save("homepage_articles", data.articles, 600);
-      renderGridArticles(data.articles);
-    } else if (!cachedArticles) {
-      renderGridArticles(FALLBACK_NEWS);
+    if (lastUpdatedText) {
+      const nowTime = new Date().toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit" });
+      lastUpdatedText.textContent = `Menampilkan ${articles.length} berita lintas redaksi · Diperbarui pukul ${nowTime} WIB`;
     }
   }
 
-  loadHomepageNews();
+  if (categoryFilterPills) {
+    categoryFilterPills.querySelectorAll(".cat-pill").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        categoryFilterPills.querySelectorAll(".cat-pill").forEach((b) => b.classList.remove("on"));
+        btn.classList.add("on");
+        activeCategoryFilter = btn.getAttribute("data-cat") || "all";
+        renderFilteredGrid();
+      });
+    });
+  }
+
+  async function loadHomepageNews(forceRefresh = false) {
+    if (forceRefresh) {
+      BTHCache.remove("homepage_articles");
+    }
+    const cachedArticles = !forceRefresh ? BTHCache.load("homepage_articles") : null;
+    if (cachedArticles && cachedArticles.length > 0) {
+      renderHomepageAll(cachedArticles);
+    } else {
+      renderGridSkeleton(8);
+    }
+
+    const data = await apiGet("/api/v1/news/latest?limit=16");
+    if (data && data.articles && data.articles.length > 0) {
+      BTHCache.save("homepage_articles", data.articles, 600);
+      renderHomepageAll(data.articles);
+    } else if (!cachedArticles) {
+      renderHomepageAll(FALLBACK_NEWS);
+    }
+  }
+
+  if (refreshBtn) {
+    refreshBtn.addEventListener("click", () => {
+      loadHomepageNews(true);
+    });
+  }
+
+  loadHomepageNews(false);
 }
 
 // =========================================================================
@@ -423,9 +697,13 @@ if (toggle) {
 const compareTable = document.getElementById("compareTable");
 const aiSummaryElem = document.getElementById("aiSummary");
 const beritaListElem = document.getElementById("beritaList");
+const beritaCountElem = document.getElementById("beritaCount");
 const compareSectionElem = document.getElementById("compareSection");
 const beritaSectionElem = document.getElementById("beritaSection");
 const aiNoteElem = document.getElementById("aiNote");
+const insightGridElem = document.getElementById("insightGrid");
+const consensusListElem = document.getElementById("consensusList");
+const divergenceListElem = document.getElementById("divergenceList");
 
 if (compareTable && aiSummaryElem) {
   function setResultsVisibility(visible) {
@@ -436,6 +714,7 @@ if (compareTable && aiSummaryElem) {
 
   function renderSearchSkeleton() {
     setResultsVisibility(true);
+    if (insightGridElem) insightGridElem.hidden = true;
     aiSummaryElem.innerHTML = `
       <span class="skeleton on-dark sk-line sk-w-100"></span>
       <span class="skeleton on-dark sk-line sk-w-90"></span>
@@ -469,7 +748,38 @@ if (compareTable && aiSummaryElem) {
     const tbody = document.getElementById("compareBody");
     if (tbody) tbody.innerHTML = "";
     if (beritaListElem) beritaListElem.innerHTML = "";
+    if (insightGridElem) insightGridElem.hidden = true;
     setResultsVisibility(false);
+  }
+
+  function renderRichNewsItem(art) {
+    const id = art.id || "art-ppn-cnn-01";
+    const pub = art.publisher || art.media || "Media Daring";
+    const title = art.title || art.judul || "Berita";
+    const cat = art.category || art.kategori || "Nasional";
+    const timeStr = formatRelativeTime(art.published_at || art.waktu);
+    const imgUrl = art.image_url || art.foto || "";
+    const url = art.url || "#";
+    const snippet = cleanSnippetText(art.snippet, title, pub);
+
+    return `
+      <article class="item item-rich">
+        <div class="ph">${buildPhotoMarkup(imgUrl, title)}</div>
+        <div>
+          <div class="item-meta-top">
+            <span class="chip">${escapeHtml(cat)}</span>
+            <small>${escapeHtml(pub)}</small>
+            <span class="item-time">· ${escapeHtml(timeStr)}</span>
+          </div>
+          <h3><a href="detail.html?id=${encodeURIComponent(id)}">${escapeHtml(title)}</a></h3>
+          ${snippet ? `<p class="item-snippet">${escapeHtml(snippet)}</p>` : ""}
+          <div class="item-links">
+            <a class="src" href="detail.html?id=${encodeURIComponent(id)}">Baca ringkasan &amp; analisis →</a>
+            <a class="src secondary" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Sumber asli ↗</a>
+          </div>
+        </div>
+      </article>
+    `;
   }
 
   function renderSearchData(data, fromClientCache = false) {
@@ -514,15 +824,23 @@ if (compareTable && aiSummaryElem) {
       }
     }
 
+    const consensus = Array.isArray(data.consensus) ? data.consensus : [];
+    const divergence = Array.isArray(data.divergence) ? data.divergence : [];
+    if (insightGridElem && consensusListElem && divergenceListElem && (consensus.length > 0 || divergence.length > 0)) {
+      consensusListElem.innerHTML = consensus.map((c) => `<li>${escapeHtml(c)}</li>`).join("");
+      divergenceListElem.innerHTML = divergence.map((d) => `<li>${escapeHtml(d)}</li>`).join("");
+      insightGridElem.hidden = false;
+    } else if (insightGridElem) {
+      insightGridElem.hidden = true;
+    }
+
     if (beritaListElem) {
       if (data.articles && data.articles.length > 0) {
-        beritaListElem.innerHTML = data.articles.map((art) => `
-          <article class="item">
-            <small>${escapeHtml(art.publisher || "Media Daring")}</small>
-            <h3><a href="detail.html?id=${encodeURIComponent(art.id)}">${escapeHtml(art.title)}</a></h3>
-            <a class="src" href="${escapeHtml(art.url)}" target="_blank" rel="noopener noreferrer">Baca di sumber asli →</a>
-          </article>
-        `).join("");
+        if (beritaCountElem) {
+          beritaCountElem.textContent = `${data.articles.length} sumber berita ditemukan`;
+        }
+        beritaListElem.innerHTML = data.articles.map(renderRichNewsItem).join("");
+        attachImageLoaders(beritaListElem);
       } else {
         if (beritaSectionElem) beritaSectionElem.hidden = true;
       }
@@ -538,7 +856,6 @@ if (compareTable && aiSummaryElem) {
 
     document.title = `${currentQuery} — Behind The Headline`;
 
-    // Cek cepat di sisi klien untuk topik nyeleneh
     if (isAbsurdTopicClient(currentQuery)) {
       renderEmptyOrInvalidState(ABSURD_TOPIC_MESSAGE);
       return;
@@ -562,10 +879,9 @@ if (compareTable && aiSummaryElem) {
       return;
     }
 
-    // Fallback offline jika server tidak terjangkau
     const qLow = currentQuery.toLowerCase();
     const matchedFallback = FALLBACK_NEWS.filter((item) =>
-      `${item.judul} ${item.kategori} ${item.full_text}`.toLowerCase().includes(qLow)
+      `${item.judul} ${item.kategori} ${item.full_text || ""}`.toLowerCase().includes(qLow)
     );
 
     if (matchedFallback.length === 0) {
@@ -584,13 +900,8 @@ if (compareTable && aiSummaryElem) {
       `;
     }
     if (beritaListElem) {
-      beritaListElem.innerHTML = matchedFallback.slice(0, 3).map((art) => `
-        <article class="item">
-          <small>${escapeHtml(art.media)}</small>
-          <h3><a href="detail.html?id=${encodeURIComponent(art.id)}">${escapeHtml(art.judul)}</a></h3>
-          <a class="src" href="${escapeHtml(art.url)}" target="_blank" rel="noopener noreferrer">Baca di sumber asli →</a>
-        </article>
-      `).join("");
+      beritaListElem.innerHTML = matchedFallback.slice(0, 3).map(renderRichNewsItem).join("");
+      attachImageLoaders(beritaListElem);
     }
   }
 
@@ -642,8 +953,9 @@ if (detailJudul) {
     detailJudul.textContent = titleText;
     document.title = `${titleText} — Behind The Headline`;
 
+    const categoryName = article.category || article.kategori || "Berita";
     const katElem = document.getElementById("kategori");
-    if (katElem) katElem.textContent = article.category || article.kategori || "Berita";
+    if (katElem) katElem.textContent = categoryName;
 
     const pubElem = document.getElementById("metaPublisher");
     if (pubElem) {
@@ -666,7 +978,6 @@ if (detailJudul) {
       attachImageLoaders(fotoContainer.parentElement);
     }
 
-    // Menampilkan HANYA 2-4 paragraf pilihan (ringkas, padat, dan nyaman dibaca)
     const isiContainer = document.getElementById("isiBerita");
     if (isiContainer) {
       let paragraphs = [];
@@ -690,11 +1001,29 @@ if (detailJudul) {
       srcLink.href = article.url || article.link;
     }
 
-    // Menampilkan RINGKASAN TOPIK TEMATIK
+    const compareTopicBtn = document.getElementById("compareTopicBtn");
+    if (compareTopicBtn) {
+      const topicQuery = categoryName !== "Berita" ? categoryName : titleText.split(" ").slice(0, 3).join(" ");
+      compareTopicBtn.href = `hasil.html?q=${encodeURIComponent(topicQuery)}`;
+    }
+
+    const shareBtn = document.getElementById("shareBtn");
+    if (shareBtn) {
+      shareBtn.onclick = async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          shareBtn.textContent = "✓ Tautan tersalin";
+          setTimeout(() => { shareBtn.textContent = "Salin tautan"; }, 2200);
+        } catch (e) {
+          shareBtn.textContent = "Gagal menyalin";
+        }
+      };
+    }
+
     const aiDetail = document.getElementById("aiSummaryDetail");
     if (aiDetail) {
       const topicText = article.topic_summary || article.ai_summary || (
-        `Topik: ${article.category || "Umum"}. Berita ini diklasifikasikan ke dalam ranah ${article.category || "Umum"} berdasarkan fokus pembahasan isu dalam laporan ${article.publisher || article.media}.`
+        `Topik: ${categoryName}. Berita ini diklasifikasikan ke dalam ranah ${categoryName} berdasarkan fokus pembahasan isu dalam laporan ${article.publisher || article.media}.`
       );
       aiDetail.innerHTML = `<p style="margin-top:0">${escapeHtml(topicText)}</p>`;
     }
@@ -703,9 +1032,15 @@ if (detailJudul) {
     if (relatedContainer && relatedArticles && relatedArticles.length > 0) {
       relatedContainer.innerHTML = relatedArticles.map((rel) => `
         <article class="item">
-          <small>${escapeHtml(rel.publisher || rel.media || "Media Lain")}</small>
+          <div class="item-meta-top">
+            <span class="chip">${escapeHtml(rel.category || rel.kategori || categoryName)}</span>
+            <small>${escapeHtml(rel.publisher || rel.media || "Media Lain")}</small>
+          </div>
           <h3><a href="detail.html?id=${encodeURIComponent(rel.id)}">${escapeHtml(rel.title || rel.judul)}</a></h3>
-          <a class="src" href="${escapeHtml(rel.url)}" target="_blank" rel="noopener noreferrer">Baca di sumber asli →</a>
+          <div class="item-links">
+            <a class="src" href="detail.html?id=${encodeURIComponent(rel.id)}">Baca ringkasan →</a>
+            <a class="src secondary" href="${escapeHtml(rel.url)}" target="_blank" rel="noopener noreferrer">Sumber asli ↗</a>
+          </div>
         </article>
       `).join("");
     } else if (relatedContainer) {

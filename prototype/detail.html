@@ -9,10 +9,29 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="topbar">
+  <div class="wrap narrow topbar-inner">
+    <div class="topbar-left">
+      <span class="live-pill"><span class="live-dot"></span> LIVE FEED</span>
+      <span id="liveDateBadge">Portal Komparasi Berita Nasional</span>
+    </div>
+    <div class="topbar-right">
+      <span>Sumber: CNN · CNBC · Tempo · ANTARA · Detik · Kompas</span>
+    </div>
+  </div>
+</div>
 <div class="wrap narrow">
   <nav class="nav" aria-label="Utama">
+    <div class="nav-sheets" aria-hidden="true">
+      <div class="sheet s1"><i></i><i></i></div>
+      <div class="sheet s2"><i></i><i></i></div>
+      <div class="sheet s3"><i></i><i></i></div>
+    </div>
     <div class="nav-head">
-      <a class="logo" href="index.html">Behind The Headline</a>
+      <a class="logo" href="index.html">
+        <span class="logo-kicker">BEHIND THE</span>
+        <span class="logo-main">HEADLINE</span>
+      </a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu kategori" aria-expanded="false" aria-controls="navList">
         <span></span><span></span><span></span>
       </button>
@@ -56,7 +75,11 @@
       <span class="skeleton sk-line sk-w-65"></span>
     </div>
     <hr>
-    <a class="btn wide" id="linkSumberAsli" href="#" target="_blank" rel="noopener noreferrer">Baca di sumber asli →</a>
+    <div class="article-actions">
+      <a class="btn wide" id="linkSumberAsli" href="#" target="_blank" rel="noopener noreferrer">Baca artikel utuh di sumber asli →</a>
+      <a class="btn-secondary" id="compareTopicBtn" href="hasil.html">Bandingkan liputan media lain</a>
+      <button type="button" class="btn-secondary" id="shareBtn">Salin tautan</button>
+    </div>
   </article>
 
   <!-- Bagian Ringkasan Topik Tematik -->
@@ -86,6 +109,33 @@
     </div>
   </section>
   <p class="note">AI hanya membandingkan dan merangkum topik, bukan menyatakan hoaks atau faktual.</p>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Behind The Headline</strong>
+        <p>Platform agregasi dan komparasi berita lintas media Indonesia berbasis analisis AI untuk membantu pembaca melihat satu isu dari berbagai sudut pandang.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Kategori</h4>
+        <ul>
+          <li><a href="hasil.html?q=Politik">Politik</a></li>
+          <li><a href="hasil.html?q=Ekonomi">Ekonomi</a></li>
+          <li><a href="hasil.html?q=Hukum">Hukum</a></li>
+          <li><a href="hasil.html?q=Teknologi">Teknologi</a></li>
+          <li><a href="hasil.html?q=Lingkungan">Lingkungan</a></li>
+        </ul>
+      </div>
+      <div class="footer-meta">
+        <h4>Sumber Rujukan</h4>
+        <p>Mengindeks RSS &amp; berita publik dari CNN Indonesia, CNBC Indonesia, Tempo, ANTARA, Detik, Kompas, serta jaringan Google News Indonesia.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Behind The Headline &middot; Proyek Manajemen Proyek TI</span>
+      <span>AI hanya merangkum dan membandingkan sudut pandang, bukan penentu hoaks/faktual.</span>
+    </div>
+  </footer>
 </div>
 <script src="script.js"></script>
 </body>
