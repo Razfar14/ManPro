@@ -170,17 +170,57 @@ initBurgerMenu();
 initSearchValidation();
 
 // =========================================================================
-// 0C. PHOTO LOADING CIRCLE HELPER
+// 0C. PHOTO LOADING CIRCLE & THEMATIC FALLBACK HELPER
 // =========================================================================
-function buildPhotoMarkup(imageUrl, altText, isLarge = false) {
-  if (!imageUrl) {
-    return `<span class="photo-fallback">Foto Berita</span>`;
-  }
+const CLIENT_THEME_POOLS = {
+  Politik: [
+    "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1575320181282-9afab399332c?w=800&auto=format&fit=crop&q=80"
+  ],
+  Ekonomi: [
+    "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=800&auto=format&fit=crop&q=80"
+  ],
+  Hukum: [
+    "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=800&auto=format&fit=crop&q=80"
+  ],
+  Teknologi: [
+    "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80"
+  ],
+  Lingkungan: [
+    "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80"
+  ],
+  Nasional: [
+    "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=800&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&auto=format&fit=crop&q=80"
+  ]
+};
+
+function getThemeFallbackImage(category, seedStr) {
+  const pool = CLIENT_THEME_POOLS[category] || CLIENT_THEME_POOLS.Nasional;
+  const s = String(seedStr || category || "bth");
+  let sum = 0;
+  for (let i = 0; i < s.length; i++) sum += s.charCodeAt(i);
+  return pool[sum % pool.length];
+}
+
+function buildPhotoMarkup(imageUrl, altText, isLarge = false, category = "Nasional") {
+  const fallbackUrl = getThemeFallbackImage(category, altText);
+  const finalUrl = imageUrl || fallbackUrl;
   const spinnerClass = isLarge ? "spinner" : "spinner sm";
   const lazyAttr = isLarge ? "" : ' loading="lazy"';
   return `
     <div class="photo-loader"><span class="${spinnerClass}" aria-label="Memuat foto"></span></div>
-    <img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(altText)}"${lazyAttr}>
+    <img src="${escapeHtml(finalUrl)}" data-fallback="${escapeHtml(fallbackUrl)}" alt="${escapeHtml(altText)}"${lazyAttr}>
   `;
 }
 
@@ -197,6 +237,12 @@ function attachImageLoaders(rootElement) {
     }
 
     function handleError() {
+      const fbUrl = img.getAttribute("data-fallback");
+      if (fbUrl && img.src !== fbUrl && !img.dataset.retried) {
+        img.dataset.retried = "1";
+        img.src = fbUrl;
+        return;
+      }
       if (loader) loader.remove();
       img.remove();
       if (box && !box.querySelector(".photo-fallback")) {
@@ -926,7 +972,7 @@ if (compareTable && aiSummaryElem) {
 
     return `
       <article class="item item-rich">
-        <div class="ph">${buildPhotoMarkup(imgUrl, title)}</div>
+        <div class="ph">${buildPhotoMarkup(imgUrl, title, false, cat)}</div>
         <div>
           <div class="item-meta-top">
             <span class="chip">${escapeHtml(cat)}</span>

@@ -46,7 +46,7 @@ from backend.ingestion.base import ArticleItem
 
 app = Flask(__name__, static_folder=PROTOTYPE_DIR)
 
-# Gambar jurnalistik berkualitas tinggi per kategori jika foto berita asli kosong
+# Gambar jurnalistik berkualitas tinggi per kategori jika foto berita asli kosong dari RSS
 THEME_IMAGES = {
     "Politik": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=900&auto=format&fit=crop&q=80",
     "Ekonomi": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=80",
@@ -55,6 +55,52 @@ THEME_IMAGES = {
     "Lingkungan": "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=900&auto=format&fit=crop&q=80",
     "Nasional": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&auto=format&fit=crop&q=80"
 }
+
+THEME_IMAGE_POOLS = {
+    "Politik": [
+        "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1575320181282-9afab399332c?w=900&auto=format&fit=crop&q=80"
+    ],
+    "Ekonomi": [
+        "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=900&auto=format&fit=crop&q=80"
+    ],
+    "Hukum": [
+        "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=900&auto=format&fit=crop&q=80"
+    ],
+    "Teknologi": [
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&auto=format&fit=crop&q=80"
+    ],
+    "Lingkungan": [
+        "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&auto=format&fit=crop&q=80"
+    ],
+    "Nasional": [
+        "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1495020689067-958852a7765e?w=900&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=900&auto=format&fit=crop&q=80"
+    ]
+}
+
+
+def pick_theme_image(category: str, seed_text: str = "") -> str:
+    pool = THEME_IMAGE_POOLS.get(category) or THEME_IMAGE_POOLS["Nasional"]
+    idx = sum(ord(c) for c in (seed_text or category)) % len(pool)
+    return pool[idx]
+
+
+def ensure_article_images(articles: list) -> None:
+    for a in articles:
+        if isinstance(a, dict) and not a.get("image_url"):
+            cat = a.get("category", "Nasional")
+            a["image_url"] = pick_theme_image(cat, a.get("id") or a.get("title", ""))
 
 @app.after_request
 def add_cache_and_cookie_headers(response):
@@ -120,11 +166,7 @@ def get_latest_news():
 
     articles = aggregator.fetch_latest_news(category=category, limit=limit)
     if articles:
-        # Pasang foto tematik jika foto asli kosong
-        for a in articles:
-            if not a.get("image_url"):
-                cat = a.get("category", "Nasional")
-                a["image_url"] = THEME_IMAGES.get(cat, THEME_IMAGES["Nasional"])
+        ensure_article_images(articles)
         cache_manager.save_latest_news(category, articles)
 
     return jsonify({
@@ -180,6 +222,7 @@ def search_news():
         articles = cached_ai.get("articles") or store.search_local(query, limit=limit)
         if not articles:
             articles = aggregator.search_news(query, limit=limit, scrape_full_text=False)
+        ensure_article_images(articles)
         for art in articles:
             if isinstance(art, dict) and art.get("id"):
                 store.articles_by_id[art["id"]] = art
@@ -201,6 +244,7 @@ def search_news():
         })
 
     articles = aggregator.search_news(query, limit=limit, scrape_full_text=True)
+    ensure_article_images(articles)
     ai_comparison = ai_engine.compare_cluster(query, articles)
     cache_payload = dict(ai_comparison)
     if not ai_comparison.get("invalid_topic"):
