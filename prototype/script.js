@@ -426,14 +426,175 @@ const liveUpdatesContainer = document.getElementById("liveUpdatesContainer");
 const developingContainer = document.getElementById("developingContainer");
 const categoryShowcase = document.getElementById("categoryShowcase");
 const categoryFilterPills = document.getElementById("categoryFilterPills");
+const trendingChipsContainer = document.getElementById("trendingChips") || document.querySelector(".trending-chips");
+const topicPulseGrid = document.getElementById("topicPulseGrid");
+const pulseTabsContainer = document.getElementById("pulseTabs");
 const refreshBtn = document.getElementById("refreshBtn");
 const lastUpdatedText = document.getElementById("lastUpdatedText");
 
 if (grid) {
   let allHomepageArticles = [];
   let activeCategoryFilter = "all";
+  let activePulseTab = "all";
+  let extractedTrendingTopics = [];
+
+  const TREND_STOPWORDS = new Set([
+    "yang", "dan", "di", "ke", "dari", "pada", "dalam", "untuk", "dengan", "atau",
+    "ini", "itu", "akan", "sudah", "telah", "bisa", "dapat", "juga", "oleh", "saat",
+    "soal", "terkait", "atas", "bagi", "karena", "agar", "namun", "tetapi", "hingga",
+    "usai", "pasca", "jelang", "mulai", "baru", "hari", "tahun", "bulan", "pekan",
+    "indonesia", "jakarta", "nasional", "pemerintah", "pastikan", "siapkan", "soroti",
+    "sebut", "ungkap", "nilai", "minta", "dorong", "buka", "tutup", "naik", "turun",
+    "capai", "tembus", "jadi", "masih", "lebih", "kurang", "berita", "terbaru",
+    "cnn", "cnbc", "tempo", "antara", "detik", "detiknews", "kompas", "republika",
+    "kata", "ujar", "tegas", "menurut", "warga", "publik", "masyarakat", "resmi"
+  ]);
+
+  function extractFigureFromArticle(art) {
+    const text = `${art.title || art.judul || ""} ${art.snippet || ""} ${art.full_text || ""}`;
+    const figMatch = text.match(/Rp\s?[\d\.,]+\s?(?:triliun|miliar|juta|T|M)?|[\d\.,]+\s?%|[\d\.,]+\s?(?:persen|triliun|miliar|daerah|orang)/i);
+    if (figMatch) {
+      return figMatch[0].replace(/triliun/i, "Triliun").replace(/miliar/i, "Miliar").replace(/persen/i, "%");
+    }
+    return null;
+  }
+
+  function mapCategoryToPulseGroup(cat) {
+    const c = (cat || "").toLowerCase();
+    if (c.includes("ekonomi") || c.includes("bisnis")) return "ekonomi";
+    if (c.includes("politik") || c.includes("hukum")) return "politik";
+    if (c.includes("teknologi") || c.includes("lingkungan")) return "tekno";
+    return "politik";
+  }
+
+  function extractKeyphraseFromTitle(rawTitle, publisher) {
+    let t = (rawTitle || "").trim();
+    if (publisher) {
+      t = t.replace(new RegExp(`\\s*[-–|]\\s*${publisher.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`, "i"), "");
+    }
+    const tokens = t.match(/[A-Za-zÀ-ÿ0-9%]{3,}/g) || [];
+    const meaningful = tokens.filter((w) => !TREND_STOPWORDS.has(w.toLowerCase()) && !/^\d+$/.test(w));
+    if (meaningful.length >= 2) {
+      return `${meaningful[0]} ${meaningful[1]}`;
+    }
+    return meaningful[0] || "";
+  }
+
+  function computeTrendingTopics(articles) {
+    const topicMap = new Map();
+
+    articles.forEach((art, idx) => {
+      const title = art.title || art.judul || "";
+      const pub = art.publisher || art.media || "Media";
+      const cat = art.category || art.kategori || "Nasional";
+      const figure = extractFigureFromArticle(art);
+
+      // Murni diekstrak dari kata kunci judul berita terbaru tanpa daftar auto-fill statis
+      const phrase = extractKeyphraseFromTitle(title, pub);
+      if (phrase && phrase.length >= 3) {
+        const normKey = phrase.toLowerCase();
+        const existing = topicMap.get(normKey);
+        if (existing) {
+          existing.count += 1;
+          existing.publishers.add(pub);
+          if (!existing.figure && figure) existing.figure = figure;
+        } else {
+          topicMap.set(normKey, {
+            label: phrase,
+            query: phrase,
+            group: mapCategoryToPulseGroup(cat),
+            category: cat,
+            count: 1,
+            rankBonus: Math.max(0, 12 - idx),
+            publishers: new Set([pub]),
+            figure: figure
+          });
+        }
+      }
+    });
+
+    return Array.from(topicMap.values()).sort(
+      (a, b) => (b.count * 10 + b.rankBonus) - (a.count * 10 + a.rankBonus)
+    );
+  }
+
+  function renderTrendingAndPulse(articles) {
+    extractedTrendingTopics = computeTrendingTopics(articles);
+    if (extractedTrendingTopics.length === 0) return;
+
+    // 1. Update strip .trending-chips secara otomatis (6-7 chip teratas)
+    if (trendingChipsContainer) {
+      trendingChipsContainer.removeAttribute("aria-busy");
+      const topChips = extractedTrendingTopics.slice(0, 7);
+      trendingChipsContainer.innerHTML = topChips.map((t) => `
+        <a href="hasil.html?q=${encodeURIComponent(t.query)}" class="trend-chip">${escapeHtml(t.label)}</a>
+      `).join("");
+    }
+
+    // 2. Update tombol contoh komparasi di kotak AI Spotlight kanan agar sesuai topik #1
+    const spotlightBtn = document.querySelector(".ai-spotlight-btn");
+    if (spotlightBtn && extractedTrendingTopics[0]) {
+      const topTopic = extractedTrendingTopics[0];
+      spotlightBtn.href = `hasil.html?q=${encodeURIComponent(topTopic.query)}`;
+      spotlightBtn.textContent = `Bandingkan Isu "${topTopic.label}" →`;
+    }
+
+    // 3. Update kartu #topicPulseGrid sesuai tab aktif
+    renderPulseCards();
+  }
+
+  function renderPulseCards() {
+    if (!topicPulseGrid || extractedTrendingTopics.length === 0) return;
+    const filtered = activePulseTab === "all"
+      ? extractedTrendingTopics
+      : extractedTrendingTopics.filter((t) => t.group === activePulseTab);
+
+    const list = (filtered.length >= 3 ? filtered : extractedTrendingTopics).slice(0, 6);
+
+    topicPulseGrid.innerHTML = list.map((t, i) => {
+      const mediaCount = Math.max(t.publishers.size, t.count);
+      const valText = t.figure || `${mediaCount} Sumber Media`;
+      const isUp = i % 3 !== 2;
+      const tagClass = isUp ? "up" : "warn";
+      const tagText = isUp
+        ? `↑ ${mediaCount > 1 ? mediaCount + " Media Meliput" : "Sorotan " + t.category}`
+        : `● Pantauan ${t.category}`;
+
+      return `
+        <a class="pulse-card" href="hasil.html?q=${encodeURIComponent(t.query)}">
+          <span class="pulse-name">${escapeHtml(t.label)}</span>
+          <strong class="pulse-val">${escapeHtml(valText)}</strong>
+          <span class="pulse-tag ${tagClass}">${escapeHtml(tagText)}</span>
+        </a>
+      `;
+    }).join("");
+  }
+
+  if (pulseTabsContainer) {
+    pulseTabsContainer.querySelectorAll(".pulse-tab").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        pulseTabsContainer.querySelectorAll(".pulse-tab").forEach((b) => b.classList.remove("on"));
+        btn.classList.add("on");
+        activePulseTab = btn.getAttribute("data-pulse") || "all";
+        renderPulseCards();
+      });
+    });
+  }
 
   function renderGridSkeleton(count = 8) {
+    if (trendingChipsContainer) {
+      trendingChipsContainer.setAttribute("aria-busy", "true");
+      trendingChipsContainer.innerHTML = Array.from({ length: 6 }, () => `<span class="skeleton sk-trend-chip"></span>`).join("");
+    }
+    if (topicPulseGrid) {
+      topicPulseGrid.innerHTML = Array.from({ length: 6 }, () => `
+        <div class="pulse-card" aria-hidden="true">
+          <span class="skeleton sk-line sm sk-w-80"></span>
+          <span class="skeleton sk-line lg sk-w-65"></span>
+          <span class="skeleton sk-chip"></span>
+        </div>
+      `).join("");
+    }
     grid.innerHTML = Array.from({ length: count }, () => `
       <article class="card" aria-hidden="true">
         <div class="ph">
@@ -617,6 +778,7 @@ if (grid) {
   function renderHomepageAll(articles) {
     if (!articles || articles.length === 0) return;
     allHomepageArticles = articles;
+    renderTrendingAndPulse(articles);
     renderNewsroomDesk(articles);
     renderFilteredGrid();
     renderCategoryShowcase(articles);

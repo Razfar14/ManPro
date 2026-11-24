@@ -1274,5 +1274,127 @@
         }
       ]
     }
+  },
+  "v3_ekspor": {
+    "_cached_at": 1795492748.9769864,
+    "data": {
+      "query": "Ekspor",
+      "invalid_topic": false,
+      "summary": "Pencarian topik 'Ekspor' merangkum 6 berita terkini dari ANTARA News Kalimantan Timur - Berita Terkini Kalimantan Timur, detikNews, ANTARA News, CNBC Indonesia, dan 1 media lainnya (antara lain terkait Negara, Kaltim, ASEAN, Libya). Isu utama yang mengemuka dalam liputan tersebut berpusat pada \"Ekspor nonmigas Kaltim ke ASEAN tumbuh 24 persen\" serta perkembangan mengenai \"Libya Protes Serangan Ukraina: Negara Kami Bukan Arena untuk Ekspor Konflik\".\n\nANTARA News Kalimantan Timur - Berita Terkini Kalimantan Timur menyoroti isu \"Ekspor nonmigas Kaltim ke ASEAN tumbuh 24 persen\"; detikNews menyoroti isu \"Libya Protes Serangan Ukraina: Negara Kami Bukan Arena untuk Ekspor Konflik\"; sementara ANTARA News dalam laporannya \"Indonesia bidik perluasan pasar ekspor ke Eropa lewat IEU-CEPA\" menekankan bahwa indonesia bidik perluasan pasar ekspor ke Eropa lewat IEU-CEPA ANTARA NewsIEU-CEPA Buka Peluang Ekspor Manufaktur RI ke Eropa, Industri Tekstil Diuntungkan kontan.co.idIndonesia-Uni Eropa Re. dengan angka/data yang dikutip berupa 24 persen, 0 Persen. Secara keseluruhan, masing-masing media di atas menampilkan sudut pandang berbeda dalam membingkai isu 'Ekspor', baik dari sisi dinamika aktor utama, pernyataan tokoh, maupun dampaknya bagi publik.",
+      "matrix_columns": [
+        "Aspek",
+        "ANTARA News Kalimantan Timur - Berita Terkini Kalimantan Timur",
+        "detikNews",
+        "ANTARA News"
+      ],
+      "matrix_rows": [
+        {
+          "aspek": "Data angka",
+          "cnn": "24 persen",
+          "cnbc": "Tidak ada angka spesifik; menyoroti aspek kualitatif \"Libya Protes Serangan Ukraina: Negara Kami Bukan Arena ...\"",
+          "tempo": "0 Persen"
+        },
+        {
+          "aspek": "Narasumber",
+          "cnn": "Subjek pemberitaan pada \"Ekspor nonmigas Kaltim ke ASEAN tumbuh 24 persen\"",
+          "cnbc": "Subjek pemberitaan pada \"Libya Protes Serangan Ukraina: Negara Kami Bukan Arena ...\"",
+          "tempo": "Subjek pemberitaan pada \"Indonesia bidik perluasan pasar ekspor ke Eropa lewat I...\""
+        },
+        {
+          "aspek": "Fokus berita",
+          "cnn": "Ekspor nonmigas Kaltim ke ASEAN tumbuh 24 persen",
+          "cnbc": "Libya Protes Serangan Ukraina: Negara Kami Bukan Arena untuk Ekspor Konflik",
+          "tempo": "Indonesia bidik perluasan pasar ekspor ke Eropa lewat IEU-CEPA ANTARA NewsIEU-CEPA Buka Peluang Ekspor Manufaktur RI ke Eropa, Industri Tekstil Diuntungkan kontan.co.idIndonesia-Uni Eropa Re..."
+        }
+      ],
+      "consensus": [
+        "Seluruh laporan yang dirujuk sama-sama menyoroti perkembangan terkait 'Ekspor'.",
+        "Setiap media mengangkat konteks peristiwa berdasarkan aktor dan pernyataan yang relevan."
+      ],
+      "divergence": [
+        "Perbedaan penekanan isu utama, narasumber yang ditonjolkan, serta sudut pandang pemberitaan antarportal."
+      ],
+      "engine_used": "Prototype NLP (DeepSeek fallback)",
+      "articles": [
+        {
+          "id": "gn-136e7b01d5",
+          "title": "Ekspor nonmigas Kaltim ke ASEAN tumbuh 24 persen",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxON3R0czVnVjdGQ3hxcjdLai1mdUJUdXVrZ3lueGZ2TVVJQlV0VU9jbU9EZGltWkgxYktISG5lc04tMlhURzgxT05uaTVOQm5tS05GSUFjRVJGY05YZy0xWXkybHlSS0pVM1pLMWdtUXRGaWZKcFZLWXZjbzA5WldYVkpieHdoY2JFYXIwaGt3TU4zOTFSSnRz0gGcAUFVX3lxTE5XTDBTdXhNb1dYR3FxU1pHTnNnNzNURlY5SVFWYTF4dFVrT1FNYWs3dmNhUjk0WmJLTU52TFFmZXZLQml1c1hnZDNVM2lYR2JSWHdEUkhiNWpHdHZacEVFeUE2SFNJaVhXZFRXVDRqOTFyczJmbkc0aDE5UHZzMENlOWJrNDNxc1ZsRHVLVV85MDVScGpqTVJveFMxVw?oc=5",
+          "publisher": "ANTARA News Kalimantan Timur - Berita Terkini Kalimantan Timur",
+          "category": "Nasional",
+          "published_at": "Mon, 23 Nov 2026 07:23:12 GMT",
+          "snippet": "Ekspor nonmigas Kaltim ke ASEAN tumbuh 24 persen  ANTARA News Kalimantan Timur - Berita Terkini Kalimantan Timur",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-546a9464a9",
+          "title": "Libya Protes Serangan Ukraina: Negara Kami Bukan Arena untuk Ekspor Konflik",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTi1CRjNheG5wX3JtWVYxVXE2LTk1dGdJTng3VVlXNHNOV2pDdFc1TDlNMDBtcHNadVlrUGRoeG9aY1Q5eE1CX1hxWGsyLUhYS0xHQVV2YlFLbDdCUnZldTZTWTdfNk1sYjdfWnJyM1BVQVlmRnlBYkMzZG1fd3kzM0dQcy02dk95OHE3SGk2SVhzTTFEZnlZT0s0V2dwSHdGM24wQU9aaXpkSkRUSHdfZ2J2TlRwdUdIeGJyVU530gHDAUFVX3lxTE0tUE9QTmg5cExjQ3Z2a0NOQlBBVEZLNUZZV3BnaWMyV05QRUsxT2s1d0RabldBdEtxRVZJLXJsWVl2WXI3c0YzUzJNSDlVNFZyZWV0dldNMXJxaUdyZEFEX0gwVGJwaGJXZ2hjdHczVEZTdmFZMFpjTDZUdllqdE53c1piR2VJQktBT2xPYTcxTVFCaUpXNGxoM1FadVluRWRoc0ZmcVg3NVhnUjdPS3BGeHlzOEpaV2hOaWFkWERQbmp6Yw?oc=5",
+          "publisher": "detikNews",
+          "category": "Teknologi",
+          "published_at": "Mon, 23 Nov 2026 09:22:33 GMT",
+          "snippet": "Libya Protes Serangan Ukraina: Negara Kami Bukan Arena untuk Ekspor Konflik  detikNews",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-e7cdd3597b",
+          "title": "Indonesia bidik perluasan pasar ekspor ke Eropa lewat IEU-CEPA",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNTVZNZmpYT1FYV2Q5M25DY0xWbzNxYkg2OXpyRVVTRzJteGRhVmtfRmFhSFl4M2J5QlBzbGUwVmtjTnNyYVJ3VDBvLV9uN1lEXzZjMUFGQ0xCTlFDcHFEdnoyRlpIMEt0UnFHVzZNWWZGZVBFQXBWVkE5cUpXcFhuYzNuMnJURzlQTU1mQkZodTRKMktxZm5qU1RQSWdhNEY2WUxYNTBPWUjSAa4BQVVfeXFMUGNYeVgwWDdZVGI5c1VzNkUwMlFuZ0tZYmZjZURGZV9Sa1lzcDJYVVUzUXZURThiX0RUZ0huenhwZ3ltcTVXSUl0MUdqelNfUmRaa0lrMGVNSWtMaE9Ra295bWt4b1EtUDNNNk92TUhjWHFqRUdqZnJLTWxlMDhvRXBiNFVweE1aTzlILUROY3loY0FwMlhVMnNEZ0Q3RjB3VnFibVFkQXBaTTVqX1N3?oc=5",
+          "publisher": "ANTARA News",
+          "category": "Nasional",
+          "published_at": "Mon, 23 Nov 2026 05:54:28 GMT",
+          "snippet": "Indonesia bidik perluasan pasar ekspor ke Eropa lewat IEU-CEPA  ANTARA NewsIEU-CEPA Buka Peluang Ekspor Manufaktur RI ke Eropa, Industri Tekstil Diuntungkan  kontan.co.idIndonesia-Uni Eropa Resmi Tandatangani IEU-CEPA, Tarif Ekspor Turun hingga 0 Persen  Presiden RI",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-0af90d7060",
+          "title": "Iran Siap Habis-habisan Bongkar Blokade Laut AS Demi Ekspor Minyak",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPU2tqQWxya1lkNXBVRnM0VU8yX2pfREFLQnh3S1lRM1pnOWFfTG5jR0c2QUJwWFVWS1h2QkhycEdfZ1hpUzdSRm44OHNTc3hiN0xTcTJ0aHB2bml3XzhFVUF2bjF4OTBfa1YtdW5nMWh3b0szZmJsTlByMHV2OXdvOWFYZHhLWjhjZFRjUGhLcjREdWw0WG4wa0RlRjlIVGNIcTNNNElKRDg4ZlRFQkd6QUlYRkFxSUFVdzlQSWFGdHdxSjDSAcgBQVVfeXFMUGJoMlJQNU9zNDhDdFU4bmR2UEVsbWlsb1MxVy1QTHNWNTVBTnllZ09XVF9uSXFaRnBRWDhselJjdUNqYVpOOHNlYk5XbXhYX3VtZUhBcUhXMG01a1NaaHFfc3NVODZLRWU3cllEZFNCdHU3OVQybHg0dW5vN3NYdFUydWRSVmhVVDh6UEEyOWl0eDJNanVFUW9mRlpjcl80Q3hLYmJqdktxMWdOOVJ0VFZtel9pYnVqbXZBelpuUTdrS2FnNEVENjA?oc=5",
+          "publisher": "CNBC Indonesia",
+          "category": "Nasional",
+          "published_at": "Mon, 23 Nov 2026 15:00:00 GMT",
+          "snippet": "Iran Siap Habis-habisan Bongkar Blokade Laut AS Demi Ekspor Minyak  CNBC Indonesia",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-6f6f5a0eb9",
+          "title": "Danantara Masuk ke Jalur Ekspor, Margin dan Daya Saing Jadi Sorotan",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPREhia2RfelE3WUFCMHZkZ3FmejlTWVEyZmliaDAzeXFDcnZBY1B0eXRnTGQ4RFEyVFlSdTZfTENyMXdHZ0FHMkhXVzJfcHJiSHZfb0ROQ0x4emxxbldFZTFYQk9feG8wUElFdnphWS1XV2JvTHJ0QnNtcTJJR2R3d3l6bXRJVG5FNjJMV3daSG1FUWJUNW1uaFJFNDRITmctaVFsVlIwZlc3RnNHTWRyVERXdGg1cFVsQ20w?oc=5",
+          "publisher": "Bisnis Indonesia Premium",
+          "category": "Teknologi",
+          "published_at": "Mon, 23 Nov 2026 08:21:00 GMT",
+          "snippet": "Danantara Masuk ke Jalur Ekspor, Margin dan Daya Saing Jadi Sorotan  Bisnis Indonesia Premium",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        },
+        {
+          "id": "gn-06246319ec",
+          "title": "Tak Lagi Transit, Bahlil Siapkan Mekanisme Ekspor ke Negara Tujuan",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcVl6SjEyVGNBSHBZNFFucWs2WWw3TENTdElodnRib2FBOTc4RVVFVXgxd1F2dk1pMXZucTVNSE9hRU9aU2NnT0FSeWJkZk55eXc2Smx0WXQzeTVCaGkwSkw2cVNpekNHNGpsYmt5aHJmOHl3dmQ3SkJsa2VQUGwwTzFWbndBaFJmMks5QWtTWmx5b2ViOVZfU0E2aWlsTkxjSTRib0VUZ3hqSHRCUWI5NzNKOTMyQktzTERNZThKOUl4d9IBxwFBVV95cUxPSzY2OXYtMVdMb2JibW92YWM4WmpvSjZsMUtHakhiUnFGLXFkMnBkWS11OEdCUDdSMkRLYkFKQ0plbG1yTTFyaTZueWNvemgxbzFFcUFfOXloY2IzM3piekxyT1pNM0lDaDA3Z1NSbm9hN01rc1N0aTJKNVgzc1lkMkg5ZlZaLTU1OENIVE9lcENHTkozVzgyb0xXRks1aUgxZG1qTjBOcUMxUDhkcXVIMzJmR3g2bWdvc3VUdkVTbWlIVlh6NzdB?oc=5",
+          "publisher": "CNBC Indonesia",
+          "category": "Nasional",
+          "published_at": "Mon, 23 Nov 2026 12:50:02 GMT",
+          "snippet": "Tak Lagi Transit, Bahlil Siapkan Mekanisme Ekspor ke Negara Tujuan  CNBC Indonesia",
+          "image_url": "",
+          "source_type": "google_news_rss",
+          "author": "Redaksi",
+          "full_text": ""
+        }
+      ]
+    }
   }
 }

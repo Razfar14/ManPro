@@ -58,13 +58,13 @@
     <span class="subnav-badge dark">Komparasi AI 2026</span>
     <span class="subnav-badge accent">Pantauan Multi-Media</span>
     <span class="trending-label">Isu Terhangat:</span>
-    <div class="trending-chips">
-      <a href="hasil.html?q=PPN" class="trend-chip">PPN 12%</a>
-      <a href="hasil.html?q=Banjir+Jakarta" class="trend-chip">Banjir Jakarta</a>
-      <a href="hasil.html?q=Kecerdasan+Buatan" class="trend-chip">Kecerdasan Buatan (AI)</a>
-      <a href="hasil.html?q=KPK" class="trend-chip">Korupsi &amp; KPK</a>
-      <a href="hasil.html?q=Pilkada" class="trend-chip">Pilkada Serentak</a>
-      <a href="hasil.html?q=Ekspor" class="trend-chip">Ekspor &amp; Komoditas</a>
+    <div class="trending-chips" id="trendingChips" aria-busy="true">
+      <span class="skeleton sk-trend-chip"></span>
+      <span class="skeleton sk-trend-chip"></span>
+      <span class="skeleton sk-trend-chip"></span>
+      <span class="skeleton sk-trend-chip"></span>
+      <span class="skeleton sk-trend-chip"></span>
+      <span class="skeleton sk-trend-chip"></span>
     </div>
   </div>
 
@@ -75,44 +75,20 @@
         <h2>PANTAUAN ISU &amp; RADAR MEDIA</h2>
         <span class="pulse-arrow">→</span>
       </div>
-      <div class="pulse-tabs">
-        <span class="on">ISU UTAMA</span>
-        <span>FISKAL &amp; PASAR</span>
-        <span>POLITIK &amp; HUKUM</span>
-        <span>TEKNOLOGI &amp; IKLIM</span>
+      <div class="pulse-tabs" id="pulseTabs">
+        <button type="button" class="pulse-tab on" data-pulse="all">ISU UTAMA</button>
+        <button type="button" class="pulse-tab" data-pulse="ekonomi">FISKAL &amp; PASAR</button>
+        <button type="button" class="pulse-tab" data-pulse="politik">POLITIK &amp; HUKUM</button>
+        <button type="button" class="pulse-tab" data-pulse="tekno">TEKNOLOGI &amp; IKLIM</button>
       </div>
     </div>
     <div class="pulse-grid" id="topicPulseGrid">
-      <a class="pulse-card" href="hasil.html?q=PPN">
-        <span class="pulse-name">Tarif PPN 12%</span>
-        <strong class="pulse-val">Rp 70-80 T</strong>
-        <span class="pulse-tag up">↑ 3 Perspektif Media</span>
-      </a>
-      <a class="pulse-card" href="hasil.html?q=Politik">
-        <span class="pulse-name">Bursa &amp; Koalisi Politik</span>
-        <strong class="pulse-val">Sorotan Tinggi</strong>
-        <span class="pulse-tag up">↑ Dinamika Nasional</span>
-      </a>
-      <a class="pulse-card" href="hasil.html?q=Banjir+Jakarta">
-        <span class="pulse-name">Normalisasi Ciliwung</span>
-        <strong class="pulse-val">Rp 850 Miliar</strong>
-        <span class="pulse-tag warn">● Fokus Infrastruktur</span>
-      </a>
-      <a class="pulse-card" href="hasil.html?q=Teknologi">
-        <span class="pulse-name">Investasi Pusat Data AI</span>
-        <strong class="pulse-val">Rp 40 Triliun</strong>
-        <span class="pulse-tag up">↑ Tren Teknologi</span>
-      </a>
-      <a class="pulse-card" href="hasil.html?q=Hukum">
-        <span class="pulse-name">Pemulihan Aset KPK</span>
-        <strong class="pulse-val">Rp 350 Miliar</strong>
-        <span class="pulse-tag up">↑ Sorotan Hukum</span>
-      </a>
-      <a class="pulse-card" href="hasil.html?q=Ekonomi">
-        <span class="pulse-name">Konsumsi &amp; Daya Beli</span>
-        <strong class="pulse-val">Koreksi 1,2%</strong>
-        <span class="pulse-tag warn">● Pantauan Ritel</span>
-      </a>
+      <div class="pulse-card" aria-hidden="true"><span class="skeleton sk-line sm sk-w-80"></span><span class="skeleton sk-line lg sk-w-65"></span><span class="skeleton sk-chip"></span></div>
+      <div class="pulse-card" aria-hidden="true"><span class="skeleton sk-line sm sk-w-90"></span><span class="skeleton sk-line lg sk-w-80"></span><span class="skeleton sk-chip"></span></div>
+      <div class="pulse-card" aria-hidden="true"><span class="skeleton sk-line sm sk-w-80"></span><span class="skeleton sk-line lg sk-w-65"></span><span class="skeleton sk-chip"></span></div>
+      <div class="pulse-card" aria-hidden="true"><span class="skeleton sk-line sm sk-w-90"></span><span class="skeleton sk-line lg sk-w-80"></span><span class="skeleton sk-chip"></span></div>
+      <div class="pulse-card" aria-hidden="true"><span class="skeleton sk-line sm sk-w-80"></span><span class="skeleton sk-line lg sk-w-65"></span><span class="skeleton sk-chip"></span></div>
+      <div class="pulse-card" aria-hidden="true"><span class="skeleton sk-line sm sk-w-90"></span><span class="skeleton sk-line lg sk-w-80"></span><span class="skeleton sk-chip"></span></div>
     </div>
   </section>
 

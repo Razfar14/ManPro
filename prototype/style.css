@@ -275,16 +275,26 @@ a{color:inherit;text-decoration:none}
 }
 .pulse-tabs{
   display:flex;
-  gap:14px;
+  gap:10px;
   font-size:11.5px;
   font-weight:700;
   color:var(--muted);
   flex-wrap:wrap;
 }
-.pulse-tabs span.on{
+.pulse-tab{
+  border:0;
+  background:transparent;
+  font:700 11.5px "Arimo",Arial,sans-serif;
+  color:var(--muted);
+  cursor:pointer;
+  padding:2px 4px 6px;
+  border-bottom:2px solid transparent;
+  transition:color 0.2s, border-color 0.2s;
+}
+.pulse-tab:hover{color:var(--navy)}
+.pulse-tab.on,.pulse-tabs span.on{
   color:#0b57d0;
   border-bottom:2px solid #0b57d0;
-  padding-bottom:4px;
 }
 .pulse-grid{
   display:grid;
@@ -851,6 +861,16 @@ td+td{color:var(--ink)}
 .sk-line.lg{height:20px}
 .sk-line.xl{height:28px;margin-bottom:12px}
 .sk-chip{width:64px;height:18px;border-radius:42px;margin-bottom:10px}
+.sk-trend-chip{
+  display:inline-block;
+  width:104px;
+  height:27px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#d8dee8 25%,#eaEEF5 50%,#d8dee8 75%);
+  background-size:200% 100%;
+}
+.sk-trend-chip:nth-child(even){width:124px}
+.sk-trend-chip:nth-child(3n){width:88px}
 .sk-w-100{width:100%}
 .sk-w-90{width:90%}
 .sk-w-80{width:80%}
